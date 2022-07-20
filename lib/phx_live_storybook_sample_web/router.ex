@@ -19,7 +19,7 @@ defmodule PhxLiveStorybookSampleWeb.Router do
   scope "/", PhxLiveStorybookSampleWeb do
     pipe_through(:browser)
 
-    get("/", PageController, :index)
+    live("/", PageLive, :index)
     live_storybook("/storybook")
   end
 

@@ -106,6 +106,8 @@ defmodule PhxLiveStorybookSampleWeb do
   defp components do
     quote do
       import PhxLiveStorybookSampleWeb.Components.Badge
+      import PhxLiveStorybookSampleWeb.Components.Button
+      import PhxLiveStorybookSampleWeb.Components.Dropdown
     end
   end
 
