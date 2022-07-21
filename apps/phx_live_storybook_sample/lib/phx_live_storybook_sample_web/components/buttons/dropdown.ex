@@ -3,7 +3,6 @@ defmodule PhxLiveStorybookSampleWeb.Components.Dropdown do
 
   def dropdown(assigns) do
     assigns
-    |> assign_new(:id, &random_id/0)
     |> assign_new(:label, fn -> "" end)
     |> assign_new(:"bg-color", fn -> "bg-white" end)
     |> assign_new(:"hover-bg-color", fn -> "hover:bg-gray-50" end)
@@ -17,7 +16,7 @@ defmodule PhxLiveStorybookSampleWeb.Components.Dropdown do
       id={@id}
       class="flex relative w-max"
       phx-hook="DropdownHook"
-      data-content-class="dropdown-content flex flex-col w-max border absolute mt-1 bg-default-bg right-0 top-full z-10 rounded-md shadow-md py-1"
+      data-content-class="dropdown-content bg-white flex flex-col w-max border absolute mt-1 bg-default-bg right-0 top-full z-10 rounded-md shadow-md py-1"
     >
       <button type="button" class={"toggle-button inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 #{assigns[:"text-color"]} #{assigns[:"bg-color"]} #{assigns[:"hover-bg-color"]} text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"}>
         <%= @label %>
@@ -38,7 +37,4 @@ defmodule PhxLiveStorybookSampleWeb.Components.Dropdown do
     """
   end
 
-  defp random_id do
-    123
-  end
 end

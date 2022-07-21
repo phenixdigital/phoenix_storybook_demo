@@ -58,6 +58,7 @@ config :phx_live_storybook_sample, PhxLiveStorybookSampleWeb.Endpoint,
 config :phx_live_storybook_sample, PhxLiveStorybookSampleWeb.Endpoint,
   live_reload: [
     patterns: [
+      ~r"../phx_live_storybook/lib/phx_live_storybook/.*(ex)$",
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
       ~r"lib/phx_live_storybook_sample_web/(live|views)/.*(ex)$",
