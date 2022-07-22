@@ -1,7 +1,7 @@
 defmodule PhxLiveStorybookSampleWeb.Storybook.Components.Buttons.Button do
   alias PhxLiveStorybookSampleWeb.Components.Button
 
-  use PhxLiveStorybook.Component
+  use PhxLiveStorybook.Entry, :component
 
   def component, do: Button
   def function, do: &Button.button/1

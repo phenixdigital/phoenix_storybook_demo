@@ -1,3 +1,3 @@
 defmodule PhxLiveStorybookSampleWeb.Storybook.Components.Badge do
-  use PhxLiveStorybook.Component
+  use PhxLiveStorybook.Entry, :component
 end

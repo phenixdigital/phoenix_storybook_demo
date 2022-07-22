@@ -1,7 +1,7 @@
 defmodule PhxLiveStorybookSampleWeb.Storybook.Components.Buttons.Dropdown do
   alias PhxLiveStorybookSampleWeb.Components.Dropdown
 
-  use PhxLiveStorybook.Component
+  use PhxLiveStorybook.Entry, :component
 
   def component, do: Dropdown
   def function, do: &Dropdown.dropdown/1
