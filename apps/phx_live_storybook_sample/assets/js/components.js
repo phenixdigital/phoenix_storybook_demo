@@ -1,8 +1,6 @@
 import * as Hooks from "./hooks";
 
-function components() {
+(function () {
   window.storybook = {};
   window.storybook.Hooks = Hooks;
-}
-
-components();
+})();
