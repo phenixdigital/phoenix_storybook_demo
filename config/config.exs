@@ -39,13 +39,8 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
-config :phx_live_storybook_sample, PhxLiveStorybookSampleWeb.Storybook,
-  content_path:
-    Path.expand(
-      "../apps/phx_live_storybook_sample/lib/phx_live_storybook_sample_web/storybook",
-      __DIR__
-    ),
-  components_module_prefix: PhxLiveStorybookSampleWeb.Storybook,
+config :phx_live_storybook_sample, Storybook,
+  content_path: Path.expand("../apps/phx_live_storybook_sample/lib/storybook/", __DIR__),
   title: "My Storybook",
   css_path: "/assets/app.css",
   js_path: "/assets/components.js"

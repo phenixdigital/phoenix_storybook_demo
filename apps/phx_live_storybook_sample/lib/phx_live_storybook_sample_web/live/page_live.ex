@@ -15,6 +15,7 @@ defmodule PhxLiveStorybookSampleWeb.PageLive do
         <:entry path="#" label="Support"/>
         <:entry path="#" label="License"/>
       </.dropdown>
+      <.live_component module={LiveButton} label="I have state" id="live-button"/>
     </section>
     """
   end
