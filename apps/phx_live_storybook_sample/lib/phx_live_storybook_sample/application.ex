@@ -8,10 +8,6 @@ defmodule PhxLiveStorybookSample.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Start the Ecto repository
-      PhxLiveStorybookSample.Repo,
-      # Start the Telemetry supervisor
-      PhxLiveStorybookSampleWeb.Telemetry,
       # Start the PubSub system
       {Phoenix.PubSub, name: PhxLiveStorybookSample.PubSub},
       # Start the Endpoint (http/https)

@@ -9,13 +9,19 @@ defmodule PhxLiveStorybookSampleWeb.Storybook.Components.Buttons.Button do
 
   def variations do
     [
-      default: %{
-        label: "A button"
+      %Variation{
+        id: :default,
+        attributes: %{
+          label: "A button"
+        }
       },
-      custom_colors: %{
-        :label => "A button",
-        :"bg-color" => "bg-green-600",
-        :"hover-bg-color" => "bg-green-700"
+      %Variation{
+        id: :custom_colors,
+        attributes: %{
+          :label => "A button",
+          :"bg-color" => "bg-green-600",
+          :"hover-bg-color" => "bg-green-700"
+        }
       }
     ]
   end

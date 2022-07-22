@@ -7,9 +7,6 @@
 # General application configuration
 import Config
 
-config :phx_live_storybook_sample,
-  ecto_repos: [PhxLiveStorybookSample.Repo]
-
 # Configures the endpoint
 config :phx_live_storybook_sample, PhxLiveStorybookSampleWeb.Endpoint,
   url: [host: "localhost"],

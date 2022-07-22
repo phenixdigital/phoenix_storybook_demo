@@ -9,28 +9,34 @@ defmodule PhxLiveStorybookSampleWeb.Storybook.Components.Buttons.Dropdown do
 
   def variations do
     [
-      default: %{
-        label: "A dropdown",
-        slots: [
+      %Variation{
+        id: :default,
+        description: "",
+        attributes: %{
+          label: "A dropdown",
+        },
+        slots:
           """
           <:entry path="#" label="Account settings"/>
           <:entry path="#" label="Support"/>
           <:entry path="#" label="License"/>
           """
-        ]
       },
-      custom_colors: %{
-        :label => "A dropdown",
-        :"bg-color" => "bg-green-600",
-        :"hover-bg-color" => "bg-green-700",
-        :"text-color" => "text-white",
-        slots: [
+      %Variation{
+        id: :custom_colors,
+        attributes: %{
+          :label => "A dropdown",
+          :"bg-color" => "bg-green-600",
+          :"hover-bg-color" => "bg-green-700",
+          :"text-color" => "text-white",
+        },
+        slots:
           """
           <:entry path="#" label="Account settings"/>
           <:entry path="#" label="Support"/>
           <:entry path="#" label="License"/>
           """
-        ]
+
       }
     ]
   end

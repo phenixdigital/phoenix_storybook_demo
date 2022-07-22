@@ -32,7 +32,6 @@ defmodule PhxLiveStorybookSampleWeb.ConnCase do
   end
 
   setup tags do
-    PhxLiveStorybookSample.DataCase.setup_sandbox(tags)
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 end
