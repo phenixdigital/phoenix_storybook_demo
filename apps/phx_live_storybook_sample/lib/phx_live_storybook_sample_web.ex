@@ -22,7 +22,6 @@ defmodule PhxLiveStorybookSampleWeb do
       use Phoenix.Controller, namespace: PhxLiveStorybookSampleWeb
 
       import Plug.Conn
-      import PhxLiveStorybookSampleWeb.Gettext
       alias PhxLiveStorybookSampleWeb.Router.Helpers, as: Routes
     end
   end
@@ -97,8 +96,6 @@ defmodule PhxLiveStorybookSampleWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import PhxLiveStorybookSampleWeb.ErrorHelpers
-      import PhxLiveStorybookSampleWeb.Gettext
       alias PhxLiveStorybookSampleWeb.Router.Helpers, as: Routes
     end
   end

@@ -1,13 +1,5 @@
-# This file is responsible for configuring your application
-# and its dependencies with the aid of the Config module.
-#
-# This configuration file is loaded before any dependency and
-# is restricted to this project.
-
-# General application configuration
 import Config
 
-# Configures the endpoint
 config :phx_live_storybook_sample, PhxLiveStorybookSampleWeb.Endpoint,
   url: [host: "localhost"],
   render_errors: [
@@ -17,18 +9,6 @@ config :phx_live_storybook_sample, PhxLiveStorybookSampleWeb.Endpoint,
   ],
   pubsub_server: PhxLiveStorybookSample.PubSub,
   live_view: [signing_salt: "fYsrW27v"]
-
-# Configures the mailer
-#
-# By default it uses the "Local" adapter which stores the emails
-# locally. You can see the emails in your browser, at "/dev/mailbox".
-#
-# For production it's recommended to configure a different adapter
-# at the `config/runtime.exs`.
-config :phx_live_storybook_sample, PhxLiveStorybookSample.Mailer, adapter: Swoosh.Adapters.Local
-
-# Swoosh API client is needed for adapters other than SMTP.
-config :swoosh, :api_client, false
 
 # Configure esbuild (the version is required)
 config :esbuild,
@@ -59,7 +39,18 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
-config :phx_live_storybook, :backend_module, PhxLiveStorybookSampleWeb.Storybook
+config :phx_live_storybook_sample, PhxLiveStorybookSampleWeb.Storybook,
+  components_path:
+    Path.expand(
+      "../apps/phx_live_storybook_sample/lib/phx_live_storybook_sample_web/storybook",
+      __DIR__
+    ),
+  components_module_prefix: PhxLiveStorybookSampleWeb.Storybook,
+  title: "My Storybook",
+  css_path: "/assets/app.css",
+  js_path: "/assets/components.js"
+
+# makeup_style: Makeup.Styles.HTML.StyleMap.tango_style()
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

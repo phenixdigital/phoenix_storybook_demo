@@ -1,19 +1,15 @@
 # PhxLiveStorybookSample
 
-To start your Phoenix server:
+Demo phoenix web application to showcase [phx_live_storybook](https://github.com/phenixdigital/phx_live_storybook/).
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+For a better developper experience (code reload), `phx_live_storybook` is symlinked as an umbrella app under `apps/phx_live_storybook`.
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+## Setup
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+- Clone `phx_live_storybook` alongside this repo (relative path from current repo: `../phx_live_storybook`)
+- Install dependencies with `mix deps.get`
+- Install storybook asset dependencies: `cd apps/phx_live_storybook/assets && npm install`
+- Watch storybook assets: `cd - && mix storybook.assets.watch`
+- Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
 
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+Now you can visit [`localhost:4000/storybook`](http://localhost:4000/storybook) from your browser.
