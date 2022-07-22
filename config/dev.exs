@@ -17,7 +17,8 @@ config :phx_live_storybook_sample, PhxLiveStorybookSampleWeb.Endpoint,
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]},
+    npm: ["run", "watch", cd: Path.expand("../apps/phx_live_storybook/assets", __DIR__)]
   ]
 
 # ## SSL Support

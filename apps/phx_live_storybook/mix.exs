@@ -8,7 +8,6 @@ defmodule PhxLiveStorybook.MixProject do
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      aliases: aliases(),
       build_path: "../../_build",
       config_path: "../../config/config.exs",
       deps_path: "../../deps",
@@ -28,12 +27,6 @@ defmodule PhxLiveStorybook.MixProject do
     [
       {:phoenix_live_view, "~> 0.17.11"},
       {:makeup_eex, "~> 0.1.0"}
-    ]
-  end
-
-  defp aliases do
-    [
-      "assets.watch": "cmd npm run watch --prefix assets"
     ]
   end
 end
