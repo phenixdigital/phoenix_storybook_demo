@@ -13,14 +13,13 @@ defmodule Storybook.Components.Buttons.Dropdown do
         id: :default,
         description: "",
         attributes: %{
-          label: "A dropdown",
+          label: "A dropdown"
         },
-        slots:
-          """
-          <:entry path="#" label="Account settings"/>
-          <:entry path="#" label="Support"/>
-          <:entry path="#" label="License"/>
-          """
+        slots: """
+        <:entry path="#" label="Account settings"/>
+        <:entry path="#" label="Support"/>
+        <:entry path="#" label="License"/>
+        """
       },
       %Variation{
         id: :custom_colors,
@@ -28,15 +27,13 @@ defmodule Storybook.Components.Buttons.Dropdown do
           :label => "A dropdown",
           :"bg-color" => "bg-green-600",
           :"hover-bg-color" => "bg-green-700",
-          :"text-color" => "text-white",
+          :"text-color" => "text-white"
         },
-        slots:
-          """
-          <:entry path="#" label="Account settings"/>
-          <:entry path="#" label="Support"/>
-          <:entry path="#" label="License"/>
-          """
-
+        slots: """
+        <:entry path="#" label="Account settings"/>
+        <:entry path="#" label="Support"/>
+        <:entry path="#" label="License"/>
+        """
       }
     ]
   end

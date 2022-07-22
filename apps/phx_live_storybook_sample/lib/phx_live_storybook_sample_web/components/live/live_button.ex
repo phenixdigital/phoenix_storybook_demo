@@ -2,10 +2,11 @@ defmodule PhxLiveStorybookSampleWeb.Components.Live.LiveButton do
   use PhxLiveStorybookSampleWeb, :live_component
 
   def update(assigns, socket) do
-    {:ok, socket
-    |> assign(assigns)
-    |> assign_new(:label, fn -> "" end)
-    |> assign_new(:color, &random_color/0)}
+    {:ok,
+     socket
+     |> assign(assigns)
+     |> assign_new(:label, fn -> "" end)
+     |> assign_new(:color, &random_color/0)}
   end
 
   def render(assigns) do

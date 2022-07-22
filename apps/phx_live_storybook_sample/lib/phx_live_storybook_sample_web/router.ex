@@ -17,9 +17,9 @@ defmodule PhxLiveStorybookSampleWeb.Router do
 
     live("/", PageLive, :index)
 
-    live_storybook "/storybook",
+    live_storybook("/storybook",
       otp_app: :phx_live_storybook_sample,
       backend_module: Storybook
+    )
   end
-
 end

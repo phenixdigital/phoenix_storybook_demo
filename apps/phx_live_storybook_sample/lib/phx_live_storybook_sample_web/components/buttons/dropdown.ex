@@ -36,5 +36,4 @@ defmodule PhxLiveStorybookSampleWeb.Components.Dropdown do
     </div>
     """
   end
-
 end

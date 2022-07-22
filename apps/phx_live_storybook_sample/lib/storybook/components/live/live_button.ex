@@ -4,10 +4,12 @@ defmodule Storybook.Components.Live.LiveButton do
   use PhxLiveStorybook.Entry, :live_component
 
   def component, do: LiveButton
-  def description, do: """
-  A LiveComponent button, with some state.
-  Will change its color every time you click it
-  """
+
+  def description,
+    do: """
+    A LiveComponent button, with some state.
+    Will change its color every time you click it
+    """
 
   def variations do
     [
