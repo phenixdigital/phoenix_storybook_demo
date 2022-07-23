@@ -45,15 +45,21 @@ config :phx_live_storybook_sample, PhxLiveStorybookSampleWeb.Endpoint,
 # configured to run both http and https servers on
 # different ports.
 
+config :phoenix_live_reload, :dirs, [
+  Path.expand("../apps/phx_live_storybook_sample", __DIR__),
+  Path.expand("../apps/phx_live_storybook", __DIR__)
+]
+
 # Watch static and templates for browser reloading.
 config :phx_live_storybook_sample, PhxLiveStorybookSampleWeb.Endpoint,
+  backend: :fs_poll,
   live_reload: [
     patterns: [
-      ~r"../phx_live_storybook/lib/phx_live_storybook/.*(ex)$",
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
       ~r"lib/phx_live_storybook_sample_web/(live|views)/.*(ex)$",
-      ~r"lib/phx_live_storybook_sample_web/templates/.*(eex)$"
+      ~r"lib/phx_live_storybook_sample_web/templates/.*(eex)$",
+      ~r"lib/phx_live_storybook/(live|views|components)/.*(ex)$"
     ]
   ]
 

@@ -102,7 +102,7 @@ defmodule PhxLiveStorybookSampleWeb do
 
   defp components do
     quote do
-      alias PhxComponentHelpersDemoWeb.Components.Live.LiveButton
+      alias PhxLiveStorybookSampleWeb.Components.Live.LiveButton
 
       import PhxLiveStorybookSampleWeb.Components.Badge
       import PhxLiveStorybookSampleWeb.Components.Button

@@ -41,11 +41,8 @@ config :phoenix, :json_library, Jason
 
 config :phx_live_storybook_sample, Storybook,
   content_path: Path.expand("../apps/phx_live_storybook_sample/lib/storybook/", __DIR__),
-  title: "My Storybook",
   css_path: "/assets/app.css",
   js_path: "/assets/components.js"
-
-# makeup_style: Makeup.Styles.HTML.StyleMap.tango_style()
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

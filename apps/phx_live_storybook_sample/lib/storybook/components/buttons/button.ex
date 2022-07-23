@@ -11,12 +11,14 @@ defmodule Storybook.Components.Buttons.Button do
     [
       %Variation{
         id: :default,
+        description: "Default button",
         attributes: %{
           label: "A button"
         }
       },
       %Variation{
         id: :custom_colors,
+        description: "A button with custom colors",
         attributes: %{
           :label => "A button",
           :"bg-color" => "bg-green-600",
