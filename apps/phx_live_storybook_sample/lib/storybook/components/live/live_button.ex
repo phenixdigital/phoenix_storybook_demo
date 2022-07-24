@@ -20,10 +20,11 @@ defmodule Storybook.Components.Live.LiveButton do
         }
       },
       %Variation{
-        id: :custom_colors,
+        id: :base_color,
+        description: "With a base color in assigns",
         attributes: %{
           label: "A button",
-          color: :emerald
+          color: :indigo
         }
       }
     ]

@@ -11,7 +11,7 @@ defmodule PhxLiveStorybookSampleWeb.Components.Live.LiveButton do
 
   def render(assigns) do
     ~H"""
-    <button id={assigns[:id]} class={button_class(assigns)} phx-click="change_color" phx-target={@myself}>
+    <button id={assigns[:id]}class={button_class(assigns)} phx-click="change_color" phx-target={@myself}>
       <%= @label %>
     </button>
     """

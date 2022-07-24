@@ -12,6 +12,9 @@ defmodule PhxLiveStorybookSampleWeb.Components.Badge do
   defp render(assigns) do
     ~H"""
     <span class={"inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium #{assigns[:"bg-color"]} #{assigns[:"text-color"]}"}>
+      <%= if assigns[:icon] do %>
+        <i class={"#{@icon} pr-2"}></i>
+      <% end %>
       <%= @label %>
     </span>
     """

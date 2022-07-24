@@ -890,6 +890,11 @@ select {
   background-color: rgb(79 70 229 / var(--tw-bg-opacity));
 }
 
+.bg-red-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 202 202 / var(--tw-bg-opacity));
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -969,6 +974,10 @@ select {
   padding-bottom: 0.5rem;
 }
 
+.pr-2 {
+  padding-right: 0.5rem;
+}
+
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
@@ -996,6 +1005,11 @@ select {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-red-700 {
+  --tw-text-opacity: 1;
+  color: rgb(185 28 28 / var(--tw-text-opacity));
 }
 
 .text-gray-700 {
