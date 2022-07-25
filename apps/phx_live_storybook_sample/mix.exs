@@ -47,7 +47,9 @@ defmodule PhxLiveStorybookSample.MixProject do
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:phx_live_storybook, in_umbrella: true}
+      {:phx_live_storybook, github: "phenixdigital/phx_live_storybook", override: true}
+      # {:phx_live_storybook, in_umbrella: true}
+
     ]
   end
 

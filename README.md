@@ -2,6 +2,8 @@
 
 Demo phoenix web application to showcase [phx_live_storybook](https://github.com/phenixdigital/phx_live_storybook/).
 
+👉 [Available online here](https://phx-live-storybook-sample.fly.dev/storybook)
+
 For a better developper experience (code reload), `phx_live_storybook` is symlinked as an umbrella app under `apps/phx_live_storybook`.
 
 ## Setup
