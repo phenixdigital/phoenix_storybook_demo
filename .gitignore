@@ -23,16 +23,17 @@ erl_crash.dump
 phx_live_storybook_sample-*.tar
 
 # Ignore assets that are produced by build tools.
-/priv/static/assets/
-
-# Ignore digested assets cache.
-/priv/static/cache_manifest.json
+/apps/*/priv/static/assets/
+/apps/*/priv/static/cache_manifest.json
+/apps/*/priv/static/*.gz
+/apps/*/priv/static/**/*-????????????????????????????????.*
 
 # In case you use Node.js/npm, you want to ignore these.
 npm-debug.log
 /assets/node_modules/
 
 .elixir_ls
+.envrc
 
 apps/phx_live_storybook/deps
 apps/phx_live_storybook/_build
