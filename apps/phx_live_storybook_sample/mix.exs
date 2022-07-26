@@ -10,7 +10,7 @@ defmodule PhxLiveStorybookSample.MixProject do
       compilers: Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps(),
+      deps: deps(Mix.env()),
       build_path: "../../_build",
       config_path: "../../config/config.exs",
       deps_path: "../../deps",
@@ -35,8 +35,8 @@ defmodule PhxLiveStorybookSample.MixProject do
   # Specifies your project dependencies.
   #
   # Type `mix help deps` for examples and options.
-  defp deps do
-    [
+  defp deps(env) do
+    deps = [
       {:phoenix, "~> 1.6.11"},
       {:phoenix_html, "~> 3.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
@@ -47,10 +47,13 @@ defmodule PhxLiveStorybookSample.MixProject do
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:phx_live_storybook, github: "phenixdigital/phx_live_storybook", override: true}
-      # {:phx_live_storybook, in_umbrella: true}
-
     ]
+
+    if env == :prod do
+      [{:phx_live_storybook, github: "phenixdigital/phx_live_storybook"} | deps]
+    else
+      [{:phx_live_storybook, in_umbrella: true} | deps]
+    end
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

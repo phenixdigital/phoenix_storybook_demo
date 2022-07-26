@@ -44,8 +44,8 @@ config :phx_live_storybook_sample, Storybook,
   css_path: "/assets/app.css",
   js_path: "/assets/components.js",
   folders: [
-    components: [icon: "far fa-toolbox", open: true],
-    "components/live": [icon: "fal fa-bolt"]
+    components: [icon: "far fa-toolbox"],
+    "components/live": [icon: "fal fa-bolt", open: true]
   ]
 
 # Import environment specific config. This must remain at the bottom

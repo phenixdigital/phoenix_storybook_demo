@@ -7,7 +7,7 @@ defmodule PhxLiveStorybookSampleUmbrella.MixProject do
       version: "0.1.0",
       start_permanent: Mix.env() == :prod,
       deps: [],
-      apps: [:phx_live_storybook_sample],
+      apps: apps(Mix.env()),
       releases: [
         phx_live_storybook_sample: [
           applications: [phx_live_storybook_sample: :permanent]
@@ -15,4 +15,7 @@ defmodule PhxLiveStorybookSampleUmbrella.MixProject do
       ]
     ]
   end
+
+  defp apps(:prod), do: [:phx_live_storybook_sample]
+  defp apps(_), do: [:phx_live_storybook_sample, :phx_live_storybook]
 end
