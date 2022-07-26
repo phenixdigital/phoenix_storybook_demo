@@ -8,6 +8,7 @@ defmodule PhxLiveStorybookSampleUmbrella.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: [],
       apps: apps(Mix.env()),
+      aliases: aliases(),
       releases: [
         phx_live_storybook_sample: [
           applications: [phx_live_storybook_sample: :permanent]
@@ -18,4 +19,15 @@ defmodule PhxLiveStorybookSampleUmbrella.MixProject do
 
   defp apps(:prod), do: [:phx_live_storybook_sample]
   defp apps(_), do: [:phx_live_storybook_sample, :phx_live_storybook]
+
+  defp aliases do
+    [
+      release: [
+        "tailwind default --minify",
+        "esbuild default --minify",
+        "phx.digest",
+        "release"
+      ]
+    ]
+  end
 end
