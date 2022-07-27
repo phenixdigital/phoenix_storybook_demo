@@ -21,7 +21,7 @@ Now you can visit [`localhost:4000/storybook`](http://localhost:4000/storybook) 
 First make sure your sample app is using an up-to-date storybook library:
 
 ```
-MIX_ENV=prod mix deps.update phx_live_storybook`
+MIX_ENV=prod mix deps.update phx_live_storybook
 ```
 
 Then you can test your release locally with:
@@ -34,5 +34,5 @@ PHX_SERVER=true build/prod/rel/phx_live_storybook_sample/bin/phx_live_storybook_
 Or go for production instead:
 
 ```
-flyctl deploy
+flyctl deploy --no-cache
 ```
