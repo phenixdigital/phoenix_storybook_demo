@@ -6,7 +6,7 @@ defmodule Storybook.Components.Badge do
   def component, do: Badge
   def function, do: &Badge.badge/1
   def description, do: "Just a badge component, with colors."
-  def icon, do: "fal fa-badge-check"
+  def icon, do: "fat fa-badge-check"
 
   def variations do
     for i <- 1..5 do

@@ -11,6 +11,8 @@ defmodule Storybook.Components.Live.LiveButton do
     Will change its color every time you click it
     """
 
+  def icon, do: "fat fa-rectangle-ad"
+
   def variations do
     [
       %Variation{

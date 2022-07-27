@@ -6,6 +6,7 @@ defmodule Storybook.Components.Buttons.Dropdown do
   def component, do: Dropdown
   def function, do: &Dropdown.dropdown/1
   def description, do: "A dropdown button, with a JS hook."
+  def icon, do: "fat fa-list-dropdown"
 
   def variations do
     [

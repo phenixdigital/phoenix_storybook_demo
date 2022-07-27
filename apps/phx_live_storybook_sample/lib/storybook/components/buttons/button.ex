@@ -6,6 +6,7 @@ defmodule Storybook.Components.Buttons.Button do
   def component, do: Button
   def function, do: &Button.button/1
   def description, do: "A simple generic button."
+  def icon, do: "fat fa-rectangle-ad"
 
   def variations do
     [
