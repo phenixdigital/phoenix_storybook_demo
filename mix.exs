@@ -22,6 +22,11 @@ defmodule PhxLiveStorybookSampleUmbrella.MixProject do
 
   defp aliases do
     [
+      "assets.deploy": [
+        "tailwind default --minify",
+        "esbuild default --minify",
+        "phx.digest"
+      ],
       release: [
         "tailwind default --minify",
         "esbuild default --minify",

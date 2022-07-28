@@ -34,5 +34,6 @@ PHX_SERVER=true build/prod/rel/phx_live_storybook_sample/bin/phx_live_storybook_
 Or go for production instead:
 
 ```
+mix assets.deploy
 flyctl deploy --no-cache
 ```
