@@ -11,18 +11,24 @@ defmodule Storybook.Components.Badge do
   def variations do
     for i <- 1..5 do
       [
+        %VariationGroup{
+          id: :"custom_colors_#{i}",
+          description: "With custom colors",
+          variations: [
+            %Variation{
+              id: :"with_custom_colors_#{i}",
+              attributes: %{
+                :label => "An indigo badge",
+                :"text-color" => "text-white",
+                :"bg-color" => "bg-indigo-600"
+              }
+            }
+          ]
+        },
         %Variation{
           id: :"default_badge_#{i}",
           attributes: %{
             :label => "A badge"
-          }
-        },
-        %Variation{
-          id: :"with_custom_colors_#{i}",
-          attributes: %{
-            :label => "An indigo badge",
-            :"text-color" => "text-white",
-            :"bg-color" => "bg-indigo-600"
           }
         },
         %Variation{
