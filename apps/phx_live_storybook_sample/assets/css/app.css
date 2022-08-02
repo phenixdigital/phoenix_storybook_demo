@@ -3,10 +3,10 @@
 @import "tailwindcss/utilities";
 
 h1 {
-  @apply text-2xl font-bold text-slate-700 my-6;
+  @apply text-2xl font-bold text-slate-700 mt-2 mb-6;
 }
 h2 {
-  @apply text-xl font-bold text-slate-500 my-4;
+  @apply text-xl font-bold text-slate-500 mt-2 mb-4;
 }
 h3 {
   @apply text-lg font-bold text-slate-500 my-2;

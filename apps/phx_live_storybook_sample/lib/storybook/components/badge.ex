@@ -3,7 +3,6 @@ defmodule Storybook.Components.Badge do
 
   use PhxLiveStorybook.Entry, :component
 
-  def component, do: Badge
   def function, do: &Badge.badge/1
   def description, do: "Just a badge component, with colors."
   def icon, do: "fat fa-badge-check"
@@ -14,16 +13,17 @@ defmodule Storybook.Components.Badge do
         %VariationGroup{
           id: :"custom_colors_#{i}",
           description: "With custom colors",
-          variations: [
-            %Variation{
-              id: :"with_custom_colors_#{i}",
-              attributes: %{
-                :label => "An indigo badge",
-                :"text-color" => "text-white",
-                :"bg-color" => "bg-indigo-600"
+          variations:
+            for color <- ~w(indigo purple pink) do
+              %Variation{
+                id: :"custom_colors_#{i}_#{color}}",
+                attributes: %{
+                  :label => "#{color} badge",
+                  :"text-color" => "text-white",
+                  :"bg-color" => "bg-#{color}-600"
+                }
               }
-            }
-          ]
+            end
         },
         %Variation{
           id: :"default_badge_#{i}",
@@ -35,7 +35,7 @@ defmodule Storybook.Components.Badge do
           id: :"with_an_icon_#{i}",
           description: "With a custom FontAwesome icon",
           attributes: %{
-            :label => "A check badge",
+            :label => "Check",
             :icon => "fa fa-check"
           }
         },
