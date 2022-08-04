@@ -28,12 +28,12 @@ Then you can test your release locally with:
 
 ```
 MIX_ENV=prod mix release
-PHX_SERVER=true build/prod/rel/phx_live_storybook_sample/bin/phx_live_storybook_sample start
+PHX_SERVER=true _build/prod/rel/phx_live_storybook_sample/bin/phx_live_storybook_sample start
 ```
 
 Or go for production instead:
 
 ```
-mix assets.deploy
+mix assets.build
 flyctl deploy --no-cache
 ```

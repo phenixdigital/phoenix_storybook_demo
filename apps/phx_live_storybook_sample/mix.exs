@@ -66,7 +66,7 @@ defmodule PhxLiveStorybookSample.MixProject do
     [
       setup: ["deps.get"],
       test: ["test"],
-      "assets.deploy": [
+      "assets.build": [
         "tailwind default --minify",
         "esbuild default --minify",
         "phx.digest"

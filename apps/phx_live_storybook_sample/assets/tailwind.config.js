@@ -5,7 +5,7 @@ const colors = require("tailwindcss/colors");
 let plugin = require("tailwindcss/plugin");
 
 module.exports = {
-  content: ["./js/**/*.js", "../lib/**/*.*ex"],
+  content: ["./js/**/*.js", "../lib/**/*.*ex", "../**/*.*exs"],
   safelist: [
     {
       pattern: /bg-(blue|indigo|purple|pink)-.*/,

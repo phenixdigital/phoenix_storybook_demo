@@ -40,7 +40,7 @@ config :logger, :console,
 config :phoenix, :json_library, Jason
 
 config :phx_live_storybook_sample, Storybook,
-  content_path: Path.expand("../apps/phx_live_storybook_sample/lib/storybook/", __DIR__),
+  content_path: Path.expand("../apps/phx_live_storybook_sample/storybook/", __DIR__),
   css_path: "/assets/app.css",
   js_path: "/assets/components.js",
   folders: [

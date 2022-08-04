@@ -7,7 +7,7 @@ defmodule Storybook.Components.Live.LiveButton do
 
   def description,
     do: """
-    A LiveComponent button, with some state.
+    A LiveComponent button, with some state...
     Will change its color every time you click it
     """
 
