@@ -22,6 +22,7 @@ defmodule PhxLiveStorybookSampleUmbrella.MixProject do
 
   defp aliases do
     [
+      "assets.build": "cmd mix assets.build",
       release: [
         "assets.build",
         "release"
