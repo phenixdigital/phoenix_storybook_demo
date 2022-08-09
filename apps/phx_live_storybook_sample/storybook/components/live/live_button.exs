@@ -13,15 +13,15 @@ defmodule Storybook.Components.Live.LiveButton do
 
   def icon, do: "fat fa-rectangle-ad"
 
-  def variations do
+  def stories do
     [
-      %Variation{
+      %Story{
         id: :default,
         attributes: %{
           label: "Click me"
         }
       },
-      %Variation{
+      %Story{
         id: :base_color,
         description: "With a base color in assigns",
         attributes: %{

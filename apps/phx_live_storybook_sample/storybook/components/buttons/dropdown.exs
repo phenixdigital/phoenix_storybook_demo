@@ -7,9 +7,9 @@ defmodule Storybook.Components.Buttons.Dropdown do
   def description, do: "A dropdown button, with a JS hook."
   def icon, do: "fat fa-list-dropdown"
 
-  def variations do
+  def stories do
     [
-      %Variation{
+      %Story{
         id: :default,
         description: "Default dropdown",
         attributes: %{
@@ -21,7 +21,7 @@ defmodule Storybook.Components.Buttons.Dropdown do
         <:entry path="#" label="License"/>
         """
       },
-      %Variation{
+      %Story{
         id: :custom_colors,
         description: "A dropdown with custom colors",
         attributes: %{
