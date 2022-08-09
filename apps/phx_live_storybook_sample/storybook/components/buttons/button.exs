@@ -7,16 +7,16 @@ defmodule Storybook.Components.Buttons.Button do
   def description, do: "A simple generic button."
   def icon, do: "fat fa-rectangle-ad"
 
-  def variations do
+  def stories do
     [
-      %Variation{
+      %Story{
         id: :default,
         description: "Default button",
         attributes: %{
           label: "A button"
         }
       },
-      %Variation{
+      %Story{
         id: :custom_colors,
         description: "A button with custom colors",
         attributes: %{

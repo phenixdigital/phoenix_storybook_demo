@@ -8,15 +8,15 @@ defmodule Storybook.Components.Badge do
 
   def icon, do: "fat fa-badge-check"
 
-  def variations do
+  def stories do
     for i <- 1..5 do
       [
-        %VariationGroup{
+        %StoryGroup{
           id: :"custom_colors_#{i}",
           description: "With custom colors",
-          variations:
+          stories:
             for color <- ~w(indigo purple pink) do
-              %Variation{
+              %Story{
                 id: :"custom_colors_#{i}_#{color}}",
                 attributes: %{
                   :label => "#{color} badge",
@@ -26,13 +26,13 @@ defmodule Storybook.Components.Badge do
               }
             end
         },
-        %Variation{
+        %Story{
           id: :"default_badge_#{i}",
           attributes: %{
             :label => "A badge"
           }
         },
-        %Variation{
+        %Story{
           id: :"with_an_icon_#{i}",
           description: "With a custom FontAwesome icon",
           attributes: %{
@@ -40,7 +40,7 @@ defmodule Storybook.Components.Badge do
             :icon => "fa fa-check"
           }
         },
-        %Variation{
+        %Story{
           id: :"with_color_and_icon_#{i}",
           description: "With a custom FontAwesome icon & color",
           attributes: %{
