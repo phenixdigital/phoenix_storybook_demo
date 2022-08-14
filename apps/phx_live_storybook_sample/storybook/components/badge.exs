@@ -24,7 +24,7 @@ defmodule Storybook.Components.Badge do
       %Attr{
         id: :small,
         type: :boolean,
-        default: :false,
+        default: false,
         doc: "When true, renders a smaller badge."
       },
       %Attr{
@@ -90,7 +90,7 @@ defmodule Storybook.Components.Badge do
         id: :icons,
         description: "With FontAwesome icons",
         stories:
-          for icon <- ["fa fa-alicorn", "fa fa-bolt","fas fa-skull"] do
+          for icon <- ["fa fa-alicorn", "fa fa-bolt", "fas fa-skull"] do
             %Story{
               id: String.to_atom(icon),
               attributes: %{
