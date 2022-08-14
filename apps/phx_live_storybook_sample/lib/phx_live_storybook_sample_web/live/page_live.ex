@@ -17,12 +17,12 @@ defmodule PhxLiveStorybookSampleWeb.PageLive do
 
       <h2 class="text-xl border-b border-gray-200 pt-10 pb-2 text-slate-700">These are application components rendered by the application itself.</h2>
       <section class="row space-y-4">
-        <.badge label="I'm a badge" text-color="text-blue-600" bg-color="bg-blue-100"/>
+        <.badge text="I'm a badge" color={:primary}/>
         <.button label="I'm a button"/>
-        <.dropdown label="I'm a dropdown" id="dropdown">
-          <:entry path="#" label="Account settings"/>
-          <:entry path="#" label="Support"/>
-          <:entry path="#" label="License"/>
+        <.dropdown text="I'm a dropdown" id="dropdown">
+          <:entry path="#" text="Account settings"/>
+          <:entry path="#" text="Support"/>
+          <:entry path="#" text="License"/>
         </.dropdown>
         <.live_component module={LiveButton} label="I have state" id="live-button"/>
       </section>

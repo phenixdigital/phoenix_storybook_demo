@@ -7,34 +7,50 @@ defmodule Storybook.Components.Buttons.Dropdown do
   def description, do: "A dropdown button, with a JS hook."
   def icon, do: "fat fa-list-dropdown"
 
-  def variations do
+  def attributes do
     [
-      %Variation{
+      %Attr{id: :text, type: :string, required: true, doc: "Dropdown label"},
+      %Attr{
+        id: :color,
+        type: :atom,
+        doc: "One predefined color among a small set.",
+        default: :default,
+        options: ~w(default primary)a
+      },
+      %Attr{
+        id: :entry,
+        type: :slot,
+        doc: "An entry in the dropdown menu. Must contain path & text attributes."
+      }
+    ]
+  end
+
+  def stories do
+    [
+      %Story{
         id: :default,
         description: "Default dropdown",
         attributes: %{
-          label: "A dropdown"
+          text: "A dropdown"
         },
-        slots: """
-        <:entry path="#" label="Account settings"/>
-        <:entry path="#" label="Support"/>
-        <:entry path="#" label="License"/>
-        """
+        slots: [
+          ~s|<:entry path="#" text="Account settings"/>|,
+          ~s|<:entry path="#" text="Support"/>|,
+          ~s|<:entry path="#" text="License"/>|
+        ]
       },
-      %Variation{
-        id: :custom_colors,
-        description: "A dropdown with custom colors",
+      %Story{
+        id: :primary_color,
+        description: "A dropdown with primary color",
         attributes: %{
-          :label => "A dropdown",
-          :"bg-color" => "bg-green-600",
-          :"hover-bg-color" => "bg-green-700",
-          :"text-color" => "text-white"
+          text: "Primary",
+          color: :primary
         },
-        slots: """
-        <:entry path="#" label="Account settings"/>
-        <:entry path="#" label="Support"/>
-        <:entry path="#" label="License"/>
-        """
+        slots: [
+          ~s|<:entry path="#" text="Account settings"/>|,
+          ~s|<:entry path="#" text="Support"/>|,
+          ~s|<:entry path="#" text="License"/>|
+        ]
       }
     ]
   end
