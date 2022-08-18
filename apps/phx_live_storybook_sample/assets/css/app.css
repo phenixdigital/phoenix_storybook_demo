@@ -2,14 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  color: red !important;
+.lsb-sandbox {
+  font-family: sans-serif;
 }
 
 @layer utilities {
-  * {
-    font: initial;
-  }
   h1 {
     @apply text-2xl font-bold text-slate-700 mt-2 mb-6;
   }
