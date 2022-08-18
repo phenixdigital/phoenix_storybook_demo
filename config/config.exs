@@ -39,6 +39,8 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+config :phx_live_storybook, :gzip_assets, false
+
 config :phx_live_storybook_sample, Storybook,
   content_path: Path.expand("../apps/phx_live_storybook_sample/storybook/", __DIR__),
   css_path: "/assets/app.css",

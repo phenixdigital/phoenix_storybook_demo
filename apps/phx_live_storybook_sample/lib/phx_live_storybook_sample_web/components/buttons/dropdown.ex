@@ -13,7 +13,7 @@ defmodule PhxLiveStorybookSampleWeb.Components.Dropdown do
     ~H"""
     <div
       id={@id}
-      class="flex relative w-max"
+      class="flex flex-col relative w-max"
       phx-hook="DropdownHook"
       data-content-class="dropdown-content bg-white flex flex-col w-max border absolute mt-1 bg-default-bg right-0 top-full z-10 rounded-md shadow-md py-1"
     >
@@ -32,7 +32,9 @@ defmodule PhxLiveStorybookSampleWeb.Components.Dropdown do
           </a>
         <% end %>
       </div>
+
     </div>
+
     """
   end
 

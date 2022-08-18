@@ -19,6 +19,7 @@ defmodule PhxLiveStorybook.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
+      mod: {PhxLiveStorybook.Application, []},
       extra_applications: [:logger]
     ]
   end
@@ -27,13 +28,18 @@ defmodule PhxLiveStorybook.MixProject do
   defp deps do
     [
       {:phoenix_live_view, "~> 0.17.11"},
+      {:jason, "~> 1.3"},
       {:makeup_eex, "~> 0.1.0"}
     ]
   end
 
   defp aliases do
     [
-      "assets.build": "cmd npm run build --prefix assets"
+      "assets.build": [
+        "cmd npm run build --prefix assets",
+        "phx.digest",
+        "phx.digest.clean"
+      ]
     ]
   end
 

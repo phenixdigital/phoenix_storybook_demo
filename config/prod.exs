@@ -12,6 +12,8 @@ import Config
 config :phx_live_storybook_sample, PhxLiveStorybookSampleWeb.Endpoint,
   cache_static_manifest: "priv/static/cache_manifest.json"
 
+config :phx_live_storybook, :gzip_assets, true
+
 # Do not print debug messages in production
 config :logger, level: :info
 

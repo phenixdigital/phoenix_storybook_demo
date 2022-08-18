@@ -6,6 +6,7 @@ let plugin = require("tailwindcss/plugin");
 
 module.exports = {
   content: ["./js/**/*.js", "../lib/**/*.*ex", "../**/*.*exs"],
+  important: ".lsb-sandbox",
   safelist: [
     {
       pattern: /bg-(blue|indigo|purple|pink)-.*/,
@@ -128,8 +129,10 @@ module.exports = {
       },
     },
   },
+  corePlugins: {
+    preflight: false,
+  },
   plugins: [
-    require("@tailwindcss/forms"),
     plugin(({ addVariant }) =>
       addVariant("phx-no-feedback", ["&.phx-no-feedback", ".phx-no-feedback &"])
     ),

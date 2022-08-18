@@ -16,10 +16,10 @@ defmodule PhxLiveStorybookSampleWeb.Router do
     pipe_through(:browser)
 
     live("/", PageLive, :index)
-
-    live_storybook("/storybook",
-      otp_app: :phx_live_storybook_sample,
-      backend_module: Storybook
-    )
   end
+
+  live_storybook("/storybook",
+    otp_app: :phx_live_storybook_sample,
+    backend_module: Storybook
+  )
 end

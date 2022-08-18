@@ -3,6 +3,7 @@ defmodule Storybook.Components.Badge do
 
   def function, do: &PhxLiveStorybookSampleWeb.Components.Badge.badge/1
   def description, do: "Just a badge component, with colors."
+  def container, do: :iframe
 
   def icon, do: "fat fa-badge-check"
 
