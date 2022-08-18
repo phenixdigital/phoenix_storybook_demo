@@ -1,11 +1,12 @@
-defmodule Storybook.Components.Buttons.Button do
+defmodule Storybook.Components.Buttons.ButtonIframe do
   alias PhxLiveStorybookSampleWeb.Components.Button
 
   use PhxLiveStorybook.Entry, :component
 
   def function, do: &Button.button/1
-  def description, do: "A simple button. If you click, I'll raise!"
+  def description, do: "Same button, but rendered in an iframe."
   def icon, do: "fat fa-rectangle-ad"
+  def container, do: :iframe
 
   def attributes do
     [

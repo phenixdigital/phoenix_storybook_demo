@@ -10,7 +10,7 @@ defmodule PhxLiveStorybookSampleWeb.PageLive do
     <div class="mx-auto max-w-4xl mt-6">
       <h1 class="text-2xl text-indigo-600 mb-6 text-center uppercase font-bold">Live Storybook demo application</h1>
       <div class="my-6 mb-10 text-center text-lg p-2 rounded-md bg-indigo-600 hover:bg-indigo-800 text-white">
-        <%= live_redirect to: "/storybook" do %>
+        <%= live_redirect to: "/storybook", class: "text-inherit no-underline" do %>
           👉 Go to Storybook
         <% end %>
       </div>

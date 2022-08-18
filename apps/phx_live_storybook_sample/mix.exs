@@ -51,7 +51,7 @@ defmodule PhxLiveStorybookSample.MixProject do
     ]
 
     if env == :prod do
-      [{:phx_live_storybook, github: "phenixdigital/phx_live_storybook", branch: "17-css-conflicts-in-variations-020"} | deps]
+      [{:phx_live_storybook, github: "phenixdigital/phx_live_storybook"} | deps]
     else
       [{:phx_live_storybook, in_umbrella: true} | deps]
     end

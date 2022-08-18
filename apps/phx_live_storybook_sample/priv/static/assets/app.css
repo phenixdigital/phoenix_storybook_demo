@@ -3437,6 +3437,10 @@
   color: rgb(79 70 229 / var(--tw-text-opacity));
 }
 
+.lsb-sandbox .text-inherit {
+  color: inherit;
+}
+
 .lsb-sandbox .text-slate-700 {
   --tw-text-opacity: 1;
   color: rgb(51 65 85 / var(--tw-text-opacity));
@@ -3510,6 +3514,11 @@
 .lsb-sandbox .text-danger-txt-secondary {
   --tw-text-opacity: 1;
   color: rgb(252 165 165 / var(--tw-text-opacity));
+}
+
+.lsb-sandbox .no-underline {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
 }
 
 .lsb-sandbox .opacity-75 {
