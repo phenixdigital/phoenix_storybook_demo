@@ -6,6 +6,7 @@ defmodule PhxLiveStorybookSampleWeb.Components.Badge do
 
   def badge(assigns) do
     assigns
+    |> assign_new(:theme, fn -> :not_set end)
     |> set_attributes(
       [
         :id,
@@ -26,7 +27,7 @@ defmodule PhxLiveStorybookSampleWeb.Components.Badge do
 
   defp render(assigns) do
     ~H"""
-    <span style={@inline_style} {@heex_class} {@heex_id}>
+    <span style={@inline_style} {@heex_class} {@heex_id} theme={@theme}>
       <%= if @icon do %>
         <i {@heex_icon_class}></i>
       <% end %>
@@ -45,25 +46,41 @@ defmodule PhxLiveStorybookSampleWeb.Components.Badge do
     end
   end
 
-  defp color_and_small_class(%{color: color, small: small?}) do
+  defp color_and_small_class(%{color: color, small: small?, theme: theme}) do
     class = @default_span_class
 
     class =
-      case color do
-        :info ->
+      case {color, theme} do
+        {:info, :colorful} ->
+          class <> " bg-cyan-500 hover:bg-cyan-700 text-white"
+
+        {:info, _} ->
           class <> " bg-blue-500 hover:bg-blue-700 text-white"
 
-        :primary ->
+        {:primary, :colorful} ->
+          class <> " bg-fuchsia-500 hover:bg-fuchsia-700 text-white"
+
+        {:primary, _} ->
           class <> " bg-indigo-500 hover:bg-indigo-700 text-white"
 
-        :success ->
+        {:success, :colorful} ->
+          class <> " bg-lime-500 hover:bg-lime-700 text-white"
+
+        {:success, _} ->
           class <> " bg-green-500 hover:bg-green-700 text-white"
 
-        :warning ->
+        {:warning, :colorful} ->
+          class <> " bg-amber-500 hover:bg-amber-700 text-white"
+
+        {:warning, _} ->
           class <> " bg-orange-500 hover:bg-orange-700 text-white"
 
-        :danger ->
+        {:danger, _} ->
           class <> " bg-red-500 hover:bg-red-700 text-white"
+
+        {_, :colorful} ->
+          class <>
+            " border border-stone-200 bg-stone-300 text-stone-700 hover:bg-stone-500 hover:text-white"
 
         _ ->
           class <>

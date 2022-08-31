@@ -5,7 +5,12 @@ const colors = require("tailwindcss/colors");
 let plugin = require("tailwindcss/plugin");
 
 module.exports = {
-  content: ["./js/**/*.js", "../lib/**/*.*ex", "../**/*.*exs"],
+  content: [
+    "./js/**/*.js",
+    "../lib/**/*.*ex",
+    "../**/*.*exs",
+    "../../../config/*.*exs",
+  ],
   important: ".lsb-sandbox",
   safelist: [
     {

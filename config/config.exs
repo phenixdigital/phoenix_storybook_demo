@@ -49,6 +49,10 @@ config :phx_live_storybook_sample, Storybook,
     /: [icon: "fal fa-book-open"],
     "/components": [icon: "far fa-toolbox", open: true],
     "/components/live": [icon: "fal fa-bolt", open: true, name: "Live!"]
+  ],
+  themes: [
+    default: [name: "Default"],
+    colorful: [name: "Colorful", dropdown_class: "text-pink-600"]
   ]
 
 # Import environment specific config. This must remain at the bottom

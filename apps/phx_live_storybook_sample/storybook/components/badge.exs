@@ -3,8 +3,6 @@ defmodule Storybook.Components.Badge do
 
   def function, do: &PhxLiveStorybookSampleWeb.Components.Badge.badge/1
   def description, do: "Just a badge component, with colors."
-  def container, do: :div
-
   def icon, do: "fat fa-badge-check"
 
   def attributes do
@@ -38,6 +36,12 @@ defmodule Storybook.Components.Badge do
 
   def stories do
     [
+      %Story{
+        id: :default_badge,
+        attributes: %{
+          text: "Default badge"
+        }
+      },
       %StoryGroup{
         id: :predefined_colors,
         description: "With predefined colors",
