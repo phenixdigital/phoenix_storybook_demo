@@ -7,6 +7,7 @@ let plugin = require("tailwindcss/plugin");
 module.exports = {
   content: [
     "./js/**/*.js",
+    "./css/**/*.css",
     "../lib/**/*.*ex",
     "../**/*.*exs",
     "../../../config/*.*exs",
@@ -133,9 +134,6 @@ module.exports = {
         },
       },
     },
-  },
-  corePlugins: {
-    preflight: false,
   },
   plugins: [
     plugin(({ addVariant }) =>

@@ -6,19 +6,51 @@ defmodule Storybook.Components.Modal do
   def template do
     """
     <div>
-      <button phx-click={Modal.show_modal()}>Open modal</button>
+      <button type="button" class="btn" phx-click={Modal.show_modal()}>
+        Open modal
+      </button>
       <.story/>
     </div>
     """
+  end
+
+  def attributes do
+    [
+      %Attr{
+        id: :title,
+        doc: "Modal title",
+        type: :string,
+        required: true
+      },
+      %Attr{
+        id: :icon,
+        doc: "Modal icon. FontAwesome classes",
+        type: :string
+      },
+      %Attr{
+        id: :body,
+        doc: "Modal content",
+        type: :slot,
+        required: true
+      },
+      %Attr{
+        id: :buttons,
+        doc: "Modal buttons, displayed in footer",
+        type: :slot
+      }
+    ]
   end
 
   def stories do
     [
       %Story{
         id: :default_modal,
+        attributes: %{
+          title: "Payment succesful",
+          icon: "fa fa-check"
+        },
         slots: [
-          "<:icon><i class='fa fa-check'></i></:icon>",
-          "<:body>hello world</:body>"
+          "<:body>Thanks for your money!</:body>"
         ]
       }
     ]

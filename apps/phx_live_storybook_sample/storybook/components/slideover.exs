@@ -38,7 +38,7 @@ defmodule Storybook.Components.Slideover do
   def template do
     """
     <div>
-      <button phx-click="set-story-assign/:story_id/show/true">
+      <button type="button" class="btn" phx-click="set-story-assign/:story_id/show/true">
         Open slideover
       </button>
       <.story/>
@@ -59,10 +59,10 @@ defmodule Storybook.Components.Slideover do
         ]
       },
       %Story{
-        id: :left_slideover,
+        id: :right_slideover,
         attributes: %{
           title: "I open on the right 👉",
-          close_event: "set-story-assign/left_slideover/show/false",
+          close_event: "set-story-assign/right_slideover/show/false",
           position: :right
         },
         slots: [

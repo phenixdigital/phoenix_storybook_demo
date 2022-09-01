@@ -11,12 +11,12 @@ defmodule PhxLiveStorybookSampleWeb.Components.Modal do
         <div id="modal-content" phx-click-away={hide_modal()} class="relative bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-sm sm:w-full sm:p-6">
           <div>
             <%= if assigns[:icon] do %>
-            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
-              <%= render_slot(@icon) %>
-            </div>
+              <div class="mx-auto flex items-center justify-center bg-green-100 h-12 w-12 rounded-full">
+                <i class={@icon}></i>
+              </div>
             <% end %>
             <div class="mt-3 text-center sm:mt-5">
-              <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">Payment successful</h3>
+              <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title"><%= @title %></h3>
               <div class="mt-2">
                 <p class="text-sm text-gray-500">
                   <%= render_slot(@body) %>
@@ -25,11 +25,11 @@ defmodule PhxLiveStorybookSampleWeb.Components.Modal do
             </div>
           </div>
           <%= if assigns[:button] do %>
-          <div class="mt-5 sm:mt-6">
-            <%= for button <- @button do %>
-              <%= render_slot(button) %>
-            <% end %>
-          </div>
+            <div class="mt-5 sm:mt-6">
+              <%= for button <- @button do %>
+                <%= render_slot(button) %>
+              <% end %>
+            </div>
           <% end %>
         </div>
       </div>
