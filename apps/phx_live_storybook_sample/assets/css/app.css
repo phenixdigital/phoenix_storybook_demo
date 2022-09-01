@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  * {
+    font-family: "Helvetica Neue";
+  }
+  h1 {
+    @apply text-2xl font-bold text-slate-700 mt-2 mb-6;
+  }
+  h2 {
+    @apply text-xl font-bold text-slate-500 mt-2 mb-4;
+  }
+  h3 {
+    @apply text-lg font-bold text-slate-500 my-2;
+  }
+  h4 {
+    @apply text-base font-bold text-slate-500 my-2;
+  }
+  h5 {
+    @apply text-base font-medium text-slate-500 my-2;
+  }
+  .btn {
+    @apply inline-flex items-center rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
+  }
+}
