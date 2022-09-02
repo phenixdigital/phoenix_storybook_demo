@@ -1,6 +1,7 @@
 defmodule Storybook.Components.Slideover do
   use PhxLiveStorybook.Entry, :component
 
+  def name, do: "Slide-over"
   def function, do: &PhxLiveStorybookSampleWeb.Components.Slideover.slideover/1
   def description, do: "A side panel that will slide over your document."
 

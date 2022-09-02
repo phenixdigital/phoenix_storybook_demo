@@ -25,7 +25,7 @@ defmodule PhxLiveStorybookSampleWeb.Components.Modal do
             </div>
           </div>
           <%= if assigns[:button] do %>
-            <div class="mt-5 sm:mt-6">
+            <div class="mt-5 sm:mt-6 flex justify-end space-x-2">
               <%= for button <- @button do %>
                 <%= render_slot(button) %>
               <% end %>

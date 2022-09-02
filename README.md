@@ -35,5 +35,6 @@ Or go for production instead:
 
 ```
 mix assets.build
+cp -R apps/phx_live_storybook/priv/static _build/prod/rel/phx_live_storybook_sample/lib/phx_live_storybook-*/priv
 flyctl deploy --no-cache
 ```

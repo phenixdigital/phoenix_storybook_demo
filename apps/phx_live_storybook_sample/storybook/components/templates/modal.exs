@@ -3,10 +3,14 @@ defmodule Storybook.Components.Modal do
 
   def function, do: &PhxLiveStorybookSampleWeb.Components.Modal.modal/1
 
+  def imports do
+    [{PhxLiveStorybookSampleWeb.Components.Modal, show_modal: 0}]
+  end
+
   def template do
     """
     <div>
-      <button type="button" class="btn" phx-click={Modal.show_modal()}>
+      <button type="button" class="btn" phx-click={show_modal()}>
         Open modal
       </button>
       <.story/>
@@ -44,13 +48,37 @@ defmodule Storybook.Components.Modal do
   def stories do
     [
       %Story{
-        id: :default_modal,
+        id: :default,
         attributes: %{
           title: "Payment succesful",
           icon: "fa fa-check"
         },
         slots: [
           "<:body>Thanks for your money!</:body>"
+        ]
+      },
+      %Story{
+        id: :with_buttons,
+        attributes: %{
+          title: "Payment succesful",
+          icon: "fa fa-check"
+        },
+        slots: [
+          "<:body>Thanks for your money!</:body>",
+          """
+          <:button>
+            <button type="button" class="btn">
+              Cancel
+            </button>
+          </:button>
+          """,
+          """
+          <:button>
+            <button type="button" class="btn">
+              OK
+            </button>
+          </:button>
+          """
         ]
       }
     ]
