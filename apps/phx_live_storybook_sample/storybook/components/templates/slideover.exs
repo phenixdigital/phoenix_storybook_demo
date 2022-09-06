@@ -2,6 +2,7 @@ defmodule Storybook.Components.Slideover do
   use PhxLiveStorybook.Entry, :component
 
   def name, do: "Slide-over"
+  def icon, do: "fat fa-sidebar"
   def function, do: &PhxLiveStorybookSampleWeb.Components.Slideover.slideover/1
   def description, do: "A side panel that will slide over your document."
 
@@ -68,6 +69,34 @@ defmodule Storybook.Components.Slideover do
         },
         slots: [
           "<:body>Hello world</:body>"
+        ]
+      },
+      %StoryGroup{
+        id: :group,
+        stories: [
+          %Story{
+            id: :default_slideover,
+            attributes: %{
+              title: "I open on the left 👈",
+              close_event: "set-story-assign/default_slideover/show/false",
+              show: false
+            },
+            slots: [
+              "<:body>Left slide-over</:body>"
+            ]
+          },
+          %Story{
+            id: :right_slideover,
+            attributes: %{
+              title: "I open on the right 👉",
+              close_event: "set-story-assign/right_slideover/show/false",
+              position: :right,
+              show: false
+            },
+            slots: [
+              "<:body>Right slide-over</:body>"
+            ]
+          }
         ]
       }
     ]

@@ -50,7 +50,7 @@ defmodule Storybook.Components.Badge do
             %Story{
               id: color,
               attributes: %{
-                text: color |> to_string() |> String.capitalize(),
+                text: "Predefined color",
                 color: color
               }
             }
@@ -64,7 +64,7 @@ defmodule Storybook.Components.Badge do
             %Story{
               id: color,
               attributes: %{
-                text: color |> to_string() |> String.capitalize(),
+                text: "Same but small",
                 color: color,
                 small: true
               }
@@ -79,7 +79,7 @@ defmodule Storybook.Components.Badge do
             %Story{
               id: String.to_atom(color),
               attributes: %{
-                text: color,
+                text: "Custom color",
                 hex_color: color
               }
             }

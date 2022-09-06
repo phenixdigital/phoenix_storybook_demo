@@ -12,14 +12,18 @@ defmodule PhxLiveStorybookSampleWeb.Router do
     plug(:put_secure_browser_headers)
   end
 
+  scope "/" do
+    storybook_assets()
+  end
+
   scope "/", PhxLiveStorybookSampleWeb do
     pipe_through(:browser)
     get "/", RedirectController, :redirect_to_storybook
     live("/page", PageLive, :index)
-  end
 
-  live_storybook("/storybook",
-    otp_app: :phx_live_storybook_sample,
-    backend_module: Storybook
-  )
+    live_storybook("/storybook",
+      otp_app: :phx_live_storybook_sample,
+      backend_module: Storybook
+    )
+  end
 end

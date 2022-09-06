@@ -3,6 +3,8 @@ defmodule Storybook.Components.Modal do
 
   def function, do: &PhxLiveStorybookSampleWeb.Components.Modal.modal/1
 
+  def icon, do: "fat fa-window-restore"
+
   def imports do
     [{PhxLiveStorybookSampleWeb.Components.Modal, show_modal: 0}]
   end
@@ -38,7 +40,7 @@ defmodule Storybook.Components.Modal do
         required: true
       },
       %Attr{
-        id: :buttons,
+        id: :button,
         doc: "Modal buttons, displayed in footer",
         type: :slot
       }
