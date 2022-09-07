@@ -8,7 +8,7 @@ defmodule PhxLiveStorybookSampleWeb.Components.TemplateComponent do
       |> assign_new(:status, fn -> false end)
 
     ~H"""
-    <span>template_component: <%= @label %> / status: <%= @status %></span>
+    <span>label: <%= @label %> / status: <%= @status %></span>
     """
   end
 end

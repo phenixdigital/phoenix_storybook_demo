@@ -1,18 +1,13 @@
-# fly.toml file generated for phx-live-storybook-sample on 2022-07-25T21:25:36+02:00
+# fly.toml file generated for phx-live-storybook-demo on 2022-09-07T08:12:58+02:00
 
 app = "phx-live-storybook-sample"
-kill_signal = "SIGINT"
+kill_signal = "SIGTERM"
 kill_timeout = 5
 processes = []
 
-[build]
-  builder = "heroku/buildpacks:20"
-  buildpacks = ["https://cnb-shim.herokuapp.com/v1/hashnuke/elixir"]
-
 [env]
-  PHX_SERVER = "true"
+  PHX_HOST = "phx-live-storybook-sample.fly.dev"
   PORT = "8080"
-  PH_HOST = "phx-live-storybook-sample.fly.dev"
 
 [experimental]
   allowed_public_ports = []

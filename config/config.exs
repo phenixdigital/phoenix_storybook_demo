@@ -16,7 +16,7 @@ config :esbuild,
   default: [
     args:
       ~w(js/app.js js/components.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
-    cd: Path.expand("../apps/phx_live_storybook_sample/assets", __DIR__),
+    cd: Path.expand("../assets", __DIR__),
     env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
   ]
 
@@ -28,7 +28,7 @@ config :tailwind,
       --input=css/app.css
       --output=../priv/static/assets/app.css
     ),
-    cd: Path.expand("../apps/phx_live_storybook_sample/assets", __DIR__)
+    cd: Path.expand("../assets", __DIR__)
   ]
 
 # Configures Elixir's Logger
@@ -42,7 +42,7 @@ config :phoenix, :json_library, Jason
 config :phx_live_storybook, :gzip_assets, false
 
 config :phx_live_storybook_sample, Storybook,
-  content_path: Path.expand("../apps/phx_live_storybook_sample/storybook/", __DIR__),
+  content_path: Path.expand("../storybook/", __DIR__),
   css_path: "/assets/app.css",
   js_path: "/assets/components.js",
   folders: [

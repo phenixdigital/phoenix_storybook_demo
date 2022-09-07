@@ -18,8 +18,9 @@ config :phx_live_storybook_sample, PhxLiveStorybookSampleWeb.Endpoint,
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
     tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]},
-    npm: ["run", "watch", cd: Path.expand("../apps/phx_live_storybook/assets", __DIR__)]
-  ]
+    npm: ["run", "watch", cd: Path.expand("../../phx_live_storybook/assets", __DIR__)]
+  ],
+  reloadable_apps: [:phx_live_storybook_sample, :phx_live_storybook]
 
 # ## SSL Support
 #
@@ -45,11 +46,6 @@ config :phx_live_storybook_sample, PhxLiveStorybookSampleWeb.Endpoint,
 # configured to run both http and https servers on
 # different ports.
 
-config :phoenix_live_reload, :dirs, [
-  Path.expand("../apps/phx_live_storybook_sample", __DIR__),
-  Path.expand("../apps/phx_live_storybook", __DIR__)
-]
-
 # Watch static and templates for browser reloading.
 config :phx_live_storybook_sample, PhxLiveStorybookSampleWeb.Endpoint,
   backend: :fs_poll,
@@ -57,8 +53,6 @@ config :phx_live_storybook_sample, PhxLiveStorybookSampleWeb.Endpoint,
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/phx_live_storybook_sample_web/(live|views)/.*(ex)$",
-      ~r"lib/phx_live_storybook_sample_web/templates/.*(eex)$",
       ~r"lib/phx_live_storybook/(live|views|components)/.*(ex)$"
     ]
   ]
