@@ -1,6 +1,6 @@
 defmodule Storybook.TemplateComponent do
   use PhxLiveStorybook.Entry, :component
-  alias PhxLiveStorybookSampleWeb.Components.TemplateComponent
+  alias PhxLiveStorybookSample.Components.TemplateComponent
   def function, do: &TemplateComponent.template_component/1
   def name, do: "Set assigns"
   def description, do:
@@ -12,13 +12,15 @@ defmodule Storybook.TemplateComponent do
 
   def template do
     """
-    <div id=":story_id" class="flex justify-start items-center space-x-1 mb-1">
+    <div id=":story_id" class="space-y-2">
       <button class="btn" id="set-foo" phx-click="set-story-assign/:story_id/label/foo">Set label to foo</button>
       <button class="btn" id="set-bar" phx-click="set-story-assign/:story_id/label/bar">Set label to bar</button>
       <button class="btn" id="toggle-status" phx-click="toggle-story-assign/:story_id/status">Toggle status</button>
       <button class="btn" id="set-status-true" phx-click="set-story-assign/:story_id/status/true">Set status to true</button>
       <button class="btn" id="set-status-false" phx-click="set-story-assign/:story_id/status/false">Set status to false</button>
-      <.story/>
+      <div class="mt-2">
+        <.story/>
+      </div>
     </div>
     """
   end

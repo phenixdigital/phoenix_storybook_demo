@@ -1,12 +1,12 @@
-defmodule PhxLiveStorybookSampleWeb do
+defmodule PhxLiveStorybookSample do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use PhxLiveStorybookSampleWeb, :controller
-      use PhxLiveStorybookSampleWeb, :view
+      use PhxLiveStorybookSample, :controller
+      use PhxLiveStorybookSample, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,18 +19,18 @@ defmodule PhxLiveStorybookSampleWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: PhxLiveStorybookSampleWeb
+      use Phoenix.Controller, namespace: PhxLiveStorybookSample
 
       import Plug.Conn
-      alias PhxLiveStorybookSampleWeb.Router.Helpers, as: Routes
+      alias PhxLiveStorybookSample.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/phx_live_storybook_sample_web/templates",
-        namespace: PhxLiveStorybookSampleWeb
+        root: "lib/phx_live_storybook_sample/templates",
+        namespace: PhxLiveStorybookSample
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -45,7 +45,7 @@ defmodule PhxLiveStorybookSampleWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {PhxLiveStorybookSampleWeb.LayoutView, "live.html"}
+        layout: {PhxLiveStorybookSample.LayoutView, "live.html"}
 
       unquote(view_helpers())
       unquote(components())
@@ -81,7 +81,7 @@ defmodule PhxLiveStorybookSampleWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import PhxLiveStorybookSampleWeb.Gettext
+      import PhxLiveStorybookSample.Gettext
     end
   end
 
@@ -96,17 +96,19 @@ defmodule PhxLiveStorybookSampleWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      alias PhxLiveStorybookSampleWeb.Router.Helpers, as: Routes
+      alias PhxLiveStorybookSample.Router.Helpers, as: Routes
     end
   end
 
   defp components do
     quote do
-      alias PhxLiveStorybookSampleWeb.Components.Live.LiveButton
+      alias PhxLiveStorybookSample.Components.Live.LiveButton
 
-      import PhxLiveStorybookSampleWeb.Components.Badge
-      import PhxLiveStorybookSampleWeb.Components.Button
-      import PhxLiveStorybookSampleWeb.Components.Dropdown
+      import PhxLiveStorybookSample.Components.Badge
+      import PhxLiveStorybookSample.Components.Button
+      import PhxLiveStorybookSample.Components.Dropdown
+      import PhxLiveStorybookSample.Components.List
+      import PhxLiveStorybookSample.Components.Table
     end
   end
 

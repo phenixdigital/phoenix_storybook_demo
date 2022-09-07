@@ -1,7 +1,7 @@
 defmodule Storybook.Components.Badge do
   use PhxLiveStorybook.Entry, :component
 
-  def function, do: &PhxLiveStorybookSampleWeb.Components.Badge.badge/1
+  def function, do: &PhxLiveStorybookSample.Components.Badge.badge/1
   def description, do: "Just a badge component, with colors."
   def icon, do: "fat fa-badge-check"
 

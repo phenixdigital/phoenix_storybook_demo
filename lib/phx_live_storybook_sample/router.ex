@@ -1,5 +1,5 @@
-defmodule PhxLiveStorybookSampleWeb.Router do
-  use PhxLiveStorybookSampleWeb, :router
+defmodule PhxLiveStorybookSample.Router do
+  use PhxLiveStorybookSample, :router
 
   import PhxLiveStorybook.Router
 
@@ -7,7 +7,7 @@ defmodule PhxLiveStorybookSampleWeb.Router do
     plug(:accepts, ["html"])
     plug(:fetch_session)
     plug(:fetch_live_flash)
-    plug(:put_root_layout, {PhxLiveStorybookSampleWeb.LayoutView, :root})
+    plug(:put_root_layout, {PhxLiveStorybookSample.LayoutView, :root})
     plug(:protect_from_forgery)
     plug(:put_secure_browser_headers)
   end
@@ -16,7 +16,7 @@ defmodule PhxLiveStorybookSampleWeb.Router do
     storybook_assets()
   end
 
-  scope "/", PhxLiveStorybookSampleWeb do
+  scope "/", PhxLiveStorybookSample do
     pipe_through(:browser)
     get "/", RedirectController, :redirect_to_storybook
     live("/page", PageLive, :index)

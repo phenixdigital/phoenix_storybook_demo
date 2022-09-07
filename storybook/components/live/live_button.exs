@@ -1,5 +1,5 @@
 defmodule Storybook.Components.Live.LiveButton do
-  alias PhxLiveStorybookSampleWeb.Components.Live.LiveButton
+  alias PhxLiveStorybookSample.Components.Live.LiveButton
 
   use PhxLiveStorybook.Entry, :live_component
 

@@ -1,5 +1,5 @@
-defmodule PhxLiveStorybookSampleWeb.Components.Button do
-  use PhxLiveStorybookSampleWeb, :component
+defmodule PhxLiveStorybookSample.Components.Button do
+  use PhxLiveStorybookSample, :component
 
   def button(assigns) do
     assigns

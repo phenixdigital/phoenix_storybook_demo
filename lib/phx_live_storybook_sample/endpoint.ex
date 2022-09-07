@@ -1,4 +1,4 @@
-defmodule PhxLiveStorybookSampleWeb.Endpoint do
+defmodule PhxLiveStorybookSample.Endpoint do
   use Phoenix.Endpoint, otp_app: :phx_live_storybook_sample
 
   # The session will be stored in the cookie and signed,
@@ -41,5 +41,5 @@ defmodule PhxLiveStorybookSampleWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug PhxLiveStorybookSampleWeb.Router
+  plug PhxLiveStorybookSample.Router
 end

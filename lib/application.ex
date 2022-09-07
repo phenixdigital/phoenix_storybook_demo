@@ -11,7 +11,7 @@ defmodule PhxLiveStorybookSample.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: PhxLiveStorybookSample.PubSub},
       # Start the Endpoint (http/https)
-      PhxLiveStorybookSampleWeb.Endpoint
+      PhxLiveStorybookSample.Endpoint
       # Start a worker by calling: PhxLiveStorybookSample.Worker.start_link(arg)
       # {PhxLiveStorybookSample.Worker, arg}
     ]
@@ -26,7 +26,7 @@ defmodule PhxLiveStorybookSample.Application do
   # whenever the application is updated.
   @impl true
   def config_change(changed, _new, removed) do
-    PhxLiveStorybookSampleWeb.Endpoint.config_change(changed, removed)
+    PhxLiveStorybookSample.Endpoint.config_change(changed, removed)
     :ok
   end
 end

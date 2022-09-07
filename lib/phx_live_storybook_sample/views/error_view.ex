@@ -1,5 +1,5 @@
-defmodule PhxLiveStorybookSampleWeb.ErrorView do
-  use PhxLiveStorybookSampleWeb, :view
+defmodule PhxLiveStorybookSample.ErrorView do
+  use PhxLiveStorybookSample, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

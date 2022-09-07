@@ -17,7 +17,6 @@ First make sure your sample app is using an up-to-date storybook library:
 
 ```
 MIX_ENV=prod mix deps.update phx_live_storybook
-MIX_ENV=prod mix release
 ```
 
 Then you can test your release locally with:
@@ -29,6 +28,5 @@ PHX_SERVER=true _build/prod/rel/phx_live_storybook_sample/bin/phx_live_storybook
 Or go for production instead:
 
 ```
-mix assets.build
-fly deploy
+fly deploy --no-cache
 ```

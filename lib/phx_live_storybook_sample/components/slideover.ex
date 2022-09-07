@@ -1,5 +1,5 @@
-defmodule PhxLiveStorybookSampleWeb.Components.Slideover do
-  use PhxLiveStorybookSampleWeb, :component
+defmodule PhxLiveStorybookSample.Components.Slideover do
+  use PhxLiveStorybookSample, :component
 
   def slideover(assigns) do
     assigns

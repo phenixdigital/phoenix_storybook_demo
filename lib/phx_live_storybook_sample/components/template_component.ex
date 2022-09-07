@@ -1,4 +1,4 @@
-defmodule PhxLiveStorybookSampleWeb.Components.TemplateComponent do
+defmodule PhxLiveStorybookSample.Components.TemplateComponent do
   use Phoenix.Component
 
   def template_component(assigns) do

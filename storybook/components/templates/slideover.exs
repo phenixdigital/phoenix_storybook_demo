@@ -3,7 +3,7 @@ defmodule Storybook.Components.Slideover do
 
   def name, do: "Slide-over"
   def icon, do: "fat fa-sidebar"
-  def function, do: &PhxLiveStorybookSampleWeb.Components.Slideover.slideover/1
+  def function, do: &PhxLiveStorybookSample.Components.Slideover.slideover/1
   def description, do: "A side panel that will slide over your document."
 
   def attributes do

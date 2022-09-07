@@ -1,5 +1,5 @@
-defmodule PhxLiveStorybookSampleWeb.Components.Badge do
-  use PhxLiveStorybookSampleWeb, :component
+defmodule PhxLiveStorybookSample.Components.Badge do
+  use PhxLiveStorybookSample, :component
   import PhxComponentHelpers
 
   @default_span_class "inline-flex items-center justify-center text-nowrap font-medium cursor-pointer whitespace-nowrap"

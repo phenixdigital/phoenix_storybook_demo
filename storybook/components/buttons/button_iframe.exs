@@ -1,5 +1,5 @@
 defmodule Storybook.Components.Buttons.ButtonIframe do
-  alias PhxLiveStorybookSampleWeb.Components.Button
+  alias PhxLiveStorybookSample.Components.Button
 
   use PhxLiveStorybook.Entry, :component
 

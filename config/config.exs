@@ -1,9 +1,9 @@
 import Config
 
-config :phx_live_storybook_sample, PhxLiveStorybookSampleWeb.Endpoint,
+config :phx_live_storybook_sample, PhxLiveStorybookSample.Endpoint,
   url: [host: "localhost"],
   render_errors: [
-    view: PhxLiveStorybookSampleWeb.ErrorView,
+    view: PhxLiveStorybookSample.ErrorView,
     accepts: ~w(html json),
     layout: false
   ],

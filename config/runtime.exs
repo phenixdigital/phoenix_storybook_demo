@@ -17,7 +17,7 @@ import Config
 # Alternatively, you can use `mix phx.gen.release` to generate a `bin/server`
 # script that automatically sets the env var above.
 if System.get_env("PHX_SERVER") do
-  config :phx_live_storybook_sample, PhxLiveStorybookSampleWeb.Endpoint, server: true
+  config :phx_live_storybook_sample, PhxLiveStorybookSample.Endpoint, server: true
 end
 
 if config_env() == :prod do
@@ -36,7 +36,7 @@ if config_env() == :prod do
   host = System.get_env("PHX_HOST") || "localhost"
   port = String.to_integer(System.get_env("PORT") || "4000")
 
-  config :phx_live_storybook_sample, PhxLiveStorybookSampleWeb.Endpoint,
+  config :phx_live_storybook_sample, PhxLiveStorybookSample.Endpoint,
     url: [host: host, port: 443, scheme: "https"],
     http: [
       # Enable IPv6 and bind on all interfaces.

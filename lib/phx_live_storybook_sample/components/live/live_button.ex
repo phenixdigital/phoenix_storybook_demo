@@ -1,5 +1,5 @@
-defmodule PhxLiveStorybookSampleWeb.Components.Live.LiveButton do
-  use PhxLiveStorybookSampleWeb, :live_component
+defmodule PhxLiveStorybookSample.Components.Live.LiveButton do
+  use PhxLiveStorybookSample, :live_component
 
   def update(assigns, socket) do
     {:ok,

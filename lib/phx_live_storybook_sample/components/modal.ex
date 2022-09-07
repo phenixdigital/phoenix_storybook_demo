@@ -1,5 +1,5 @@
-defmodule PhxLiveStorybookSampleWeb.Components.Modal do
-  use PhxLiveStorybookSampleWeb, :component
+defmodule PhxLiveStorybookSample.Components.Modal do
+  use PhxLiveStorybookSample, :component
 
   alias Phoenix.LiveView.JS
 

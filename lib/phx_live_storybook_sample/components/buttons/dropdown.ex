@@ -1,5 +1,5 @@
-defmodule PhxLiveStorybookSampleWeb.Components.Dropdown do
-  use PhxLiveStorybookSampleWeb, :component
+defmodule PhxLiveStorybookSample.Components.Dropdown do
+  use PhxLiveStorybookSample, :component
   import PhxComponentHelpers
 
   def dropdown(assigns) do

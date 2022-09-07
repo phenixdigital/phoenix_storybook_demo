@@ -1,12 +1,12 @@
 defmodule Storybook.Components.Modal do
   use PhxLiveStorybook.Entry, :component
 
-  def function, do: &PhxLiveStorybookSampleWeb.Components.Modal.modal/1
+  def function, do: &PhxLiveStorybookSample.Components.Modal.modal/1
 
   def icon, do: "fat fa-window-restore"
 
   def imports do
-    [{PhxLiveStorybookSampleWeb.Components.Modal, show_modal: 0}]
+    [{PhxLiveStorybookSample.Components.Modal, show_modal: 0}]
   end
 
   def template do
