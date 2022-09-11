@@ -12,7 +12,7 @@ defmodule Storybook.TemplateComponent do
 
   def template do
     """
-    <div id=":story_id" class="space-y-2">
+    <div id=":story_id" class="space-y-2" lsb-code-hidden>
       <button class="btn" id="set-foo" phx-click="set-story-assign/:story_id/label/foo">Set label to foo</button>
       <button class="btn" id="set-bar" phx-click="set-story-assign/:story_id/label/bar">Set label to bar</button>
       <button class="btn" id="toggle-status" phx-click="toggle-story-assign/:story_id/status">Toggle status</button>

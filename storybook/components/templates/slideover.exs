@@ -39,7 +39,7 @@ defmodule Storybook.Components.Slideover do
 
   def template do
     """
-    <div>
+    <div lsb-code-hidden>
       <button type="button" class="btn" phx-click="set-story-assign/:story_id/show/true">
         Open :story_id
       </button>
