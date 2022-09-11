@@ -19,7 +19,7 @@ defmodule Storybook.TemplateComponent do
       <button class="btn" id="set-status-true" phx-click="set-story-assign/:story_id/status/true">Set status to true</button>
       <button class="btn" id="set-status-false" phx-click="set-story-assign/:story_id/status/false">Set status to false</button>
       <div class="mt-2">
-        <.story/>
+        <.lsb-story/>
       </div>
     </div>
     """

@@ -15,7 +15,7 @@ defmodule Storybook.Components.Modal do
       <button type="button" class="btn" phx-click={show_modal()}>
         Open modal
       </button>
-      <.story/>
+      <.lsb-story/>
     </div>
     """
   end
