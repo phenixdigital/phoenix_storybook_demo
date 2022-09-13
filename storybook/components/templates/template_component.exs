@@ -30,8 +30,7 @@ defmodule Storybook.TemplateComponent do
       %Attr{
         id: :label,
         type: :string,
-        doc: "component label",
-        required: true
+        doc: "component label"
       },
       %Attr{
         id: :status,
@@ -53,6 +52,12 @@ defmodule Storybook.TemplateComponent do
         id: :world,
         description: "World story",
         attributes: %{label: "world"}
+      },
+      %Story{
+        id: :value_template,
+        template: """
+        <.lsb-story label={"coucou"}/>
+        """
       },
       %StoryGroup{
         id: :group,
