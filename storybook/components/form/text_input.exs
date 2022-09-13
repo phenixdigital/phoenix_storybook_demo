@@ -56,6 +56,11 @@ defmodule Storybook.Components.TextInput do
         doc: "An hint to display below the input."
       },
       %Attr{
+        id: :addon,
+        type: :string,
+        doc: "A short label that will be preprended to your input"
+      },
+      %Attr{
         id: :icon,
         type: :string,
         doc: "A font awesome icon class that will be prepended to the input."

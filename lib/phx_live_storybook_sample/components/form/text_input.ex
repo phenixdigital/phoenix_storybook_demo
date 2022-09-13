@@ -9,6 +9,7 @@ defmodule PhxLiveStorybookSample.Components.Form.TextInput do
   @default_class_with_addon "#{@base_class} border-0 pl-2.5 focus:ring-0 "
   @default_class_with_icon "#{@base_class} border pl-10 focus:ring-2 focus:ring-offset-2"
   @default_class_disabled "#{@base_class} border pl-2.5 bg-default-bg-disabled text-default-txt-informative cursor-not-allowed focus:ring-2 focus:ring-offset-2"
+  @default_class_disabled_with_icon "#{@base_class} border pl-10 bg-default-bg-disabled text-default-txt-informative cursor-not-allowed focus:ring-2 focus:ring-offset-2"
   @default_class_with_addon_disabled "#{@base_class} border pl-2.5 bg-default-bg-disabled text-default-txt-informative cursor-not-allowed focus:ring-0"
 
   @no_error_class "form-input"
@@ -89,6 +90,9 @@ defmodule PhxLiveStorybookSample.Components.Form.TextInput do
       cond do
         assigns[:addon] ->
           addon_class(assigns, class)
+
+        assigns[:disabled] && assigns[:icon] ->
+          "#{class} #{@default_class_disabled_with_icon} rounded-md"
 
         assigns[:disabled] ->
           "#{class} #{@default_class_disabled} rounded-md"
