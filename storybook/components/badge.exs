@@ -13,7 +13,7 @@ defmodule Storybook.Components.Badge do
         type: :atom,
         doc: "One predefined color among a small set.",
         default: :default,
-        options: ~w(default info primary success warning danger)a
+        values: ~w(default info primary success warning danger)a
       },
       %Attr{
         id: :hex_color,

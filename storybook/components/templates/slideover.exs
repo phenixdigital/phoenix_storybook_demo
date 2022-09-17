@@ -18,7 +18,7 @@ defmodule Storybook.Components.Slideover do
         id: :position,
         doc: "Anchor position of the slide-over",
         type: :atom,
-        options: [:left, :right],
+        values: [:left, :right],
         default: :left
       },
       %Attr{

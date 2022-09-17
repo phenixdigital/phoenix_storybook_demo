@@ -16,7 +16,7 @@ defmodule Storybook.Components.Buttons.Dropdown do
         type: :atom,
         doc: "One predefined color among a small set.",
         default: :default,
-        options: ~w(default primary)a
+        values: ~w(default primary)a
       },
       %Attr{
         id: :entry,
