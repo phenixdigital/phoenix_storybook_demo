@@ -41,20 +41,6 @@ config :phoenix, :json_library, Jason
 
 config :phx_live_storybook, :gzip_assets, false
 
-config :phx_live_storybook_sample, Storybook,
-  content_path: Path.expand("../storybook/", __DIR__),
-  css_path: "/assets/app.css",
-  js_path: "/assets/components.js",
-  folders: [
-    /: [icon: "fal fa-book-open"],
-    "/components": [icon: "far fa-toolbox", open: true],
-    "/components/live": [icon: "fal fa-bolt", open: true, name: "Live!"]
-  ],
-  themes: [
-    default: [name: "Default"],
-    colorful: [name: "Colorful", dropdown_class: "text-pink-600"]
-  ]
-
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"
