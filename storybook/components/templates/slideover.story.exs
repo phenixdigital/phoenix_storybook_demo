@@ -1,8 +1,7 @@
 defmodule Storybook.Components.Slideover do
-  use PhxLiveStorybook.Entry, :component
+  use PhxLiveStorybook.Story, :component
+  alias Phoenix.LiveView.JS
 
-  def name, do: "Slide-over"
-  def icon, do: "fat fa-sidebar"
   def function, do: &PhxLiveStorybookSample.Components.Slideover.slideover/1
   def description, do: "A side panel that will slide over your document."
 
@@ -25,7 +24,7 @@ defmodule Storybook.Components.Slideover do
         id: :close_event,
         doc:
           "Event that will be triggered when clicking the close button or outside of the slide-over",
-        type: :string
+        type: JS
       },
       %Attr{
         id: :title,
@@ -40,56 +39,56 @@ defmodule Storybook.Components.Slideover do
   def template do
     """
     <div lsb-code-hidden>
-      <button type="button" class="btn" phx-click="set-story-assign/:story_id/show/true">
-        Open :story_id
+      <button type="button" class="btn" phx-click={JS.push("assign", value: %{show: true})}>
+        Open :variation_id
       </button>
-      <.lsb-story/>
+      <.lsb-variation/>
     </div>
     """
   end
 
-  def stories do
+  def variations do
     [
-      %Story{
+      %Variation{
         id: :default_slideover,
         attributes: %{
           title: "I open on the left 👈",
-          close_event: "set-story-assign/default_slideover/show/false"
+          close_event: JS.push("assign", value: %{variation_id: :default_slideover, show: false})
         },
         slots: [
           "<:body>Hello world</:body>"
         ]
       },
-      %Story{
+      %Variation{
         id: :right_slideover,
         attributes: %{
           title: "I open on the right 👉",
-          close_event: "set-story-assign/right_slideover/show/false",
+          close_event: JS.push("assign", value: %{variation_id: :right_slideover, show: false}),
           position: :right
         },
         slots: [
           "<:body>Hello world</:body>"
         ]
       },
-      %StoryGroup{
+      %VariationGroup{
         id: :group,
-        stories: [
-          %Story{
+        variations: [
+          %Variation{
             id: :left_slideover,
             attributes: %{
               title: "I open on the left 👈",
-              close_event: "set-story-assign/left_slideover/show/false",
+              close_event: JS.push("assign", value: %{variation_id: [:group, :left_slideover], show: false}),
               show: false
             },
             slots: [
               "<:body>Left slide-over</:body>"
             ]
           },
-          %Story{
+          %Variation{
             id: :right_slideover,
             attributes: %{
               title: "I open on the right 👉",
-              close_event: "set-story-assign/right_slideover/show/false",
+              close_event: JS.push("assign", value: %{variation_id: [:group, :right_slideover], show: false}),
               position: :right,
               show: false
             },

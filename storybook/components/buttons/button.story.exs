@@ -1,12 +1,10 @@
-defmodule Storybook.Components.Buttons.ButtonIframe do
+defmodule Storybook.Components.Buttons.Button do
   alias PhxLiveStorybookSample.Components.Button
 
-  use PhxLiveStorybook.Entry, :component
+  use PhxLiveStorybook.Story, :component
 
   def function, do: &Button.button/1
-  def description, do: "Same button, but rendered in an iframe."
-  def icon, do: "fat fa-rectangle-ad"
-  def container, do: :iframe
+  def description, do: "A simple button. If you click, I'll raise!"
 
   def attributes do
     [
@@ -14,16 +12,16 @@ defmodule Storybook.Components.Buttons.ButtonIframe do
     ]
   end
 
-  def stories do
+  def variations do
     [
-      %Story{
+      %Variation{
         id: :default,
         description: "Default button",
         attributes: %{
           label: "Boom!"
         }
       },
-      %Story{
+      %Variation{
         id: :custom_colors,
         description: "A button with custom colors",
         attributes: %{

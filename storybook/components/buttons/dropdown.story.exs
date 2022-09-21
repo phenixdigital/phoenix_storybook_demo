@@ -1,11 +1,10 @@
 defmodule Storybook.Components.Buttons.Dropdown do
   alias PhxLiveStorybookSample.Components.Dropdown
 
-  use PhxLiveStorybook.Entry, :component
+  use PhxLiveStorybook.Story, :component
 
   def function, do: &Dropdown.dropdown/1
   def description, do: "A dropdown button, with a JS hook."
-  def icon, do: "fat fa-list-dropdown"
   def container, do: :div
 
   def attributes do
@@ -26,9 +25,9 @@ defmodule Storybook.Components.Buttons.Dropdown do
     ]
   end
 
-  def stories do
+  def variations do
     [
-      %Story{
+      %Variation{
         id: :default,
         description: "Default dropdown",
         attributes: %{
@@ -40,7 +39,7 @@ defmodule Storybook.Components.Buttons.Dropdown do
           ~s|<:entry path="#" text="License"/>|
         ]
       },
-      %Story{
+      %Variation{
         id: :primary_color,
         description: "A dropdown with primary color",
         attributes: %{

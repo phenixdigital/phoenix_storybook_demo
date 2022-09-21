@@ -1,10 +1,9 @@
 defmodule Storybook.Components.TextInput do
-  use PhxLiveStorybook.Entry, :component
+  use PhxLiveStorybook.Story, :component
   alias PhxLiveStorybookSample.Components.Form.TextInputGroup
   alias Phoenix.HTML.Form
 
   def function, do: &TextInputGroup.text_input_group/1
-  def icon, do: "fat fa-input-text"
 
   def imports do
     [{Phoenix.LiveView.Helpers, [{:form, 1}]}]
@@ -13,7 +12,7 @@ defmodule Storybook.Components.TextInput do
   def template do
     """
     <.form for={:story} let={f} class="w-full">
-      <.lsb-story form={f}/>
+      <.lsb-variation form={f}/>
     </.form>
     """
   end
@@ -74,9 +73,9 @@ defmodule Storybook.Components.TextInput do
     ]
   end
 
-  def stories do
+  def variations do
     [
-      %Story{
+      %Variation{
         id: :default_text_input,
         attributes: %{
           field: :address,
@@ -84,7 +83,7 @@ defmodule Storybook.Components.TextInput do
           label: "Address"
         }
       },
-      %Story{
+      %Variation{
         id: :with_hint,
         attributes: %{
           field: :address,
@@ -93,12 +92,12 @@ defmodule Storybook.Components.TextInput do
           hint: "Your full postal address."
         }
       },
-      %Story{
+      %Variation{
         id: :in_error,
         template: """
         <.form for={:story} let={f} class="w-full">
           <% f = %{f | data: %{foo: "not valid"}, errors: [foo: {"this field is in error", []}]} %>
-          <.lsb-story form={f}/>
+          <.lsb-variation form={f}/>
         </.form>
         """,
         attributes: %{

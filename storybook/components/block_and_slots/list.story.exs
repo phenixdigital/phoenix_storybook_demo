@@ -1,9 +1,8 @@
 defmodule Storybook.Components.List do
-  use PhxLiveStorybook.Entry, :component
+  use PhxLiveStorybook.Story, :component
 
   def function, do: &PhxLiveStorybookSample.Components.List.list/1
   def description, do: "Show how you can use block with let."
-  def icon, do: "fat fa-list"
 
   def attributes do
     [
@@ -12,9 +11,9 @@ defmodule Storybook.Components.List do
     ]
   end
 
-  def stories do
+  def variations do
     [
-      %Story{
+      %Variation{
         id: :default,
         attributes: %{
           entries: ~w(apple banana cherry)

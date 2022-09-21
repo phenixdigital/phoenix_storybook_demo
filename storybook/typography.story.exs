@@ -1,7 +1,5 @@
 defmodule Storybook.Typography do
-  use PhxLiveStorybook.Entry, :page
-
-  def icon, do: "fad fa-text-size"
+  use PhxLiveStorybook.Story, :page
 
   def render(assigns) do
     ~H"""

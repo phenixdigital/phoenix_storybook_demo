@@ -1,6 +1,5 @@
 defmodule Storybook.Colors do
-  use PhxLiveStorybook.Entry, :page
-  def icon, do: "fat fa-swatchbook"
+  use PhxLiveStorybook.Story, :page
 
   def navigation do
     [

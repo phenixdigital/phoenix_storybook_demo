@@ -1,7 +1,7 @@
 defmodule Storybook.Components.Live.LiveButton do
   alias PhxLiveStorybookSample.Components.Live.LiveButton
 
-  use PhxLiveStorybook.Entry, :live_component
+  use PhxLiveStorybook.Story, :live_component
 
   def component, do: LiveButton
 
@@ -11,17 +11,15 @@ defmodule Storybook.Components.Live.LiveButton do
     Will change its color every time you click it
     """
 
-  def icon, do: "fat fa-rectangle-ad"
-
-  def stories do
+  def variations do
     [
-      %Story{
+      %Variation{
         id: :default,
         attributes: %{
           label: "Click me"
         }
       },
-      %Story{
+      %Variation{
         id: :base_color,
         description: "With a base color in assigns",
         attributes: %{

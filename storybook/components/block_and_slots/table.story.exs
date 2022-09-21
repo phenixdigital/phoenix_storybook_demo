@@ -1,9 +1,8 @@
 defmodule Storybook.Components.Table do
-  use PhxLiveStorybook.Entry, :component
+  use PhxLiveStorybook.Story, :component
 
   def function, do: &PhxLiveStorybookSample.Components.Table.table/1
   def description, do: "Illustration of how you can use slots with let."
-  def icon, do: "fat fa-table"
 
   def attributes do
     [
@@ -12,9 +11,9 @@ defmodule Storybook.Components.Table do
     ]
   end
 
-  def stories do
+  def variations do
     [
-      %Story{
+      %Variation{
         id: :default,
         attributes: %{
           rows: [

@@ -1,9 +1,8 @@
 defmodule Storybook.Components.Modal do
-  use PhxLiveStorybook.Entry, :component
+  use PhxLiveStorybook.Story, :component
 
   def function, do: &PhxLiveStorybookSample.Components.Modal.modal/1
 
-  def icon, do: "fat fa-window-restore"
 
   def imports do
     [{PhxLiveStorybookSample.Components.Modal, show_modal: 0}]
@@ -15,7 +14,7 @@ defmodule Storybook.Components.Modal do
       <button type="button" class="btn" phx-click={show_modal()}>
         Open modal
       </button>
-      <.lsb-story/>
+      <.lsb-variation/>
     </div>
     """
   end
@@ -47,9 +46,9 @@ defmodule Storybook.Components.Modal do
     ]
   end
 
-  def stories do
+  def variations do
     [
-      %Story{
+      %Variation{
         id: :default,
         attributes: %{
           title: "Payment succesful",
@@ -59,7 +58,7 @@ defmodule Storybook.Components.Modal do
           "<:body>Thanks for your money!</:body>"
         ]
       },
-      %Story{
+      %Variation{
         id: :with_buttons,
         attributes: %{
           title: "Payment succesful",

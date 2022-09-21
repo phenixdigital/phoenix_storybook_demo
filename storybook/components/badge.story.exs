@@ -1,9 +1,8 @@
 defmodule Storybook.Components.Badge do
-  use PhxLiveStorybook.Entry, :component
+  use PhxLiveStorybook.Story, :component
 
   def function, do: &PhxLiveStorybookSample.Components.Badge.badge/1
   def description, do: "Just a badge component, with colors."
-  def icon, do: "fat fa-badge-check"
 
   def attributes do
     [
@@ -34,20 +33,20 @@ defmodule Storybook.Components.Badge do
     ]
   end
 
-  def stories do
+  def variations do
     [
-      %Story{
+      %Variation{
         id: :default_badge,
         attributes: %{
           text: "Default badge"
         }
       },
-      %StoryGroup{
+      %VariationGroup{
         id: :predefined_colors,
         description: "With predefined colors",
-        stories:
+        variations:
           for color <- ~w(info primary success warning danger)a do
-            %Story{
+            %Variation{
               id: color,
               attributes: %{
                 text: "Predefined color",
@@ -56,12 +55,12 @@ defmodule Storybook.Components.Badge do
             }
           end
       },
-      %StoryGroup{
+      %VariationGroup{
         id: :small_predefined_colors,
         description: "With predefined colors, but small",
-        stories:
+        variations:
           for color <- ~w(info primary success warning danger)a do
-            %Story{
+            %Variation{
               id: color,
               attributes: %{
                 text: "Same but small",
@@ -71,12 +70,12 @@ defmodule Storybook.Components.Badge do
             }
           end
       },
-      %StoryGroup{
+      %VariationGroup{
         id: :custom_colors,
         description: "With custom colors",
-        stories:
+        variations:
           for color <- ["#FC08CB", "#996CC0", "#7CACDD"] do
-            %Story{
+            %Variation{
               id: String.to_atom(color),
               attributes: %{
                 text: "Custom color",
@@ -85,12 +84,12 @@ defmodule Storybook.Components.Badge do
             }
           end
       },
-      %StoryGroup{
+      %VariationGroup{
         id: :icons,
         description: "With FontAwesome icons",
-        stories:
+        variations:
           for icon <- ["fa fa-alicorn", "fa fa-bolt", "fas fa-skull"] do
-            %Story{
+            %Variation{
               id: String.to_atom(icon),
               attributes: %{
                 text: icon,
@@ -99,12 +98,12 @@ defmodule Storybook.Components.Badge do
             }
           end
       },
-      %StoryGroup{
+      %VariationGroup{
         id: :small_icons,
         description: "With FontAwesome icons, but small",
-        stories:
+        variations:
           for icon <- ["fa fa-alicorn", "fa fa-bolt", "fas fa-skull"] do
-            %Story{
+            %Variation{
               id: String.to_atom(icon),
               attributes: %{
                 text: icon,
