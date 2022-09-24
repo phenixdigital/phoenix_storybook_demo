@@ -26,7 +26,7 @@ phx_live_storybook_sample-*.tar
 priv/static/assets/
 priv/static/cache_manifest.json
 priv/static/**/*.js
-priv/static/**/*.css
+priv/static/**/*.cs
 priv/static/*.gz
 priv/static/**/*-????????????????????????????????.*
 
@@ -36,6 +36,3 @@ npm-debug.log
 
 .elixir_ls
 .envrc
-
-apps/phx_live_storybook/deps
-apps/phx_live_storybook/_build
