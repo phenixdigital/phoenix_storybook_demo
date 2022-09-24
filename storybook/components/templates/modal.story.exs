@@ -3,7 +3,6 @@ defmodule Storybook.Components.Modal do
 
   def function, do: &PhxLiveStorybookSample.Components.Modal.modal/1
 
-
   def imports do
     [{PhxLiveStorybookSample.Components.Modal, show_modal: 0}]
   end
@@ -31,18 +30,14 @@ defmodule Storybook.Components.Modal do
         id: :icon,
         doc: "Modal icon. FontAwesome classes",
         type: :string
-      },
-      %Attr{
-        id: :body,
-        doc: "Modal content",
-        type: :slot,
-        required: true
-      },
-      %Attr{
-        id: :button,
-        doc: "Modal buttons, displayed in footer",
-        type: :slot
       }
+    ]
+  end
+
+  def slots do
+    [
+      %Slot{id: :body, doc: "Modal content", required: true},
+      %Slot{id: :button, doc: "Modal buttons, displayed in footer"}
     ]
   end
 

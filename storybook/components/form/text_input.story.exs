@@ -6,7 +6,7 @@ defmodule Storybook.Components.TextInput do
   def function, do: &TextInputGroup.text_input_group/1
 
   def imports do
-    [{Phoenix.LiveView.Helpers, [{:form, 1}]}]
+    [{Phoenix.Component, [{:form, 1}]}]
   end
 
   def template do

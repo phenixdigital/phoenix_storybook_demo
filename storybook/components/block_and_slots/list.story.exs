@@ -6,8 +6,13 @@ defmodule Storybook.Components.List do
 
   def attributes do
     [
-      %Attr{id: :entries, type: :list, doc: "Items you want to list", required: true},
-      %Attr{id: :block, type: :block, doc: "List items the way you want", required: true}
+      %Attr{id: :entries, type: :list, doc: "Items you want to list", required: true}
+    ]
+  end
+
+  def slots do
+    [
+      %Slot{id: :inner_block, doc: "List items the way you want", required: true}
     ]
   end
 
@@ -19,11 +24,10 @@ defmodule Storybook.Components.List do
           entries: ~w(apple banana cherry)
         },
         let: :entry,
-        block: """
-        I like <%= entry %>
-        """
+        slots: [
+          "I like <%= entry %>"
+        ]
       }
     ]
   end
-
 end

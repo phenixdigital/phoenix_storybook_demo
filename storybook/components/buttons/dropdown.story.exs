@@ -16,10 +16,14 @@ defmodule Storybook.Components.Buttons.Dropdown do
         doc: "One predefined color among a small set.",
         default: :default,
         values: ~w(default primary)a
-      },
-      %Attr{
+      }
+    ]
+  end
+
+  def slots do
+    [
+      %Slot{
         id: :entry,
-        type: :slot,
         doc: "An entry in the dropdown menu. Must contain path & text attributes."
       }
     ]

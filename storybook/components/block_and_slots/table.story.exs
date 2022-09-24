@@ -6,8 +6,13 @@ defmodule Storybook.Components.Table do
 
   def attributes do
     [
-      %Attr{id: :rows, type: :list, doc: "Data you want to list", required: true},
-      %Attr{id: :col, type: :slot, doc: "Describe one of your table columns"}
+      %Attr{id: :rows, type: :list, doc: "Data you want to list", required: true}
+    ]
+  end
+
+  def slots do
+    [
+      %Slot{id: :col, doc: "Describe one of your table columns"}
     ]
   end
 
@@ -41,5 +46,4 @@ defmodule Storybook.Components.Table do
       }
     ]
   end
-
 end

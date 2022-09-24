@@ -4,7 +4,7 @@ defmodule Storybook.Components.Buttons.Button do
   use PhxLiveStorybook.Story, :component
 
   def function, do: &Button.button/1
-  def description, do: "A simple button. If you click, I'll raise!"
+  def description, do: "A simple button. If you click, I'll log a message!"
 
   def attributes do
     [
