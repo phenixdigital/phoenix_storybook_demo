@@ -5,42 +5,6 @@ defmodule Storybook.Components.Slideover do
   def function, do: &PhxLiveStorybookSample.Components.Slideover.slideover/1
   def description, do: "A side panel that will slide over your document."
 
-  def attributes do
-    [
-      %Attr{
-        id: :show,
-        doc: "Controls slide-over visibility",
-        type: :boolean,
-        default: false
-      },
-      %Attr{
-        id: :position,
-        doc: "Anchor position of the slide-over",
-        type: :atom,
-        values: [:left, :right],
-        default: :left
-      },
-      %Attr{
-        id: :close_event,
-        doc:
-          "Event that will be triggered when clicking the close button or outside of the slide-over",
-        type: JS
-      },
-      %Attr{
-        id: :title,
-        doc: "Slide-over title",
-        type: :string,
-        default: "Panel Title"
-      }
-    ]
-  end
-
-  def slots do
-    [
-      %Slot{id: :body, doc: "Slideover content"}
-    ]
-  end
-
   def template do
     """
     <div lsb-code-hidden>

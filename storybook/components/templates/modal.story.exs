@@ -18,29 +18,6 @@ defmodule Storybook.Components.Modal do
     """
   end
 
-  def attributes do
-    [
-      %Attr{
-        id: :title,
-        doc: "Modal title",
-        type: :string,
-        required: true
-      },
-      %Attr{
-        id: :icon,
-        doc: "Modal icon. FontAwesome classes",
-        type: :string
-      }
-    ]
-  end
-
-  def slots do
-    [
-      %Slot{id: :body, doc: "Modal content", required: true},
-      %Slot{id: :button, doc: "Modal buttons, displayed in footer"}
-    ]
-  end
-
   def variations do
     [
       %Variation{

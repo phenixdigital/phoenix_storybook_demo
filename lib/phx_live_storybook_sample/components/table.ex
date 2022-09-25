@@ -1,6 +1,11 @@
-
 defmodule PhxLiveStorybookSample.Components.Table do
   use Phoenix.Component
+
+  attr :rows, :list, doc: "Data you want to list", required: true
+
+  slot :col, doc: "Describe one of your table columns" do
+    attr :label, :string, doc: "Column label", required: true
+  end
 
   def table(assigns) do
     ~H"""

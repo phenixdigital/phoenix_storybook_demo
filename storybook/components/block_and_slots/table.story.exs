@@ -4,18 +4,6 @@ defmodule Storybook.Components.Table do
   def function, do: &PhxLiveStorybookSample.Components.Table.table/1
   def description, do: "Illustration of how you can use slots with let."
 
-  def attributes do
-    [
-      %Attr{id: :rows, type: :list, doc: "Data you want to list", required: true}
-    ]
-  end
-
-  def slots do
-    [
-      %Slot{id: :col, doc: "Describe one of your table columns"}
-    ]
-  end
-
   def variations do
     [
       %Variation{

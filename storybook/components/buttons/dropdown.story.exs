@@ -7,28 +7,6 @@ defmodule Storybook.Components.Buttons.Dropdown do
   def description, do: "A dropdown button, with a JS hook."
   def container, do: :div
 
-  def attributes do
-    [
-      %Attr{id: :text, type: :string, required: true, doc: "Dropdown label"},
-      %Attr{
-        id: :color,
-        type: :atom,
-        doc: "One predefined color among a small set.",
-        default: :default,
-        values: ~w(default primary)a
-      }
-    ]
-  end
-
-  def slots do
-    [
-      %Slot{
-        id: :entry,
-        doc: "An entry in the dropdown menu. Must contain path & text attributes."
-      }
-    ]
-  end
-
   def variations do
     [
       %Variation{

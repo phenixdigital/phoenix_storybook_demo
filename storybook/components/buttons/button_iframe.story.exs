@@ -7,12 +7,6 @@ defmodule Storybook.Components.Buttons.ButtonIframe do
   def description, do: "Same button, but rendered in an iframe."
   def container, do: :iframe
 
-  def attributes do
-    [
-      %Attr{id: :label, type: :string, required: true, doc: "Button label"}
-    ]
-  end
-
   def variations do
     [
       %Variation{

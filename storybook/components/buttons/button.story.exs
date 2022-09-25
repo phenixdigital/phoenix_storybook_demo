@@ -6,12 +6,6 @@ defmodule Storybook.Components.Buttons.Button do
   def function, do: &Button.button/1
   def description, do: "A simple button. If you click, I'll log a message!"
 
-  def attributes do
-    [
-      %Attr{id: :label, type: :string, required: true, doc: "Button label"}
-    ]
-  end
-
   def variations do
     [
       %Variation{

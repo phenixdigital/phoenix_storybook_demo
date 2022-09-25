@@ -1,13 +1,22 @@
 defmodule PhxLiveStorybookSample.Components.Slideover do
   use PhxLiveStorybookSample, :component
 
-  def slideover(assigns) do
-    assigns
-    |> assign_new(:title, fn -> "Panel Title" end)
-    |> render()
-  end
+  attr :show, :boolean, default: false, doc: "Controls slide-over visibility"
+  attr :title, :string, default: "Panel Title", doc: "Slide-over title"
 
-  defp render(assigns = %{show: true}) do
+  attr :position, :atom,
+    default: :left,
+    values: [:left, :right],
+    doc: "Anchor position of the slide-over"
+
+  attr :close_event,
+       Phoenix.LiveView.JS,
+       doc:
+         "Event that will be triggered when clicking the close button or outside of the slide-over"
+
+  slot(:body, doc: "Slideover content")
+
+  def slideover(assigns = %{show: true}) do
     ~H"""
     <div class="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
       <div class="fixed inset-0 "></div>
@@ -49,7 +58,7 @@ defmodule PhxLiveStorybookSample.Components.Slideover do
     """
   end
 
-  defp render(assigns), do: ~H""
+  def slideover(assigns), do: ~H""
 
   defp position_class(%{position: :right}), do: "right-0 pl-10"
   defp position_class(_), do: "left-0 pr-10"

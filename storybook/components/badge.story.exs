@@ -4,41 +4,13 @@ defmodule Storybook.Components.Badge do
   def function, do: &PhxLiveStorybookSample.Components.Badge.badge/1
   def description, do: "Just a badge component, with colors."
 
-  def attributes do
-    [
-      %Attr{id: :text, type: :string, required: true, doc: "Badge label"},
-      %Attr{
-        id: :color,
-        type: :atom,
-        doc: "One predefined color among a small set.",
-        default: :default,
-        values: ~w(default info primary success warning danger)a
-      },
-      %Attr{
-        id: :hex_color,
-        type: :string,
-        doc: "Custom HEX color. Overrides :color attribute."
-      },
-      %Attr{
-        id: :small,
-        type: :boolean,
-        default: false,
-        doc: "When true, renders a smaller badge."
-      },
-      %Attr{
-        id: :icon,
-        type: :string,
-        doc: "Prepends an icon to the badge. Use it with FontAwesome classes."
-      }
-    ]
-  end
-
   def variations do
     [
       %Variation{
         id: :default_badge,
         attributes: %{
-          text: "Default badge"
+          text: "Default badge",
+          rest: %{"data-foo" => "bar", "qix" => 42}
         }
       },
       %VariationGroup{

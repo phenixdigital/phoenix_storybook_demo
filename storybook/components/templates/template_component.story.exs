@@ -3,8 +3,9 @@ defmodule Storybook.TemplateComponent do
   alias PhxLiveStorybookSample.Components.TemplateComponent
 
   def function, do: &TemplateComponent.template_component/1
-  def description, do:
-    """
+
+  def description,
+    do: """
     Technical component illustrating how templates and assign/toggle can be used together.
     """
 
@@ -21,22 +22,6 @@ defmodule Storybook.TemplateComponent do
       </div>
     </div>
     """
-  end
-
-  def attributes do
-    [
-      %Attr{
-        id: :label,
-        type: :string,
-        doc: "component label"
-      },
-      %Attr{
-        id: :status,
-        type: :boolean,
-        doc: "component status",
-        default: false
-      }
-    ]
   end
 
   def variations do

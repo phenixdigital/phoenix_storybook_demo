@@ -4,6 +4,20 @@ defmodule PhxLiveStorybookSample.Components.Form.TextInputGroup do
 
   import PhxLiveStorybookSample.Components.Form.{Error, Hint, InputGroup, Label, TextInput}
 
+  attr :form, Phoenix.HTML.Form, doc: "The form structure holding form data."
+  attr :field, :atom, doc: "The form field key."
+  attr :name, :string, doc: "The input name."
+  attr :label, :string, doc: "The input label."
+  attr :value, :string, doc: "The input value."
+  attr :placeholder, :string, doc: "The input placeholder."
+  attr :hint, :string, doc: "An hint to display below the input."
+  attr :addon, :string, doc: "A short label that will be preprended to your input"
+  attr :icon, :string, doc: "A font awesome icon class that will be prepended to the input."
+
+  attr :disabled, :boolean,
+    default: false,
+    doc: "To allow input change or not. The default value will not be submitted."
+
   def text_input_group(assigns) do
     assigns
     |> set_form_attributes()

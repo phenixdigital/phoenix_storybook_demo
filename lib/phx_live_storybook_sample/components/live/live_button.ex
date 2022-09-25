@@ -1,20 +1,23 @@
 defmodule PhxLiveStorybookSample.Components.Live.LiveButton do
   use PhxLiveStorybookSample, :live_component
 
+  attr :label, :string, required: true, doc: "Button label"
+  attr :color, :atom, values: ~w(indigo yellow red purple emerald)a, doc: "Button color"
+
+  def render(assigns) do
+    ~H"""
+    <button id={assigns[:id]} class={button_class(assigns)} phx-click="change_color" phx-target={@myself}>
+      <%= @label %>
+    </button>
+    """
+  end
+
   def update(assigns, socket) do
     {:ok,
      socket
      |> assign(assigns)
      |> assign_new(:label, fn -> "" end)
      |> assign_new(:color, &random_color/0)}
-  end
-
-  def render(assigns) do
-    ~H"""
-    <button id={assigns[:id]}class={button_class(assigns)} phx-click="change_color" phx-target={@myself}>
-      <%= @label %>
-    </button>
-    """
   end
 
   def handle_event("change_color", _, socket) do

@@ -2,6 +2,19 @@ defmodule PhxLiveStorybookSample.Components.Dropdown do
   use PhxLiveStorybookSample, :component
   import PhxComponentHelpers
 
+  attr :id, :string, required: true, doc: "Component unique ID."
+  attr :text, :string, required: true, doc: "Dropdown label."
+
+  attr :color, :atom,
+    default: :default,
+    values: [:default, :primary],
+    doc: "One predefined color among a small set."
+
+  slot :entry, doc: "An entry in the dropdown menu." do
+    attr :path, :string, required: true
+    attr :text, :string, required: true
+  end
+
   def dropdown(assigns) do
     assigns
     |> set_attributes([:text, color: :default, entry: []], required: [:text])
@@ -32,9 +45,7 @@ defmodule PhxLiveStorybookSample.Components.Dropdown do
           </a>
         <% end %>
       </div>
-
     </div>
-
     """
   end
 

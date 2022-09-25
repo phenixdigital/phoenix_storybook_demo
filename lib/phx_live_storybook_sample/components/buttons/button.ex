@@ -1,6 +1,8 @@
 defmodule PhxLiveStorybookSample.Components.Button do
   use PhxLiveStorybookSample, :component
 
+  attr :label, :string, required: true, doc: "Button label"
+
   def button(assigns) do
     assigns
     |> assign_new(:theme, fn -> :not_set end)

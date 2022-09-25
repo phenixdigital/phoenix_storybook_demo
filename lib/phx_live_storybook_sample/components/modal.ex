@@ -3,6 +3,12 @@ defmodule PhxLiveStorybookSample.Components.Modal do
 
   alias Phoenix.LiveView.JS
 
+  attr :title, :string, doc: "Modal title", required: true
+  attr :icon, :string, doc: "Modal icon. FontAwesome classes"
+
+  slot(:body, doc: "Modal content", required: true)
+  slot(:button, doc: "Modal buttons, displayed in footer")
+
   def modal(assigns) do
     ~H"""
     <div id="modal-overlay" class="hidden z-10 fixed inset-0 backdrop-blur-lg bg-black/20"></div>
