@@ -2,6 +2,7 @@ defmodule PhxLiveStorybookSample.Components.Button do
   use PhxLiveStorybookSample, :component
 
   attr :label, :string, required: true, doc: "Button label"
+  attr :theme, :atom
 
   def button(assigns) do
     assigns

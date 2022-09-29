@@ -11,7 +11,7 @@ defmodule Storybook.TemplateComponent do
 
   def template do
     """
-    <div id=":variation_id" class="space-y-2" lsb-code-hidden>
+    <div id=":variation_id" class="space-y-2" >
       <button class="btn" id="set-foo" phx-click={JS.push("assign", value: %{label: "foo"})}>Set label to foo</button>
       <button class="btn" id="set-bar" phx-click={JS.push("assign", value: %{label: "bar"})}>Set label to bar</button>
       <button class="btn" id="toggle-status" phx-click={JS.push("toggle", value: %{attr: :status})}>Toggle status</button>
@@ -39,7 +39,7 @@ defmodule Storybook.TemplateComponent do
       %Variation{
         id: :value_template,
         template: """
-        <.lsb-variation label={"coucou"}/>
+        <.lsb-variation label={"hey"}/>
         """
       },
       %VariationGroup{

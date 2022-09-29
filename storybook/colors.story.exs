@@ -3,12 +3,12 @@ defmodule Storybook.Colors do
 
   def navigation do
     [
-      {:default, "Default", ""},
-      {:primary, "Primary", ""},
-      {:info, "Info", ""},
-      {:success, "Success", ""},
-      {:warning, "Warning", ""},
-      {:danger, "Danger", ""}
+      {:default, "Default"},
+      {:primary, "Primary"},
+      {:info, "Info"},
+      {:success, "Success"},
+      {:warning, "Warning"},
+      {:danger, "Danger"}
     ]
   end
 

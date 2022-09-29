@@ -53,7 +53,8 @@ config :phx_live_storybook_sample, PhxLiveStorybookSample.Endpoint,
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/phx_live_storybook/(live|views|components)/.*(ex)$"
+      ~r"lib/phx_live_storybook/(live|views|components)/.*(ex)$",
+      ~r"storybook/.*(exs)$"
     ]
   ]
 

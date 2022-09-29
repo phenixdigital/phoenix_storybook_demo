@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 @layer utilities {
-  * {
+  :not(i) {
     font-family: "Helvetica Neue";
   }
+
   h1 {
     @apply text-2xl font-bold text-slate-700 mt-2 mb-6;
   }

@@ -1,7 +1,7 @@
 defmodule Storybook.Templates do
   use PhxLiveStorybook.Index
 
-  def entry("modal"), do: [icon: "fat fa-window-restore"]
-  def entry("slideover"), do: [name: "Slide-over", icon: "fat fa-sidebar"]
-  def entry("template_component"), do: [name: "Set assigns", icon: "fat fa-code"]
+  def entry("modal"), do: [icon: {:fa, "window-restore", :thin}]
+  def entry("slideover"), do: [name: "Slide-over", icon: {:fa, "sidebar", :thin}]
+  def entry("template_component"), do: [name: "Set assigns", icon: {:fa, "code", :thin}]
 end

@@ -22,7 +22,9 @@ defmodule Storybook.Components.Slideover do
         id: :default_slideover,
         attributes: %{
           title: "I open on the left 👈",
-          close_event: JS.push("assign", value: %{variation_id: :default_slideover, show: false})
+          close_event:
+            {:eval,
+             ~s|JS.push("assign", value: %{variation_id: :default_slideover, show: false})|}
         },
         slots: [
           "<:body>Hello world</:body>"

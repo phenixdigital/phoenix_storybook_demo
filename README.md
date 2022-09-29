@@ -22,6 +22,7 @@ MIX_ENV=prod mix deps.update phx_live_storybook
 Then you can test your release locally with:
 
 ```
+MIX_ENV=prod mix release
 PHX_SERVER=true _build/prod/rel/phx_live_storybook_sample/bin/phx_live_storybook_sample start
 ```
 
