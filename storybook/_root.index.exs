@@ -3,6 +3,5 @@ defmodule Storybook.Root do
   def folder_icon, do: {:fa, "book-open", :light, "lsb-mr-1"}
   def folder_name, do: "Storybook"
 
-  def entry("colors"), do: [icon: {:fa, "swatchbook", :thin}]
-  def entry("typography"), do: [icon: {:fa, "text-size", :duotone}]
+  def entry("welcome"), do: [name: "Welcome Page", icon: {:fa, "hand-wave", :thin}]
 end
