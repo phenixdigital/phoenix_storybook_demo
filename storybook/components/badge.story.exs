@@ -2,7 +2,6 @@ defmodule Storybook.Components.Badge do
   use PhxLiveStorybook.Story, :component
 
   def function, do: &PhxLiveStorybookSample.Components.Badge.badge/1
-  def description, do: "Just a badge component, with colors."
 
   def variations do
     [

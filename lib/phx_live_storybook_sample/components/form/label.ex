@@ -24,8 +24,8 @@ defmodule PhxLiveStorybookSample.Components.Form.Label do
 
   defp label_class(assigns) do
     if has_errors?(assigns) do
-     "#{@default_class} #{@error_class}"
-     else
+      "#{@default_class} #{@error_class}"
+    else
       "#{@default_class} #{@not_error_class}"
     end
   end

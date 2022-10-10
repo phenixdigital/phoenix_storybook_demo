@@ -4,10 +4,6 @@ defmodule Storybook.Components.TextInput do
 
   def function, do: &TextInputGroup.text_input_group/1
 
-  def imports do
-    [{Phoenix.Component, [{:form, 1}]}]
-  end
-
   def template do
     """
     <.form for={:story} let={f} class="w-full">

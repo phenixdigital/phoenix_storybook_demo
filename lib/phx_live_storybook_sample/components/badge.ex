@@ -5,7 +5,6 @@ defmodule PhxLiveStorybookSample.Components.Badge do
   @default_span_class "inline-flex items-center justify-center text-nowrap font-medium cursor-pointer whitespace-nowrap"
   @colors ~w(default info primary success warning danger)a
 
-  attr :id, :string
   attr :text, :string, required: true, doc: "Badge label"
   attr :theme, :atom, default: :default, doc: "Component library theme"
   attr :color, :atom, default: :default, values: @colors, doc: "One color among a small set."
@@ -14,12 +13,14 @@ defmodule PhxLiveStorybookSample.Components.Badge do
   attr :icon, :string, doc: "Prepends an icon to the badge. Use it with FontAwesome classes."
   attr :rest, :global, doc: "Any HTML attribute."
 
+  @doc """
+  Just a badge component, with colors.
+  """
   def badge(assigns) do
     assigns
     |> assign_new(:theme, fn -> :not_set end)
     |> set_attributes(
       [
-        :id,
         :text,
         color: :default,
         icon: false,
@@ -37,7 +38,7 @@ defmodule PhxLiveStorybookSample.Components.Badge do
 
   defp render(assigns) do
     ~H"""
-    <span style={@inline_style} {@heex_class} {@heex_id} theme={@theme} {@rest}>
+    <span style={@inline_style} {@heex_class} theme={@theme} {@rest}>
       <%= if @icon do %>
         <i {@heex_icon_class}></i>
       <% end %>

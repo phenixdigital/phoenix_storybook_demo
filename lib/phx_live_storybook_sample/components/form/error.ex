@@ -27,5 +27,4 @@ defmodule PhxLiveStorybookSample.Components.Form.Error do
   end
 
   defp print_error({error, _}), do: error
-
 end

@@ -46,16 +46,20 @@ defmodule Storybook.MyPage do
   end
 
   def render(assigns = %{tab: guide}) when guide in ~w(components sandboxing icons)a do
-    assigns = assign(assigns, guide: PhxLiveStoryBook.Guides.markup("#{guide}.md"))
+    assigns =
+      assign(assigns,
+        guide: guide,
+        guide_content: PhxLiveStoryBook.Guides.markup("#{guide}.md")
+      )
 
     ~H"""
     <p class="md:lsb-text-lg lsb-leading-relaxed lsb-text-slate-400 lsb-w-full lsb-text-left lsb-mb-4 lsb-mt-2 lsb-italic">
-      <a class="hover:text-indigo-700" href={"https://hexdocs.pm/phx_live_storybook/#{guide}.html"} target="_blank">
+      <a class="hover:text-indigo-700" href={"https://hexdocs.pm/phx_live_storybook/#{@guide}.html"} target="_blank">
         This guide is also available on Hexdocs among others.
       </a>
     </p>
     <div class="lsb-welcome-page lsb-border-t lsb-border-gray-200 lsb-pt-4">
-      <%= Phoenix.HTML.raw(@guide) %>
+      <%= Phoenix.HTML.raw(@guide_content) %>
     </div>
     """
   end

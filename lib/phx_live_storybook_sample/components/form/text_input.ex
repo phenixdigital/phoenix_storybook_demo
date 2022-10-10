@@ -114,5 +114,4 @@ defmodule PhxLiveStorybookSample.Components.Form.TextInput do
       "#{class} #{@default_class_with_addon} rounded-r-md"
     end
   end
-
 end

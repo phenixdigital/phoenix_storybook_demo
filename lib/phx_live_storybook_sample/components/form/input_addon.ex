@@ -32,7 +32,7 @@ defmodule PhxLiveStorybookSample.Components.Form.InputAddon do
     end
   end
 
-  defp addon_class(_assigns ) do
+  defp addon_class(_assigns) do
     "#{@addon_class} text-sm h-10 rounded-l-md"
   end
 end
