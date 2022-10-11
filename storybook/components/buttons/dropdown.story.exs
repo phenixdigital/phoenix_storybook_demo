@@ -4,8 +4,6 @@ defmodule Storybook.Components.Buttons.Dropdown do
   use PhxLiveStorybook.Story, :component
 
   def function, do: &Dropdown.dropdown/1
-  def description, do: "A dropdown button, with a JS hook."
-  def container, do: :div
 
   def variations do
     [

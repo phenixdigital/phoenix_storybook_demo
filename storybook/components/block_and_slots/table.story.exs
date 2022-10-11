@@ -2,7 +2,6 @@ defmodule Storybook.Components.Table do
   use PhxLiveStorybook.Story, :component
 
   def function, do: &PhxLiveStorybookSample.Components.Table.table/1
-  def description, do: "Illustration of how you can use slots with let."
 
   def variations do
     [

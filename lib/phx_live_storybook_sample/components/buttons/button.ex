@@ -4,6 +4,9 @@ defmodule PhxLiveStorybookSample.Components.Button do
   attr :label, :string, required: true, doc: "Button label"
   attr :theme, :atom
 
+  @doc """
+  A simple button. When clicked, triggers a `boom` event.
+  """
   def button(assigns) do
     assigns
     |> assign_new(:theme, fn -> :not_set end)

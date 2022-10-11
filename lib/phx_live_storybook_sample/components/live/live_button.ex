@@ -1,4 +1,7 @@
 defmodule PhxLiveStorybookSample.Components.Live.LiveButton do
+  @moduledoc """
+  A LiveComponent button, with some state. Will change its color every time you click it
+  """
   use PhxLiveStorybookSample, :live_component
 
   attr :label, :string, required: true, doc: "Button label"

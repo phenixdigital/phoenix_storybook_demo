@@ -15,6 +15,9 @@ defmodule PhxLiveStorybookSample.Components.Dropdown do
     attr :text, :string, required: true
   end
 
+  @doc """
+  A dropdown button, with a JS hook.
+  """
   def dropdown(assigns) do
     assigns
     |> set_attributes([:text, color: :default, entry: []], required: [:text])

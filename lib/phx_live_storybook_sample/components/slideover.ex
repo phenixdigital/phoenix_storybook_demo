@@ -16,6 +16,9 @@ defmodule PhxLiveStorybookSample.Components.Slideover do
 
   slot(:body, doc: "Slideover content")
 
+  @doc """
+  A side panel that will slide over your document.
+  """
   def slideover(assigns = %{show: true}) do
     ~H"""
     <div class="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">

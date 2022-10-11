@@ -5,6 +5,7 @@ defmodule PhxLiveStorybookSample.Components.Badge do
   @default_span_class "inline-flex items-center justify-center text-nowrap font-medium cursor-pointer whitespace-nowrap"
   @colors ~w(default info primary success warning danger)a
 
+  attr :id, :string
   attr :text, :string, required: true, doc: "Badge label"
   attr :theme, :atom, default: :default, doc: "Component library theme"
   attr :color, :atom, default: :default, values: @colors, doc: "One color among a small set."

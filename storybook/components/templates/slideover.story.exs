@@ -1,9 +1,7 @@
 defmodule Storybook.Components.Slideover do
   use PhxLiveStorybook.Story, :component
-  alias Phoenix.LiveView.JS
 
   def function, do: &PhxLiveStorybookSample.Components.Slideover.slideover/1
-  def description, do: "A side panel that will slide over your document."
 
   def template do
     """

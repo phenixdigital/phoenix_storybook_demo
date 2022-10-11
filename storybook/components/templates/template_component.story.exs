@@ -4,11 +4,6 @@ defmodule Storybook.TemplateComponent do
 
   def function, do: &TemplateComponent.template_component/1
 
-  def description,
-    do: """
-    Technical component illustrating how templates and assign/toggle can be used together.
-    """
-
   def template do
     """
     <div id=":variation_id" class="space-y-2" >

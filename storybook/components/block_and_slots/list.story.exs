@@ -2,7 +2,6 @@ defmodule Storybook.Components.List do
   use PhxLiveStorybook.Story, :component
 
   def function, do: &PhxLiveStorybookSample.Components.List.list/1
-  def description, do: "Show how you can use block with let."
 
   def variations do
     [

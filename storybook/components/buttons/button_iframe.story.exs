@@ -4,7 +4,6 @@ defmodule Storybook.Components.Buttons.ButtonIframe do
   use PhxLiveStorybook.Story, :component
 
   def function, do: &Button.button/1
-  def description, do: "Same button, but rendered in an iframe."
   def container, do: :iframe
 
   def variations do
