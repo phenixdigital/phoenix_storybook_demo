@@ -9,6 +9,10 @@ defmodule Storybook do
       default: [name: "Default"],
       colorful: [name: "Colorful", dropdown_class: "lsb-text-pink-600"]
     ],
+    themes_strategies: [
+      body_class: "theme",
+      assign: "theme"
+    ],
     font_awesome_plan: :pro,
     font_awesome_kit_id: "7a72374eed",
     compilation_mode: :eager

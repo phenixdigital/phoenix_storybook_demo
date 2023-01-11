@@ -19,7 +19,7 @@ defmodule PhxLiveStorybookSample.Components.Button do
 
   defp render(assigns) do
     ~H"""
-    <button phx-click="boom" type="button" theme={@theme} class={"inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm #{assigns[:"text-color"]} #{assigns[:"bg-color"]} #{assigns[:"hover-bg-color"]} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"}>
+    <button phx-click="click" type="button" theme={@theme} class={"inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm #{assigns[:"text-color"]} #{assigns[:"bg-color"]} #{assigns[:"hover-bg-color"]} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"}>
       <%= @label %>
     </button>
     """

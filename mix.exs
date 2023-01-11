@@ -14,7 +14,14 @@ defmodule PhxLiveStorybookSample.MixProject do
       build_path: "_build",
       config_path: "config/config.exs",
       deps_path: "deps",
-      lockfile: ".mix.lock"
+      lockfile: ".mix.lock",
+      releases: [
+        phx_live_storybook_sample: [
+          strip_beams: [
+            keep: ["Docs"]
+          ]
+        ]
+      ]
     ]
   end
 
@@ -29,8 +36,8 @@ defmodule PhxLiveStorybookSample.MixProject do
   end
 
   # Specifies which paths to compile per environment.
-  defp elixirc_paths(:test), do: ["lib", "test/support"]
-  defp elixirc_paths(_), do: ["lib"]
+  defp elixirc_paths(:test), do: ["lib", "storybook", "test/support"]
+  defp elixirc_paths(_), do: ["lib", "storybook"]
 
   # Specifies your project dependencies.
   #
@@ -41,14 +48,14 @@ defmodule PhxLiveStorybookSample.MixProject do
       {:phoenix_html, "~> 3.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_live_view, "~> 0.18.0"},
+      {:phoenix_view, "~> 2.0", override: true},
       {:floki, ">= 0.30.0", only: :test},
       {:esbuild, "~> 0.4", runtime: Mix.env() == :dev},
       {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:phx_component_helpers, "~> 1.2.0"},
-      {:heroicons, "~> 0.5.0"}
+      {:phx_component_helpers, "~> 1.2.0"}
     ]
 
     if env == :prod do

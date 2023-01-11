@@ -1,0 +1,13 @@
+<.form for={:story} let={f} class="max-w-3xl m-auto space-y-4">
+  <p>
+    Everytime you click on the button, it increments the following value by 1.
+  </p>
+  <.text_input_group
+    form={f}
+    field={:value}
+    disabled={true}
+    label="Form value"
+    value={@value}/>
+
+    <.button label="Increment counter" theme={@theme}/>
+</.form>

@@ -20,6 +20,7 @@ defmodule PhxLiveStorybookSample.Router do
     pipe_through(:browser)
     get "/", RedirectController, :redirect_to_storybook
     live("/page", PageLive, :index)
+
     live_storybook("/storybook", backend_module: Storybook)
   end
 end
