@@ -1,5 +1,5 @@
 defmodule Storybook.Colors do
-  use PhxLiveStorybook.Story, :page
+  use PhoenixStorybook.Story, :page
 
   def navigation do
     [

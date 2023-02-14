@@ -1,5 +1,5 @@
 defmodule Storybook.Buttons do
-  use PhxLiveStorybook.Index
+  use PhoenixStorybook.Index
 
   def entry("button"), do: [icon: {:fa, "rectangle-ad", :thin}]
   def entry("button_iframe"), do: [icon: {:fa, "rectangle-ad", :thin}]

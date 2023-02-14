@@ -1,5 +1,5 @@
 defmodule Storybook.Components do
-  use PhxLiveStorybook.Index
+  use PhoenixStorybook.Index
 
   def folder_icon, do: {:fa, "toolbox", :thin}
   def folder_open?, do: true

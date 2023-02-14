@@ -1,6 +1,6 @@
 defmodule Storybook.Components.TextInput do
-  use PhxLiveStorybook.Story, :component
-  alias PhxLiveStorybookSample.Components.Form.TextInputGroup
+  use PhoenixStorybook.Story, :component
+  alias PhoenixStorybookSample.Components.Form.TextInputGroup
 
   def function, do: &TextInputGroup.text_input_group/1
 

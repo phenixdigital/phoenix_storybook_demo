@@ -1,9 +1,9 @@
-defmodule PhxLiveStorybookSample.MixProject do
+defmodule PhoenixStorybookSample.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :phx_live_storybook_sample,
+      app: :phoenix_storybook_sample,
       version: "0.1.0",
       elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -16,7 +16,7 @@ defmodule PhxLiveStorybookSample.MixProject do
       deps_path: "deps",
       lockfile: ".mix.lock",
       releases: [
-        phx_live_storybook_sample: [
+        phoenix_storybook_sample: [
           strip_beams: [
             keep: ["Docs"]
           ]
@@ -30,7 +30,7 @@ defmodule PhxLiveStorybookSample.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {PhxLiveStorybookSample.Application, []},
+      mod: {PhoenixStorybookSample.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -44,7 +44,7 @@ defmodule PhxLiveStorybookSample.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps(env) do
     deps = [
-      {:phoenix, "~> 1.6.12"},
+      {:phoenix, "~> 1.7.0-rc.2", override: true},
       {:phoenix_html, "~> 3.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_live_view, "~> 0.18.0"},
@@ -59,9 +59,9 @@ defmodule PhxLiveStorybookSample.MixProject do
     ]
 
     if env == :prod do
-      [{:phx_live_storybook, github: "phenixdigital/phx_live_storybook"} | deps]
+      [{:phoenix_storybook, github: "phenixdigital/phoenix_storybook"} | deps]
     else
-      [{:phx_live_storybook, path: "../phx_live_storybook"} | deps]
+      [{:phoenix_storybook, path: "../phoenix_storybook"} | deps]
     end
   end
 

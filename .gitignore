@@ -20,7 +20,7 @@ erl_crash.dump
 *.ez
 
 # Ignore package tarball (built via "mix hex.build").
-phx_live_storybook_sample-*.tar
+phoenix_storybook_sample-*.tar
 
 # Ignore assets that are produced by build tools.
 priv/static/assets/

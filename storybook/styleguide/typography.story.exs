@@ -1,5 +1,5 @@
 defmodule Storybook.Typography do
-  use PhxLiveStorybook.Story, :page
+  use PhoenixStorybook.Story, :page
 
   def render(assigns) do
     ~H"""

@@ -1,7 +1,7 @@
 defmodule Storybook.Components.Live.LiveButton do
-  alias PhxLiveStorybookSample.Components.Live.LiveButton
+  alias PhoenixStorybookSample.Components.Live.LiveButton
 
-  use PhxLiveStorybook.Story, :live_component
+  use PhoenixStorybook.Story, :live_component
 
   def component, do: LiveButton
 

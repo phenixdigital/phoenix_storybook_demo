@@ -1,5 +1,5 @@
 defmodule Storybook.Examples do
-  use PhxLiveStorybook.Index
+  use PhoenixStorybook.Index
 
   def folder_icon, do: {:fa, "lightbulb", :thin}
 

@@ -1,13 +1,13 @@
 import Config
 
-config :phx_live_storybook_sample, PhxLiveStorybookSample.Endpoint,
+config :phoenix_storybook_sample, PhoenixStorybookSample.Endpoint,
   url: [host: "localhost"],
   render_errors: [
-    view: PhxLiveStorybookSample.ErrorView,
+    view: PhoenixStorybookSample.ErrorView,
     accepts: ~w(html json),
     layout: false
   ],
-  pubsub_server: PhxLiveStorybookSample.PubSub,
+  pubsub_server: PhoenixStorybookSample.PubSub,
   live_view: [signing_salt: "fYsrW27v"]
 
 # Configure esbuild (the version is required)
@@ -39,7 +39,7 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
-config :phx_live_storybook, :gzip_assets, false
+config :phoenix_storybook, :gzip_assets, false
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

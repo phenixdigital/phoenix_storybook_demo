@@ -1,5 +1,5 @@
 defmodule Storybook.Examples.Form do
-  use PhxLiveStorybook.Story, :example
+  use PhoenixStorybook.Story, :example
 
   alias Storybook.Examples.FormHTML
 

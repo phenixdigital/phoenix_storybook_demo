@@ -1,6 +1,6 @@
 defmodule Storybook.TemplateComponent do
-  use PhxLiveStorybook.Story, :component
-  alias PhxLiveStorybookSample.Components.TemplateComponent
+  use PhoenixStorybook.Story, :component
+  alias PhoenixStorybookSample.Components.TemplateComponent
 
   def function, do: &TemplateComponent.template_component/1
 

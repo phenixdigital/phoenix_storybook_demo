@@ -1,6 +1,6 @@
-# PhxLiveStorybookSample
+# PhoenixStorybookSample
 
-Demo phoenix web application to showcase [phx_live_storybook](https://github.com/phenixdigital/phx_live_storybook/).
+Demo phoenix web application to showcase [phoenix_storybook](https://github.com/phenixdigital/phoenix_storybook/).
 
 👉 [Available online here](https://phx-live-storybook-sample.fly.dev/storybook)
 
@@ -16,14 +16,14 @@ Now you can visit [`localhost:4000/storybook`](http://localhost:4000/storybook) 
 First make sure your sample app is using an up-to-date storybook library:
 
 ```
-MIX_ENV=prod mix deps.update phx_live_storybook
+MIX_ENV=prod mix deps.update phoenix_storybook
 ```
 
 Then you can test your release locally with:
 
 ```
 MIX_ENV=prod mix release
-PHX_SERVER=true _build/prod/rel/phx_live_storybook_sample/bin/phx_live_storybook_sample start
+PHX_SERVER=true _build/prod/rel/phoenix_storybook_sample/bin/phoenix_storybook_sample start
 ```
 
 Or go for production instead:
