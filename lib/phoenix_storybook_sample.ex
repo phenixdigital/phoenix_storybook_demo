@@ -45,7 +45,7 @@ defmodule PhoenixStorybookSample do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {PhoenixStorybookSample.LayoutView, "live.html"}
+        layout: {PhoenixStorybookSample.LayoutView, :live}
 
       unquote(view_helpers())
       unquote(components())
@@ -96,6 +96,7 @@ defmodule PhoenixStorybookSample do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
+      alias Phoenix.Flash
       alias PhoenixStorybookSample.Router.Helpers, as: Routes
     end
   end

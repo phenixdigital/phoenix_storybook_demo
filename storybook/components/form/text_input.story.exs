@@ -6,7 +6,7 @@ defmodule Storybook.Components.TextInput do
 
   def template do
     """
-    <.form for={:story} let={f} class="w-full">
+    <.form for={%{}} as={:story} :let={f} class="w-full">
       <.lsb-variation form={f}/>
     </.form>
     """
@@ -34,7 +34,7 @@ defmodule Storybook.Components.TextInput do
       %Variation{
         id: :in_error,
         template: """
-        <.form for={:story} let={f} class="w-full">
+        <.form for={%{}} as={:story} :let={f} class="w-full">
           <% f = %{f | data: %{foo: "not valid"}, errors: [foo: {"this field is in error", []}]} %>
           <.lsb-variation form={f}/>
         </.form>

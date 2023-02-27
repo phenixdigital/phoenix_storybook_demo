@@ -15,17 +15,17 @@ defmodule Storybook.Components.Table do
         },
         slots: [
           """
-          <:col let={user} label="First name">
+          <:col :let={user} label="First name">
             <%= user.first_name %>
           </:col>
           """,
           """
-          <:col let={user} label="Last name">
+          <:col :let={user} label="Last name">
             <%= user.last_name %>
           </:col>
           """,
           """
-          <:col let={user} label="City">
+          <:col :let={user} label="City">
             <%= user.city %>
           </:col>
           """

@@ -25,14 +25,14 @@ defmodule PhoenixStorybookSample.PageLive do
           <:entry path="#" text="License"/>
         </.dropdown>
         <.live_component module={LiveButton} label="I have state" id="live-button"/>
-        <.list let={entry} entries={~w(apple banana cherry)}>
+        <.list :let={entry} entries={~w(apple banana cherry)}>
           I like <%= entry %>
         </.list>
         <.table rows={[%{name: "Jean", city: "Paris"}, %{name: "Bob", city: "NY"}]}>
-          <:col let={row} label="Name">
+          <:col :let={row} label="Name">
             <%= row.name %>
           </:col>
-          <:col let={row} label="City">
+          <:col :let={row} label="City">
             <%= row.city %>
           </:col>
         </.table>

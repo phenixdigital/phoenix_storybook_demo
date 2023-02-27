@@ -1,4 +1,4 @@
-defmodule Storybook.Examples.Form do
+defmodule Storybook.Examples.Forms do
   use PhoenixStorybook.Story, :example
 
   alias Storybook.Examples.FormHTML
