@@ -18,9 +18,8 @@ defmodule Storybook.Components.Buttons.Button do
         id: :custom_colors,
         description: "A button with custom colors",
         attributes: %{
-          :label => "A button",
-          :"bg-color" => "bg-green-600",
-          :"hover-bg-color" => "bg-green-700"
+          label: "A button",
+          class: "bg-fuchsia-600 hover:bg-fuchsia-700"
         }
       }
     ]
