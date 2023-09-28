@@ -3,6 +3,10 @@ defmodule Storybook.Components.Buttons.Button do
 
   use PhoenixStorybook.Story, :component
 
+  defmodule MyStruct do
+    defstruct [:id, :label]
+  end
+
   def function, do: &Button.button/1
 
   def variations do

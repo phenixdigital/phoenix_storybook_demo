@@ -19,7 +19,7 @@ defmodule PhoenixStorybookSample.Components.Form.InputIcon do
       <div {@heex_icon_wrapper_class}>
         <i {@heex_icon_class}></i>
       </div>
-      <%= render_block(@inner_block) %>
+      <%= render_slot(@inner_block) %>
     </div>
     """
   end

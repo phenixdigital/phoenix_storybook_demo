@@ -10,9 +10,9 @@ defmodule PhoenixStorybookSample.PageLive do
     <div class="mx-auto max-w-4xl mt-6">
       <h1 class="text-2xl text-indigo-600 mb-6 text-center uppercase font-bold">Live Storybook demo application</h1>
       <div class="my-6 mb-10 text-center text-lg p-2 rounded-md bg-indigo-600 hover:bg-indigo-800 text-white">
-        <%= live_redirect to: "/storybook", class: "text-inherit no-underline" do %>
+        <.link href="/storybook" class="text-inherit no-underline">
           👉 Go to Storybook
-        <% end %>
+        </.link>
       </div>
 
       <h2 class="text-xl border-b border-gray-200 pt-10 pb-2 text-slate-700">These are application components rendered by the application itself.</h2>

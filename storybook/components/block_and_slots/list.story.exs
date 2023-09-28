@@ -12,7 +12,11 @@ defmodule Storybook.Components.List do
         },
         let: :entry,
         slots: [
-          "I like <%= entry %>"
+          """
+          <%= for i <- 1..10 do %>
+            <p>Item #<%= i %></p>
+          <% end %>
+          """
         ]
       }
     ]
