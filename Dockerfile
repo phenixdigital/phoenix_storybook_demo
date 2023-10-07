@@ -1,19 +1,18 @@
-# Find eligible builder and runner images on Docker Hub. We use Ubuntu/Debian instead of
-# Alpine to avoid DNS resolution issues in production.
+# Find eligible builder and runner images on Docker Hub. We use Ubuntu/Debian
+# instead of Alpine to avoid DNS resolution issues in production.
 #
 # https://hub.docker.com/r/hexpm/elixir/tags?page=1&name=ubuntu
 # https://hub.docker.com/_/ubuntu?tab=tags
 #
-#
 # This file is based on these images:
 #
 #   - https://hub.docker.com/r/hexpm/elixir/tags - for the build image
-#   - https://hub.docker.com/_/debian?tab=tags&page=1&name=bullseye-20220801-slim - for the release image
+#   - https://hub.docker.com/_/debian?tab=tags&page=1&name=bullseye-20230612-slim - for the release image
 #   - https://pkgs.org/ - resource for finding needed packages
-#   - Ex: hexpm/elixir:1.13.4-erlang-25.0-debian-bullseye-20210902-slim
+#   - Ex: hexpm/elixir:1.15.5-erlang-26.0.2-debian-bullseye-20230612-slim
 #
-ARG ELIXIR_VERSION=1.15.6
-ARG OTP_VERSION=26.1.1
+ARG ELIXIR_VERSION=1.15.5
+ARG OTP_VERSION=26.0.2
 ARG DEBIAN_VERSION=bullseye-20230612-slim
 
 ARG BUILDER_IMAGE="hexpm/elixir:${ELIXIR_VERSION}-erlang-${OTP_VERSION}-debian-${DEBIAN_VERSION}"
@@ -22,7 +21,7 @@ ARG RUNNER_IMAGE="debian:${DEBIAN_VERSION}"
 FROM ${BUILDER_IMAGE} as builder
 
 # install build dependencies
-RUN apt-get update -y && apt-get install -y build-essential git nodejs npm \
+RUN apt-get update -y && apt-get install -y build-essential git \
     && apt-get clean && rm -f /var/lib/apt/lists/*_*
 
 # prepare build dir
@@ -48,16 +47,12 @@ RUN mix deps.compile
 
 COPY priv priv
 COPY lib lib
+
 COPY assets assets
 COPY storybook storybook
 
 # compile assets
 RUN mix assets.deploy
-
-# compile phoenix_storybook assets
-RUN cd deps/phoenix_storybook && mix deps.get
-RUN cd deps/phoenix_storybook && npm ci --prefix assets
-RUN cd deps/phoenix_storybook && MIX_ENV=dev mix assets.build
 
 # Compile the release
 RUN mix compile
@@ -94,6 +89,3 @@ COPY --from=builder --chown=nobody:root /app/_build/${MIX_ENV}/rel/phoenix_story
 USER nobody
 
 CMD ["/app/bin/server"]
-# Appended by flyctl
-ENV ECTO_IPV6 true
-ENV ERL_AFLAGS "-proto_dist inet6_tcp"

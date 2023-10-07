@@ -43,26 +43,22 @@ defmodule PhoenixStorybookSample.MixProject do
   #
   # Type `mix help deps` for examples and options.
   defp deps(env) do
-    deps = [
+    [
       {:phoenix, "~> 1.7.0"},
       {:phoenix_html, "~> 3.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_live_view, "~> 0.20.0"},
       {:phoenix_view, "~> 2.0", override: true},
       {:floki, ">= 0.30.0", only: :test},
-      {:esbuild, "~> 0.4", runtime: Mix.env() == :dev},
-      {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
+      {:esbuild, "~> 0.4", runtime: env == :dev},
+      {:tailwind, "~> 0.1", runtime: env == :dev},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:phx_component_helpers, "~> 1.3.0"}
+      {:phx_component_helpers, "~> 1.3.0"},
+      {:phoenix_storybook, "~> 0.5.7"}
+      # {:phoenix_storybook, path: "../phoenix_storybook"}
     ]
-
-    if env == :prod do
-      [{:phoenix_storybook, github: "phenixdigital/phoenix_storybook"} | deps]
-    else
-      [{:phoenix_storybook, path: "../phoenix_storybook"} | deps]
-    end
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
