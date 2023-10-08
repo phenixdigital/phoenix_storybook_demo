@@ -26,19 +26,40 @@ defmodule PhoenixStorybookSample.Components.Slideover do
 
       <div class="fixed inset-0 overflow-hidden">
         <div class="absolute inset-0 overflow-hidden">
-          <div phx-click-away={assigns[:close_event]} class={"pointer-events-none fixed inset-y-0 #{position_class(assigns)} flex max-w-full"}>
+          <div
+            phx-click-away={assigns[:close_event]}
+            class={"pointer-events-none fixed inset-y-0 #{position_class(assigns)} flex max-w-full"}
+          >
             <div class="pointer-events-auto w-screen max-w-md">
               <div class="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
                 <div class="px-4 sm:px-6">
                   <div class="flex items-start justify-between">
-                    <h2 class="text-lg font-bold text-indigo-600" id="slide-over-title"><%= @title %></h2>
+                    <h2 class="text-lg font-bold text-indigo-600" id="slide-over-title">
+                      <%= @title %>
+                    </h2>
                     <div class="ml-3 flex h-7 items-center">
                       <%= if assigns[:close_event] do %>
-                        <button type="button" phx-click={@close_event} class="border-0 cursor-pointer rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                        <button
+                          type="button"
+                          phx-click={@close_event}
+                          class="border-0 cursor-pointer rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        >
                           <span class="sr-only">Close panel</span>
                           <!-- Heroicon name: outline/x-mark -->
-                          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                          <svg
+                            class="h-6 w-6"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M6 18L18 6M6 6l12 12"
+                            />
                           </svg>
                         </button>
                       <% end %>

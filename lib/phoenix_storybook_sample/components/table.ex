@@ -24,7 +24,9 @@ defmodule PhoenixStorybookSample.Components.Table do
               <thead class="bg-gray-50">
                 <tr>
                   <%= for col <- @col do %>
-                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"><%= col.label %></th>
+                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                      <%= col.label %>
+                    </th>
                   <% end %>
                 </tr>
               </thead>
@@ -32,7 +34,9 @@ defmodule PhoenixStorybookSample.Components.Table do
                 <%= for row <- @rows do %>
                   <tr>
                     <%= for col <- @col do %>
-                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><%= render_slot(col, row) %></td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        <%= render_slot(col, row) %>
+                      </td>
                     <% end %>
                   </tr>
                 <% end %>

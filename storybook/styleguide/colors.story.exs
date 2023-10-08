@@ -94,7 +94,6 @@ defmodule Storybook.Colors do
         <% end %>
       <% end %>
     </div>
-
     """
   end
 end

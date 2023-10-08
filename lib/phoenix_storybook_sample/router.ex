@@ -21,6 +21,6 @@ defmodule PhoenixStorybookSample.Router do
     get "/", RedirectController, :redirect_to_storybook
     live("/page", PageLive, :index)
 
-    live_storybook("/storybook", backend_module: Storybook)
+    live_storybook "/storybook", backend_module: Storybook
   end
 end

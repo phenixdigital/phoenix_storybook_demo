@@ -1,5 +1,5 @@
 [
-  import_deps: [:phoenix],
+  import_deps: [:phoenix, :phoenix_storybook],
   plugins: [Phoenix.LiveView.HTMLFormatter],
   inputs: [
     "*.{ex,exs}",

@@ -14,7 +14,11 @@ defmodule PhoenixStorybookSample.Components.Modal do
     <div id="modal-overlay" class="hidden z-10 fixed inset-0 backdrop-blur-lg bg-black/20"></div>
     <div id="modal-container" class="hidden fixed inset-0 z-20 overflow-y-auto">
       <div class="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
-        <div id="modal-content" phx-click-away={hide_modal()} class="relative bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-sm sm:w-full sm:p-6">
+        <div
+          id="modal-content"
+          phx-click-away={hide_modal()}
+          class="relative bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-sm sm:w-full sm:p-6"
+        >
           <div>
             <%= if assigns[:icon] do %>
               <div class="mx-auto flex items-center justify-center bg-green-100 h-12 w-12 rounded-full">
@@ -22,7 +26,9 @@ defmodule PhoenixStorybookSample.Components.Modal do
               </div>
             <% end %>
             <div class="mt-3 text-center sm:mt-5">
-              <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title"><%= @title %></h3>
+              <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                <%= @title %>
+              </h3>
               <div class="mt-2">
                 <p class="text-sm text-gray-500">
                   <%= render_slot(@body) %>
