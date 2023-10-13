@@ -7,7 +7,7 @@ defmodule Storybook do
     sandbox_class: "storybook-sample-sandbox",
     themes: [
       default: [name: "Default"],
-      colorful: [name: "Colorful", dropdown_class: "lsb-text-pink-600"]
+      colorful: [name: "Colorful", dropdown_class: "psb-text-pink-600"]
     ],
     themes_strategies: [
       body_class: "theme",

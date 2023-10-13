@@ -13,7 +13,7 @@ defmodule Storybook.TemplateComponent do
       <button class="btn" id="set-status-true" phx-click={JS.push("assign", value: %{status: true})}>Set status to true</button>
       <button class="btn" id="set-status-false" phx-click={JS.push("assign", value: %{status: false})}>Set status to false</button>
       <div class="mt-2">
-        <.lsb-variation/>
+        <.psb-variation/>
       </div>
     </div>
     """
@@ -34,7 +34,7 @@ defmodule Storybook.TemplateComponent do
       %Variation{
         id: :value_template,
         template: """
-        <.lsb-variation label={"hey"}/>
+        <.psb-variation label={"hey"}/>
         """
       },
       %VariationGroup{

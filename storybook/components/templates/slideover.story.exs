@@ -5,11 +5,11 @@ defmodule Storybook.Components.Slideover do
 
   def template do
     """
-    <div lsb-code-hidden>
+    <div psb-code-hidden>
       <button type="button" class="btn" phx-click={JS.push("assign", value: %{show: true})}>
         Open :variation_id
       </button>
-      <.lsb-variation/>
+      <.psb-variation/>
     </div>
     """
   end
