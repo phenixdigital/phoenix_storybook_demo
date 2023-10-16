@@ -2,7 +2,7 @@
 
 Demo phoenix web application to showcase [phoenix_storybook](https://github.com/phenixdigital/phoenix_storybook/).
 
-👉 [Available online here](https://phx-live-storybook-sample.fly.dev/storybook)
+👉 [Available online here](https://phoenix-storybook-demo.fly.dev)
 
 ## Setup
 
