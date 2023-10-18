@@ -30,7 +30,7 @@ defmodule PhoenixStorybookSample.Components.Modal do
                 <%= @title %>
               </h3>
               <div class="mt-2">
-                <p class="text-sm text-gray-500">
+                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                   <%= render_slot(@body) %>
                 </p>
               </div>
