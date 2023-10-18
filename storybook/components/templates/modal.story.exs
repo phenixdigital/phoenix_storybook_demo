@@ -9,9 +9,9 @@ defmodule Storybook.Components.Modal do
 
   def template do
     """
-    <div>
+    <div lsb-code-hidden >
       <button type="button" class="btn" phx-click={show_modal()}>
-        Open modal
+        Open modal :variation_id
       </button>
       <.lsb-variation/>
     </div>
@@ -20,16 +20,6 @@ defmodule Storybook.Components.Modal do
 
   def variations do
     [
-      %Variation{
-        id: :default,
-        attributes: %{
-          title: "Payment succesful",
-          icon: "fa fa-check"
-        },
-        slots: [
-          "<:body>Thanks for your money!</:body>"
-        ]
-      },
       %Variation{
         id: :with_buttons,
         attributes: %{
@@ -52,6 +42,23 @@ defmodule Storybook.Components.Modal do
             </button>
           </:button>
           """
+        ]
+      },
+      %Variation{
+        id: :help,
+        attributes: %{
+          title: "Help",
+          icon: "fa fa-info-circle"
+        },
+        slots: [
+          "<:body>
+      <p>
+      This storybook allows you to create new components within this application and/or add UI components to your own application
+      </p>
+      <p>
+        Should you wish to add the UI components to your application, you can copy the sample code on the right.
+      </p>
+     </:body>"
         ]
       }
     ]

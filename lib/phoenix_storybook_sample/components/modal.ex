@@ -24,7 +24,7 @@ defmodule PhoenixStorybookSample.Components.Modal do
             <div class="mt-3 text-center sm:mt-5">
               <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title"><%= @title %></h3>
               <div class="mt-2">
-                <p class="text-sm text-gray-500">
+                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                   <%= render_slot(@body) %>
                 </p>
               </div>
