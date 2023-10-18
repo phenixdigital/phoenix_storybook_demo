@@ -8,13 +8,13 @@ defmodule Storybook.Components.List do
       %Variation{
         id: :default,
         attributes: %{
-          entries: ~w(apple banana cherry)
+          entries: ~w(hata godfrey sami )
         },
         let: :entry,
         slots: [
           """
-          <%= for i <- 1..10 do %>
-            <p>Item #<%= i %></p>
+          <%= for i <- 1..4 do %>
+            <p> <br><%= i %>.<%= entry %>#<br></p>
           <% end %>
           """
         ]

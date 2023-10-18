@@ -21,30 +21,6 @@ defmodule Storybook.Components.Modal do
   def variations do
     [
       %Variation{
-        id: :with_buttons,
-        attributes: %{
-          title: "Payment succesful",
-          icon: "fa fa-check"
-        },
-        slots: [
-          "<:body>Thanks for your money!</:body>",
-          """
-          <:button>
-            <button type="button" class="btn">
-              Cancel
-            </button>
-          </:button>
-          """,
-          """
-          <:button>
-            <button type="button" class="btn">
-              OK
-            </button>
-          </:button>
-          """
-        ]
-      },
-      %Variation{
         id: :help,
         attributes: %{
           title: "Help",

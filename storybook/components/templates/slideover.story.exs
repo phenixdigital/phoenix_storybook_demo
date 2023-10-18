@@ -25,7 +25,7 @@ defmodule Storybook.Components.Slideover do
              ~s|JS.push("assign", value: %{variation_id: :default_slideover, show: false})|}
         },
         slots: [
-          "<:body>Hello world</:body>"
+          "<:body>Hello beautiful people of Tauspace!</:body>"
         ]
       },
       %Variation{
@@ -37,7 +37,7 @@ defmodule Storybook.Components.Slideover do
           position: :right
         },
         slots: [
-          "<:body>Hello world</:body>"
+          "<:body>Hello beautiful people of Tauspace!</:body>"
         ]
       },
       %VariationGroup{
@@ -53,7 +53,7 @@ defmodule Storybook.Components.Slideover do
               show: false
             },
             slots: [
-              "<:body>Left slide-over</:body>"
+              "<:body>Welcome to Tauspace :)</:body>"
             ]
           },
           %Variation{
@@ -67,7 +67,7 @@ defmodule Storybook.Components.Slideover do
               show: false
             },
             slots: [
-              "<:body>Right slide-over</:body>"
+              "<:body>Welcome to Tauspace :)</:body>"
             ]
           }
         ]
