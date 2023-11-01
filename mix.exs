@@ -55,9 +55,10 @@ defmodule PhoenixStorybookSample.MixProject do
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:phx_component_helpers, "~> 1.3.0"},
-      # {:phoenix_storybook, "~> 0.5.7"}
-      {:phoenix_storybook, path: "../phoenix_storybook"}
+      {:phx_component_helpers, "~> 1.3"},
+      {:phoenix_storybook,
+       github: "phenixdigital/phoenix_storybook", branch: "55-use-iframe-srcdoc-instead-of-src"}
+      # {:phoenix_storybook, path: "../phoenix_storybook"}
     ]
   end
 

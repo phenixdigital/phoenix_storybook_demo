@@ -2,6 +2,7 @@ defmodule Storybook.Components.Live.LiveButton do
   alias PhoenixStorybookSample.Components.Live.LiveButton
 
   use PhoenixStorybook.Story, :live_component
+  def container, do: :iframe
 
   def component, do: LiveButton
 
