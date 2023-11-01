@@ -1,9 +1,9 @@
-defmodule PhoenixStorybookSample.MixProject do
+defmodule PhoenixStorybookDemo.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :phoenix_storybook_sample,
+      app: :phoenix_storybook_demo,
       version: "0.1.0",
       elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -16,7 +16,7 @@ defmodule PhoenixStorybookSample.MixProject do
       deps_path: "deps",
       lockfile: ".mix.lock",
       releases: [
-        phoenix_storybook_sample: [
+        phoenix_storybook_demo: [
           strip_beams: [
             keep: ["Docs"]
           ]
@@ -30,7 +30,7 @@ defmodule PhoenixStorybookSample.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {PhoenixStorybookSample.Application, []},
+      mod: {PhoenixStorybookDemo.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -56,8 +56,7 @@ defmodule PhoenixStorybookSample.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:phx_component_helpers, "~> 1.3"},
-      {:phoenix_storybook,
-       github: "phenixdigital/phoenix_storybook", branch: "55-use-iframe-srcdoc-instead-of-src"}
+      {:phoenix_storybook, "~> 0.5"}
       # {:phoenix_storybook, path: "../phoenix_storybook"}
     ]
   end

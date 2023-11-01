@@ -1,7 +1,7 @@
 defmodule Storybook.Components.List do
   use PhoenixStorybook.Story, :component
 
-  def function, do: &PhoenixStorybookSample.Components.List.list/1
+  def function, do: &PhoenixStorybookDemo.Components.List.list/1
 
   def variations do
     [

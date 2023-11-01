@@ -1,13 +1,13 @@
 import Config
 
-config :phoenix_storybook_sample, PhoenixStorybookSample.Endpoint,
+config :phoenix_storybook_demo, PhoenixStorybookDemo.Endpoint,
   url: [host: "localhost"],
   render_errors: [
-    view: PhoenixStorybookSample.ErrorView,
+    view: PhoenixStorybookDemo.ErrorView,
     accepts: ~w(html json),
     layout: false
   ],
-  pubsub_server: PhoenixStorybookSample.PubSub,
+  pubsub_server: PhoenixStorybookDemo.PubSub,
   live_view: [signing_salt: "fYsrW27v"]
 
 # Configure esbuild (the version is required)

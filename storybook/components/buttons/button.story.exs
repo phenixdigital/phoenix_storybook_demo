@@ -1,5 +1,5 @@
 defmodule Storybook.Components.Buttons.Button do
-  alias PhoenixStorybookSample.Components.Button
+  alias PhoenixStorybookDemo.Components.Button
 
   use PhoenixStorybook.Story, :component
 

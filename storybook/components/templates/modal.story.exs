@@ -1,10 +1,10 @@
 defmodule Storybook.Components.Modal do
   use PhoenixStorybook.Story, :component
 
-  def function, do: &PhoenixStorybookSample.Components.Modal.modal/1
+  def function, do: &PhoenixStorybookDemo.Components.Modal.modal/1
 
   def imports do
-    [{PhoenixStorybookSample.Components.Modal, show_modal: 0}]
+    [{PhoenixStorybookDemo.Components.Modal, show_modal: 0}]
   end
 
   def template do

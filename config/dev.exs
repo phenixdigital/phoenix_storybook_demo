@@ -6,7 +6,7 @@ import Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with esbuild to bundle .js and .css sources.
-config :phoenix_storybook_sample, PhoenixStorybookSample.Endpoint,
+config :phoenix_storybook_demo, PhoenixStorybookDemo.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {0, 0, 0, 0}, port: 4000],
@@ -20,7 +20,7 @@ config :phoenix_storybook_sample, PhoenixStorybookSample.Endpoint,
     tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]},
     npm: ["run", "watch", cd: Path.expand("../../phoenix_storybook/assets", __DIR__)]
   ],
-  reloadable_apps: [:phoenix_storybook_sample, :phoenix_storybook]
+  reloadable_apps: [:phoenix_storybook_demo, :phoenix_storybook]
 
 # ## SSL Support
 #
@@ -47,7 +47,7 @@ config :phoenix_storybook_sample, PhoenixStorybookSample.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :phoenix_storybook_sample, PhoenixStorybookSample.Endpoint,
+config :phoenix_storybook_demo, PhoenixStorybookDemo.Endpoint,
   backend: :fs_poll,
   live_reload: [
     patterns: [

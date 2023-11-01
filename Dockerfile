@@ -54,6 +54,11 @@ COPY storybook storybook
 # compile assets
 RUN mix assets.deploy
 
+# compile phoenix_storybook assets
+RUN cd deps/phoenix_storybook && mix deps.get
+RUN cd deps/phoenix_storybook && npm ci --prefix assets
+RUN cd deps/phoenix_storybook && MIX_ENV=dev mix assets.build
+
 # Compile the release
 RUN mix compile
 
@@ -84,7 +89,7 @@ RUN chown nobody /app
 ENV MIX_ENV="prod"
 
 # Only copy the final release from the build stage
-COPY --from=builder --chown=nobody:root /app/_build/${MIX_ENV}/rel/phoenix_storybook_sample ./
+COPY --from=builder --chown=nobody:root /app/_build/${MIX_ENV}/rel/phoenix_storybook_demo ./
 
 USER nobody
 

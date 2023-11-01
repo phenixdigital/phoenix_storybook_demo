@@ -1,7 +1,7 @@
 defmodule Storybook.Components.Slideover do
   use PhoenixStorybook.Story, :component
 
-  def function, do: &PhoenixStorybookSample.Components.Slideover.slideover/1
+  def function, do: &PhoenixStorybookDemo.Components.Slideover.slideover/1
 
   def template do
     """

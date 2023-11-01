@@ -1,10 +1,10 @@
 defmodule Storybook do
   use PhoenixStorybook,
-    otp_app: :phoenix_storybook_sample,
+    otp_app: :phoenix_storybook_demo,
     content_path: Path.expand("../storybook/", __DIR__),
     css_path: "/assets/app.css",
     js_path: "/assets/components.js",
-    sandbox_class: "storybook-sample-sandbox",
+    sandbox_class: "storybook-demo-sandbox",
     themes: [
       default: [name: "Default"],
       colorful: [name: "Colorful", dropdown_class: "psb-text-pink-600"]

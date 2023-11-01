@@ -1,7 +1,7 @@
 defmodule Storybook.Components.Badge do
   use PhoenixStorybook.Story, :component
 
-  def function, do: &PhoenixStorybookSample.Components.Badge.badge/1
+  def function, do: &PhoenixStorybookDemo.Components.Badge.badge/1
 
   def variations do
     [

@@ -1,4 +1,4 @@
-defmodule PhoenixStorybookSample.Application do
+defmodule PhoenixStorybookDemo.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -9,16 +9,16 @@ defmodule PhoenixStorybookSample.Application do
   def start(_type, _args) do
     children = [
       # Start the PubSub system
-      {Phoenix.PubSub, name: PhoenixStorybookSample.PubSub},
+      {Phoenix.PubSub, name: PhoenixStorybookDemo.PubSub},
       # Start the Endpoint (http/https)
-      PhoenixStorybookSample.Endpoint
-      # Start a worker by calling: PhoenixStorybookSample.Worker.start_link(arg)
-      # {PhoenixStorybookSample.Worker, arg}
+      PhoenixStorybookDemo.Endpoint
+      # Start a worker by calling: PhoenixStorybookDemo.Worker.start_link(arg)
+      # {PhoenixStorybookDemo.Worker, arg}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: PhoenixStorybookSample.Supervisor]
+    opts = [strategy: :one_for_one, name: PhoenixStorybookDemo.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
@@ -26,7 +26,7 @@ defmodule PhoenixStorybookSample.Application do
   # whenever the application is updated.
   @impl true
   def config_change(changed, _new, removed) do
-    PhoenixStorybookSample.Endpoint.config_change(changed, removed)
+    PhoenixStorybookDemo.Endpoint.config_change(changed, removed)
     :ok
   end
 end

@@ -12,7 +12,7 @@ module.exports = {
     "../**/*.*exs",
     "../../../config/*.*exs",
   ],
-  important: ".storybook-sample-sandbox",
+  important: ".storybook-demo-sandbox",
   safelist: [
     {
       pattern: /bg-(blue|indigo|purple|pink)-.*/,

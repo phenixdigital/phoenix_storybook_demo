@@ -1,8 +1,8 @@
 defmodule Storybook.Examples.FormHTML do
   use Phoenix.Component
 
-  import PhoenixStorybookSample.Components.Button
-  import PhoenixStorybookSample.Components.Form.TextInputGroup
+  import PhoenixStorybookDemo.Components.Button
+  import PhoenixStorybookDemo.Components.Form.TextInputGroup
 
   import Phoenix.Component
 
