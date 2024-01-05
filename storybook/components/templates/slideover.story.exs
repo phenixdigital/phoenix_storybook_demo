@@ -6,7 +6,7 @@ defmodule Storybook.Components.Slideover do
   def template do
     """
     <div psb-code-hidden>
-      <button type="button" class="btn" phx-click={JS.push("assign", value: %{show: true})}>
+      <button type="button" class="btn" phx-click={JS.push("psb-assign", value: %{show: true})}>
         Open :variation_id
       </button>
       <.psb-variation/>
@@ -22,7 +22,7 @@ defmodule Storybook.Components.Slideover do
           title: "I open on the left 👈",
           close_event:
             {:eval,
-             ~s|JS.push("assign", value: %{variation_id: :default_slideover, show: false})|}
+             ~s|JS.push("psb-assign", value: %{variation_id: :default_slideover, show: false})|}
         },
         slots: [
           "<:body>Hello world</:body>"
@@ -33,7 +33,8 @@ defmodule Storybook.Components.Slideover do
         attributes: %{
           title: "I open on the right 👉",
           close_event:
-            {:eval, ~s|JS.push("assign", value: %{variation_id: :right_slideover, show: false})|},
+            {:eval,
+             ~s|JS.push("psb-assign", value: %{variation_id: :right_slideover, show: false})|},
           position: :right
         },
         slots: [
@@ -49,7 +50,7 @@ defmodule Storybook.Components.Slideover do
               title: "I open on the left 👈",
               close_event:
                 {:eval,
-                 ~s|JS.push("assign", value: %{variation_id: [:group, :left_slideover], show: false})|},
+                 ~s|JS.push("psb-assign", value: %{variation_id: [:group, :left_slideover], show: false})|},
               show: false
             },
             slots: [
@@ -62,7 +63,7 @@ defmodule Storybook.Components.Slideover do
               title: "I open on the right 👉",
               close_event:
                 {:eval,
-                 ~s|JS.push("assign", value: %{variation_id: [:group, :right_slideover], show: false})|},
+                 ~s|JS.push("psb-assign", value: %{variation_id: [:group, :right_slideover], show: false})|},
               position: :right,
               show: false
             },

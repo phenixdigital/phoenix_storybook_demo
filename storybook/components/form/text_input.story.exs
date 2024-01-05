@@ -3,6 +3,7 @@ defmodule Storybook.Components.TextInput do
   alias PhoenixStorybookDemo.Components.Form.TextInputGroup
 
   def function, do: &TextInputGroup.text_input_group/1
+  def layout, do: :one_column
 
   def template do
     """

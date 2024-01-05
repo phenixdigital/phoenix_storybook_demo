@@ -78,4 +78,8 @@ defmodule PhoenixStorybookDemo.Components.Modal do
       to: "#modal-content"
     )
   end
+
+  def other_show_modal do
+    show_modal()
+  end
 end

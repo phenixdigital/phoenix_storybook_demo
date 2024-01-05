@@ -7,11 +7,11 @@ defmodule Storybook.TemplateComponent do
   def template do
     """
     <div id=":variation_id" class="space-y-2" >
-      <button class="btn" id="set-foo" phx-click={JS.push("assign", value: %{label: "foo"})}>Set label to foo</button>
-      <button class="btn" id="set-bar" phx-click={JS.push("assign", value: %{label: "bar"})}>Set label to bar</button>
-      <button class="btn" id="toggle-status" phx-click={JS.push("toggle", value: %{attr: :status})}>Toggle status</button>
-      <button class="btn" id="set-status-true" phx-click={JS.push("assign", value: %{status: true})}>Set status to true</button>
-      <button class="btn" id="set-status-false" phx-click={JS.push("assign", value: %{status: false})}>Set status to false</button>
+      <button class="btn" id="set-foo" phx-click={JS.push("psb-assign", value: %{label: "foo"})}>Set label to foo</button>
+      <button class="btn" id="set-bar" phx-click={JS.push("psb-assign", value: %{label: "bar"})}>Set label to bar</button>
+      <button class="btn" id="toggle-status" phx-click={JS.push("psb-toggle", value: %{attr: :status})}>Toggle status</button>
+      <button class="btn" id="set-status-true" phx-click={JS.push("psb-assign", value: %{status: true})}>Set status to true</button>
+      <button class="btn" id="set-status-false" phx-click={JS.push("psb-assign", value: %{status: false})}>Set status to false</button>
       <div class="mt-2">
         <.psb-variation/>
       </div>

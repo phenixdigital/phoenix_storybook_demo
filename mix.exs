@@ -45,7 +45,7 @@ defmodule PhoenixStorybookDemo.MixProject do
   defp deps(env) do
     [
       {:phoenix, "~> 1.7.0"},
-      {:phoenix_html, "~> 3.0"},
+      {:phoenix_html, "~> 4.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_live_view, "~> 0.20.0"},
       {:phoenix_view, "~> 2.0", override: true},
@@ -55,8 +55,8 @@ defmodule PhoenixStorybookDemo.MixProject do
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:phx_component_helpers, "~> 1.3"},
-      {:phoenix_storybook, "~> 0.5"}
+      {:phx_component_helpers, "~> 1.3.0"},
+      {:phoenix_storybook, "~> 0.6.0"}
       # {:phoenix_storybook, path: "../phoenix_storybook"}
     ]
   end
