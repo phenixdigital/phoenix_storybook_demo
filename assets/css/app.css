@@ -2,11 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Sevillana&display=swap");
+@layer base {
+  @font-face {
+    font-family: "Nerko One";
+    src: url("../fonts/NerkoOne-Regular.ttf");
+  }
+}
 
 @layer utilities {
   * {
-    font-family: "Sevillana", cursive;
+    @apply font-custom;
   }
 
   h1 {

@@ -20,6 +20,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        custom: ["Nerko One"],
+      },
       colors: {
         default: {
           DEFAULT: colors.gray[600],
