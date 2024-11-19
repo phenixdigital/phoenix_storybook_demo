@@ -9,10 +9,12 @@ module.exports = {
     "./js/**/*.js",
     "./css/**/*.css",
     "../lib/**/*.*ex",
+    "../storybook/**/*.exs",
     "../**/*.*exs",
     "../../../config/*.*exs",
   ],
   important: ".storybook-demo-sandbox",
+  darkMode: "selector",
   safelist: [
     {
       pattern: /bg-(blue|indigo|purple|pink)-.*/,

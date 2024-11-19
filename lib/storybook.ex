@@ -13,6 +13,7 @@ defmodule Storybook do
       body_class: "theme",
       assign: "theme"
     ],
+    color_mode: true,
     font_awesome_plan: :pro,
     font_awesome_kit_id: "7a72374eed",
     compilation_mode: :eager

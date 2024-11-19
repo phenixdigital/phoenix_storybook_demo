@@ -39,9 +39,9 @@ defmodule PhoenixStorybookDemo.Components.Live.LiveButton do
 
   defp random_color, do: Enum.random([:indigo, :yellow, :red, :purple, :emerald])
 
-  defp color_style(%{color: :indigo}), do: "bg-indigo-600 hover:bg-indigo-700"
-  defp color_style(%{color: :yellow}), do: "bg-yellow-400 hover:bg-yellow-500"
-  defp color_style(%{color: :red}), do: "bg-red-600 hover:bg-red-700"
-  defp color_style(%{color: :purple}), do: "bg-purple-600 hover:bg-purple-700"
-  defp color_style(%{color: :emerald}), do: "bg-emerald-600 hover:bg-emerald-700"
+  defp color_style(%{color: :indigo}), do: "bg-indigo-600 dark:bg-indigo-800 hover:bg-indigo-700"
+  defp color_style(%{color: :yellow}), do: "bg-yellow-400 dark:bg-yellow-600 hover:bg-yellow-500"
+  defp color_style(%{color: :red}), do: "bg-red-600 dark:bg-red-800 hover:bg-red-700"
+  defp color_style(%{color: :purple}), do: "bg-purple-600 dark:pg-purple-800 hover:bg-purple-700"
+  defp color_style(%{color: :emerald}), do: "bg-emerald-600 dark:bg-emerald-800 hover:bg-emerald-700"
 end

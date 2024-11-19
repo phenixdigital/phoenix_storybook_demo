@@ -46,14 +46,17 @@ config :phoenix_storybook_demo, PhoenixStorybookDemo.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
+
+config :phoenix_live_reload, :dirs, ["../../priv/phoenix_storybook", "./"]
+
 config :phoenix_storybook_demo, PhoenixStorybookDemo.Endpoint,
-  backend: :fs_poll,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
       ~r"lib/phoenix_storybook/(live|views|components)/.*(ex)$",
-      ~r"storybook/.*(exs)$"
+      ~r"storybook/.*(exs)$",
+      ~r"../../priv/phoenix_storybook.*"
     ]
   ]
 

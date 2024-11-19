@@ -56,7 +56,7 @@ defmodule PhoenixStorybookDemo.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:phx_component_helpers, "~> 1.4.0"},
-      {:phoenix_storybook, "~> 0.6.0"}
+      {:phoenix_storybook, "~> 0.7.0"}
       # {:phoenix_storybook, path: "../phoenix_storybook"}
     ]
   end

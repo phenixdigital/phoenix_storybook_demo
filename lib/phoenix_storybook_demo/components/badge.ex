@@ -67,7 +67,7 @@ defmodule PhoenixStorybookDemo.Components.Badge do
           class <> " bg-cyan-500 hover:bg-cyan-700 text-white"
 
         {:info, _} ->
-          class <> " bg-blue-500 hover:bg-blue-700 text-white"
+          class <> " bg-blue-500 hover:bg-blue-700 dark:bg-fuchsia-900 text-white"
 
         {:primary, :colorful} ->
           class <> " bg-fuchsia-500 hover:bg-fuchsia-700 text-white"
@@ -96,7 +96,7 @@ defmodule PhoenixStorybookDemo.Components.Badge do
 
         _ ->
           class <>
-            " border border-gray-200 bg-gray-300 text-gray-700 hover:bg-gray-500 hover:text-white"
+            " border border-gray-200 dark:bg-pink-300 bg-gray-300 text-gray-700 hover:bg-gray-500 hover:text-white"
       end
 
     if small? do
