@@ -1,6 +1,7 @@
 defmodule Storybook do
   use PhoenixStorybook,
     otp_app: :phoenix_storybook_demo,
+    title: "Phoenix Storybook",
     content_path: Path.expand("../storybook/", __DIR__),
     css_path: "/assets/app.css",
     js_path: "/assets/components.js",
