@@ -2,6 +2,7 @@ defmodule Storybook.CoreComponents.Icon do
   use PhoenixStorybook.Story, :component
 
   def function, do: &PhoenixStorybookDemo.CoreComponents.icon/1
+  def render_only_function_source, do: true
 
   def variations do
     [
