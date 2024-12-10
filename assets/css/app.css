@@ -4,7 +4,11 @@
 
 @layer utilities {
   * {
-    font-family: "Helvetica Neue";
+    font-family: system-ui;
+  }
+
+  i.fa {
+    font-family: "Font Awesome 6 Pro";
   }
 
   h1 {
