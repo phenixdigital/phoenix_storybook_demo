@@ -9,12 +9,10 @@ defmodule PhoenixStorybookDemo.Components.Table do
 
     Multiline __comment__
     """ do
-    attr :first_name, :string, doc: "First name", required: true
-    attr :last_name, :string, doc: "Last name", required: true
-
-    attr :city, :string,
+    attr :label, :string,
+      required: true,
       doc: """
-      City
+      Label
 
       Multiline __comment__
       """
@@ -57,7 +55,7 @@ defmodule PhoenixStorybookDemo.Components.Table do
                 <tr>
                   <%= for col <- @col do %>
                     <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                      <%= col.label %>
+                      {col.label}
                     </th>
                   <% end %>
                 </tr>
@@ -67,7 +65,7 @@ defmodule PhoenixStorybookDemo.Components.Table do
                   <tr>
                     <%= for col <- @col do %>
                       <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        <%= render_slot(col, row) %>
+                        {render_slot(col, row)}
                       </td>
                     <% end %>
                   </tr>

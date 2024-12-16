@@ -17,7 +17,7 @@ defmodule PhoenixStorybookDemo.Components.Form.Label do
   defp render(assigns) do
     ~H"""
     <label {@heex_for} {@heex_class}>
-      <%= @label %>
+      {@label}
     </label>
     """
   end

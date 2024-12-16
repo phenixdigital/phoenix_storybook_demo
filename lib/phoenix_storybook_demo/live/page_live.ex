@@ -30,14 +30,20 @@ defmodule PhoenixStorybookDemo.PageLive do
         </.dropdown>
         <.live_component module={LiveButton} label="I have state" id="live-button" />
         <.list :let={entry} entries={~w(apple banana cherry)}>
-          I like <%= entry %>
+          I like {entry}
         </.list>
-        <.table rows={[%{name: "Jean", city: "Paris"}, %{name: "Bob", city: "NY"}]}>
-          <:col :let={row} label="Name">
-            <%= row.name %>
+        <.table rows={[
+          %{first_name: "Jean", last_name: "Dupont", city: "Paris"},
+          %{first_name: "Bob", last_name: "Joe", city: "NY"}
+        ]}>
+          <:col :let={row} label="First Name">
+            {row.first_name}
+          </:col>
+          <:col :let={row} label="Last Name">
+            {row.last_name}
           </:col>
           <:col :let={row} label="City">
-            <%= row.city %>
+            {row.city}
           </:col>
         </.table>
       </section>

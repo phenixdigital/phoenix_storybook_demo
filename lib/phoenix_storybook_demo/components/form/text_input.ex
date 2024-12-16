@@ -39,16 +39,16 @@ defmodule PhoenixStorybookDemo.Components.Form.TextInput do
     <%= cond do %>
       <% assigns[:addon] -> %>
         <.input_addon {forward_assigns(assigns, prefix: :addon, take: [:theme, :form, :field])}>
-          <%= render_input(assigns) %>
+          {render_input(assigns)}
         </.input_addon>
       <% assigns[:icon] -> %>
         <.input_icon {forward_assigns(assigns, prefix: :icon, take: [:theme])}>
-          <%= render_input(assigns) %>
+          {render_input(assigns)}
         </.input_icon>
       <% assigns[:textarea] -> %>
-        <%= render_text_area_input(assigns) %>
+        {render_text_area_input(assigns)}
       <% true -> %>
-        <%= render_input(assigns) %>
+        {render_input(assigns)}
     <% end %>
     """
   end

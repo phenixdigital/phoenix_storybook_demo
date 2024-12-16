@@ -26,20 +26,20 @@ defmodule Storybook.Colors do
         <div class={
           "p-2 text-white flex flex-col space-y-1 justify-center items-center rounded-md #{@color.info.name}"
         }>
-          <code class="text-xl"><%= @color.info.main_color_hex %></code>
-          <code class="text-base opacity-75"><%= @color.info.main_color %></code>
+          <code class="text-xl">{@color.info.main_color_hex}</code>
+          <code class="text-base opacity-75">{@color.info.main_color}</code>
         </div>
       </div>
 
       <div class="col-span-6 md:col-span-4 text-lg flex flex-col justify-center">
-        <%= @color.info.description %>
+        {@color.info.description}
       </div>
 
       <div class="col-span-6 grid grid-cols-6 gap-x-6 gap-y-5">
         <%= for txt_style <- [:text, :text_secondary, :text_informative, :text_hover], txt_class = Map.get(@color.styles, txt_style) do %>
           <%= if txt_class do %>
             <div class="col-span-3">
-              <div class="mb-3 font-medium"><%= txt_class %></div>
+              <div class="mb-3 font-medium">{txt_class}</div>
               <div class={txt_class}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
               </div>
@@ -50,7 +50,7 @@ defmodule Storybook.Colors do
 
       <%= if border_class = Map.get(@color.styles, :border) do %>
         <div class="col-span-6">
-          <div class="font-medium"><%= border_class %></div>
+          <div class="font-medium">{border_class}</div>
           <div class={"border-b-2 h-8 #{border_class}"}></div>
           <div class={"border-b-2 h-8 border-dashed #{border_class}"}></div>
         </div>
@@ -60,7 +60,7 @@ defmodule Storybook.Colors do
         <%= for bg_style <- [:bg, :bg_hover, :bg_disabled], bg_class = Map.get(@color.styles, bg_style) do %>
           <%= if bg_class do %>
             <div class="col-span-6 md:col-span-3">
-              <div class="mb-3 font-medium"><%= bg_class %></div>
+              <div class="mb-3 font-medium">{bg_class}</div>
               <div class={
                 "p-4 text-white flex flex-col space-y-2 justify-center rounded-md #{bg_class}"
               }>
@@ -84,11 +84,11 @@ defmodule Storybook.Colors do
             btn_class = Map.get(@color.styles, btn_style) do %>
         <%= if btn_class do %>
           <div class="col-span-6 md:col-span-2">
-            <div class="mb-3 font-medium"><%= String.split(btn_class, " ") |> hd() %></div>
+            <div class="mb-3 font-medium">{String.split(btn_class, " ") |> hd()}</div>
             <div class={
               "py-2 px-4 border text-sm font-medium rounded-md text-center outline-none ring-2 ring-offset-2 #{btn_class}"
             }>
-              <%= btn_name %>
+              {btn_name}
             </div>
           </div>
         <% end %>

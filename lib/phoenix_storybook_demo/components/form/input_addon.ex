@@ -17,9 +17,9 @@ defmodule PhoenixStorybookDemo.Components.Form.InputAddon do
     ~H"""
     <div {@heex_wrapper_class}>
       <span {@heex_class}>
-        <%= @addon %>
+        {@addon}
       </span>
-      <%= render_slot(@inner_block) %>
+      {render_slot(@inner_block)}
     </div>
     """
   end

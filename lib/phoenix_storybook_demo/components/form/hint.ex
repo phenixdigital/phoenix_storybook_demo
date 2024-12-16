@@ -14,7 +14,7 @@ defmodule PhoenixStorybookDemo.Components.Form.Hint do
   defp render(assigns) do
     ~H"""
     <p {@heex_class}>
-      <%= @hint %>
+      {@hint}
     </p>
     """
   end

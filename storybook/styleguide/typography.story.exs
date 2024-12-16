@@ -34,7 +34,7 @@ defmodule Storybook.Typography do
       <div class="ml-4 pb-4">
         <%= for {weight_class, weight} <- font_weights() do %>
           <p class={"#{weight_class} my-2"}>
-            <%= "#{weight_class} - font weight: #{weight}" %>
+            {"#{weight_class} - font weight: #{weight}"}
           </p>
         <% end %>
       </div>

@@ -37,7 +37,7 @@ defmodule PhoenixStorybookDemo.Components.Dropdown do
         type="button"
         class={"#{@color_class} toggle-button inline-flex justify-center w-full rounded-md border shadow-sm px-4 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"}
       >
-        <%= @text %>
+        {@text}
         <!-- Heroicon name: solid/chevron-down -->
         <svg
           class="-mr-1 ml-2 h-5 w-5"
@@ -57,7 +57,7 @@ defmodule PhoenixStorybookDemo.Components.Dropdown do
       <div class="dropdown-content hidden">
         <%= for %{path: path, text: text} <- @entry do %>
           <a href={path} class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1">
-            <%= text %>
+            {text}
           </a>
         <% end %>
       </div>

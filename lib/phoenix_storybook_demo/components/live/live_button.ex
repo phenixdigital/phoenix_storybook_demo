@@ -15,7 +15,7 @@ defmodule PhoenixStorybookDemo.Components.Live.LiveButton do
       phx-click="change_color"
       phx-target={@myself}
     >
-      <%= @label %>
+      {@label}
     </button>
     """
   end

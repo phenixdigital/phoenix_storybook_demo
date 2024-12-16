@@ -9,7 +9,7 @@ defmodule PhoenixStorybookDemo.Components.TemplateComponent do
   """
   def template_component(assigns) do
     ~H"""
-    <span>label: <%= @label %> / status: <%= @status %></span>
+    <span>label: {@label} / status: {@status}</span>
     """
   end
 end

@@ -43,7 +43,7 @@ defmodule PhoenixStorybookDemo.Components.Badge do
       <%= if @icon do %>
         <i {@heex_icon_class}></i>
       <% end %>
-      <%= if assigns[:inner_block], do: render_slot(@inner_block), else: @text %>
+      {if assigns[:inner_block], do: render_slot(@inner_block), else: @text}
     </span>
     """
   end

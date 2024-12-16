@@ -14,7 +14,7 @@ defmodule PhoenixStorybookDemo.Components.Form.InputGroup do
   defp render(assigns) do
     ~H"""
     <div {@heex_class} {@heex_phx_attributes}>
-      <%= render_slot(@inner_block) %>
+      {render_slot(@inner_block)}
     </div>
     """
   end

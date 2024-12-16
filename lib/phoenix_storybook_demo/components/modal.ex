@@ -27,11 +27,11 @@ defmodule PhoenixStorybookDemo.Components.Modal do
             <% end %>
             <div class="mt-3 text-center sm:mt-5">
               <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
-                <%= @title %>
+                {@title}
               </h3>
               <div class="mt-2">
                 <p class="text-sm text-gray-500">
-                  <%= render_slot(@body) %>
+                  {render_slot(@body)}
                 </p>
               </div>
             </div>
@@ -39,7 +39,7 @@ defmodule PhoenixStorybookDemo.Components.Modal do
           <%= if assigns[:button] do %>
             <div class="mt-5 sm:mt-6 flex justify-end space-x-2">
               <%= for button <- @button do %>
-                <%= render_slot(button) %>
+                {render_slot(button)}
               <% end %>
             </div>
           <% end %>

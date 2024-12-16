@@ -12,7 +12,7 @@ defmodule PhoenixStorybookDemo.Components.List do
     <ul role="list" class="divide-y divide-gray-200">
       <%= for entry <- @entries do %>
         <li class="flex py-4">
-          <%= render_slot(@inner_block, entry) %>
+          {render_slot(@inner_block, entry)}
         </li>
       <% end %>
     </ul>

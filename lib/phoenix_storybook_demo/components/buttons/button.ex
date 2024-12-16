@@ -21,7 +21,7 @@ defmodule PhoenixStorybookDemo.Components.Button do
         @class
       ]}
     >
-      <%= @label %>
+      {@label}
     </button>
     """
   end

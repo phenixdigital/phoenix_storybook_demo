@@ -18,7 +18,7 @@ defmodule PhoenixStorybookDemo.Components.Form.Error do
       <div>
         <%= for error <- @errors do %>
           <p {@heex_class}>
-            <%= print_error(error) %>
+            {print_error(error)}
           </p>
         <% end %>
       </div>
