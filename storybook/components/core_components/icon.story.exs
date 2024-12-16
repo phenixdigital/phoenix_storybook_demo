@@ -1,4 +1,4 @@
-defmodule Storybook.CoreComponents.Icon do
+defmodule Storybook.Components.CoreComponents.Icon do
   use PhoenixStorybook.Story, :component
 
   def function, do: &PhoenixStorybookDemo.CoreComponents.icon/1
@@ -9,10 +9,9 @@ defmodule Storybook.CoreComponents.Icon do
       %Variation{
         id: :default_icon,
         attributes: %{
-          name: "hero-x-mark-solid",
-          class: "text-white"
+          name: "hero-x-mark-solid"
         }
-      }]
-    end
-
+      }
+    ]
+  end
 end

@@ -63,8 +63,8 @@ defmodule PhoenixStorybookDemo.MixProject do
        app: false,
        compile: false,
        depth: 1},
-      {:phoenix_storybook, "~> 0.7.2"}
-      # {:phoenix_storybook, path: "../phoenix_storybook"}
+      # {:phoenix_storybook, "~> 0.7.2"}
+      {:phoenix_storybook, path: "../phoenix_storybook"}
     ]
   end
 

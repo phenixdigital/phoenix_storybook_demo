@@ -17,7 +17,7 @@ config :phoenix_storybook_demo, PhoenixStorybookDemo.Endpoint,
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]},
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
   ],
   reloadable_apps: [:phoenix_storybook_demo, :phoenix_storybook]
 

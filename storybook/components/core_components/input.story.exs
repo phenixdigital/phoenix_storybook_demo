@@ -1,4 +1,4 @@
-defmodule Storybook.CoreComponents.Input do
+defmodule Storybook.Components.CoreComponents.Input do
   use PhoenixStorybook.Story, :component
 
   def function, do: &PhoenixStorybookDemo.CoreComponents.input/1
@@ -13,7 +13,7 @@ defmodule Storybook.CoreComponents.Input do
           name: "label",
           value: "foo"
         }
-      }]
-    end
-
+      }
+    ]
+  end
 end

@@ -43,5 +43,7 @@ defmodule PhoenixStorybookDemo.Components.Live.LiveButton do
   defp color_style(%{color: :yellow}), do: "bg-yellow-400 dark:bg-yellow-600 hover:bg-yellow-500"
   defp color_style(%{color: :red}), do: "bg-red-600 dark:bg-red-800 hover:bg-red-700"
   defp color_style(%{color: :purple}), do: "bg-purple-600 dark:pg-purple-800 hover:bg-purple-700"
-  defp color_style(%{color: :emerald}), do: "bg-emerald-600 dark:bg-emerald-800 hover:bg-emerald-700"
+
+  defp color_style(%{color: :emerald}),
+    do: "bg-emerald-600 dark:bg-emerald-800 hover:bg-emerald-700"
 end

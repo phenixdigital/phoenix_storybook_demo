@@ -3,7 +3,13 @@ defmodule Storybook.Examples.Forms do
 
   alias Storybook.Examples.FormHTML
 
-  def doc, do: "This is a basic form example."
+  def doc,
+    do: """
+    This is a basic form example.
+
+    ## Hello
+    * `world`
+    """
 
   def extra_sources do
     [

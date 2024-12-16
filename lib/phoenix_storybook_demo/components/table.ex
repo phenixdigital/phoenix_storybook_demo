@@ -3,8 +3,21 @@ defmodule PhoenixStorybookDemo.Components.Table do
 
   attr :rows, :list, doc: "Data you want to list", required: true
 
-  slot :col, doc: "Describe one of your table columns" do
-    attr :label, :string, doc: "Column label", required: true
+  slot :col,
+    doc: """
+    Describe one of your table columns.
+
+    Multiline __comment__
+    """ do
+    attr :first_name, :string, doc: "First name", required: true
+    attr :last_name, :string, doc: "Last name", required: true
+
+    attr :city, :string,
+      doc: """
+      City
+
+      Multiline __comment__
+      """
   end
 
   @doc """
@@ -12,7 +25,26 @@ defmodule PhoenixStorybookDemo.Components.Table do
 
   Illustration of how you can use slots with let.
 
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+  This component is also a demo for component doc rendering in the storybook.
+
+  Markdown features:
+  - text with __bold__
+  - text with _italic_
+  - inline `code`
+
+  ## Example
+
+      <.table rows={[%{city: "Paris", first_name: "Jean", last_name: "Dupont"}]}>
+        <:col :let={user} label="First name">
+          <%= user.first_name %>
+        </:col>
+        <:col :let={user} label="Last name">
+          <%= user.last_name %>
+        </:col>
+        <:col :let={user} label="City">
+          <%= user.city %>
+        </:col>
+      </.table>
   """
   def table(assigns) do
     ~H"""
