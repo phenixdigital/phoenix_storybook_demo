@@ -153,7 +153,8 @@ defmodule PhoenixStorybookDemo.CoreComponents do
   """
   attr :type, :string, default: nil
   attr :class, :string, default: nil
-  attr :rest, :global, include: ~w(disabled form name value)
+  attr :disabled, :boolean, default: false
+  attr :rest, :global, include: ~w(form name value)
 
   slot :inner_block, required: true
 
@@ -161,9 +162,11 @@ defmodule PhoenixStorybookDemo.CoreComponents do
     ~H"""
     <button
       type={@type}
+      disabled={@disabled}
       class={[
         "phx-submit-loading:opacity-75 rounded-lg bg-zinc-900 hover:bg-zinc-700 py-2 px-3",
         "text-sm font-semibold leading-6 text-white active:text-white/80",
+        @disabled && "cursor-not-allowed",
         @class
       ]}
       {@rest}
@@ -210,17 +213,7 @@ defmodule PhoenixStorybookDemo.CoreComponents do
                range search select tel text textarea time url week)
 
   attr :field, Phoenix.HTML.FormField,
-    doc: """
-    a form field struct retrieved from the __form__.
-
-    For example:
-
-    @form[:email]
-
-    Lorem ipsum dolor sit amet, consectetur _adipiscing_ elit.
-    Sed do eiusmod tempor incididunt ut `labore et dolore` magna aliqua.
-    Ut enim ad __minim veniam__, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-    """
+    doc: "a form field struct retrieved from the form, for example: @form[:email]"
 
   attr :errors, :list, default: []
   attr :checked, :boolean, doc: "the checked flag for checkbox inputs"
@@ -233,8 +226,7 @@ defmodule PhoenixStorybookDemo.CoreComponents do
                 multiple pattern placeholder readonly required rows size step)
 
   def input(%{field: %Phoenix.HTML.FormField{} = field} = assigns) do
-    errors = []
-    # errors = if Phoenix.Component.used_input?(field), do: field.errors, else: []
+    errors = if Phoenix.Component.used_input?(field), do: field.errors, else: []
 
     assigns
     |> assign(field: nil, id: assigns.id || field.id)
@@ -302,7 +294,7 @@ defmodule PhoenixStorybookDemo.CoreComponents do
           @errors != [] && "border-rose-400 focus:border-rose-400"
         ]}
         {@rest}
-      ><%= Phoenix.HTML.Form.normalize_value("textarea", @value) %></textarea>
+      >{Phoenix.HTML.Form.normalize_value("textarea", @value)}</textarea>
       <.error :for={msg <- @errors}>{msg}</.error>
     </div>
     """
@@ -389,8 +381,8 @@ defmodule PhoenixStorybookDemo.CoreComponents do
   ## Examples
 
       <.table id="users" rows={@users}>
-        <:col :let={user} label="id"><%= user.id %></:col>
-        <:col :let={user} label="username"><%= user.username %></:col>
+        <:col :let={user} label="id">{user.id}</:col>
+        <:col :let={user} label="username">{user.username}</:col>
       </.table>
   """
   attr :id, :string, required: true
@@ -403,7 +395,7 @@ defmodule PhoenixStorybookDemo.CoreComponents do
     doc: "the function for mapping each row before calling the :col and :action slots"
 
   slot :col, required: true do
-    attr :label, :string
+    attr :label, :string, doc: "the column header label"
   end
 
   slot :action, doc: "the slot for showing user actions in the last table column"
@@ -467,8 +459,8 @@ defmodule PhoenixStorybookDemo.CoreComponents do
   ## Examples
 
       <.list>
-        <:item title="Title"><%= @post.title %></:item>
-        <:item title="Views"><%= @post.views %></:item>
+        <:item title="Title">{@post.title}</:item>
+        <:item title="Views">{@post.views}</:item>
       </.list>
   """
   slot :item, required: true do
@@ -528,7 +520,6 @@ defmodule PhoenixStorybookDemo.CoreComponents do
   ## Examples
 
       <.icon name="hero-x-mark-solid" />
-
       <.icon name="hero-arrow-path" class="ml-1 w-3 h-3 motion-safe:animate-spin" />
   """
   attr :name, :string, required: true
@@ -564,6 +555,15 @@ defmodule PhoenixStorybookDemo.CoreComponents do
   end
 
   def translate_error({msg, opts}) do
+    # You can make use of gettext to translate error messages by
+    # uncommenting and adjusting the following code:
+
+    # if count = opts[:count] do
+    #   Gettext.dngettext(PhoenixStorybookDemo.Gettext, "errors", msg, msg, count, opts)
+    # else
+    #   Gettext.dgettext(PhoenixStorybookDemo.Gettext, "errors", msg, opts)
+    # end
+
     Enum.reduce(opts, msg, fn {key, value}, acc ->
       String.replace(acc, "%{#{key}}", fn _ -> to_string(value) end)
     end)
