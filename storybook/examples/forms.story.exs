@@ -6,9 +6,6 @@ defmodule Storybook.Examples.Forms do
   def doc,
     do: """
     This is a basic form example.
-
-    ## Hello
-    * `world`
     """
 
   def extra_sources do
@@ -19,8 +16,8 @@ defmodule Storybook.Examples.Forms do
   end
 
   @impl true
-  def mount(_params, session, socket) do
-    {:ok, assign(socket, value: 1, theme: session["theme"])}
+  def mount(_params, _session, socket) do
+    {:ok, assign(socket, value: 1, form: to_form(%{}))}
   end
 
   @impl true
@@ -29,7 +26,7 @@ defmodule Storybook.Examples.Forms do
   end
 
   @impl true
-  def handle_event("click", _, socket) do
-    {:noreply, update(socket, :value, &(&1 + 1))}
+  def handle_event("inc", _, socket = %{assigns: %{value: v}}) do
+    {:noreply, assign(socket, value: v + 1)}
   end
 end

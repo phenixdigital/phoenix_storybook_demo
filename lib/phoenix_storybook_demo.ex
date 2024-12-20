@@ -110,8 +110,7 @@ defmodule PhoenixStorybookDemo do
       import PhoenixStorybookDemo.Components.Badge
       import PhoenixStorybookDemo.Components.Button
       import PhoenixStorybookDemo.Components.Dropdown
-      import PhoenixStorybookDemo.Components.List
-      import PhoenixStorybookDemo.Components.Table
+      import PhoenixStorybookDemo.CoreComponents, only: [list: 1, table: 1]
     end
   end
 

@@ -11,11 +11,9 @@ defmodule Storybook do
       colorful: [name: "Colorful", dropdown_class: "psb-text-pink-600"]
     ],
     themes_strategies: [
-      body_class: "theme",
-      assign: "theme"
+      body_class: "theme"
     ],
     color_mode: true,
     font_awesome_plan: :pro,
-    font_awesome_kit_id: "7a72374eed",
-    compilation_mode: :eager
+    font_awesome_kit_id: "7a72374eed"
 end

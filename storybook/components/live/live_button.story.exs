@@ -10,7 +10,7 @@ defmodule Storybook.Components.Live.LiveButton do
       %Variation{
         id: :default,
         attributes: %{
-          label: "Click me"
+          label: "A button"
         }
       },
       %Variation{

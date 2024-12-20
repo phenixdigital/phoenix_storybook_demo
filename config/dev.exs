@@ -69,3 +69,9 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
+
+# config :phoenix_storybook, enabled: false
+
+config :phoenix_storybook_demo, Storybook,
+  compilation_mode: :lazy,
+  compilation_debug: true

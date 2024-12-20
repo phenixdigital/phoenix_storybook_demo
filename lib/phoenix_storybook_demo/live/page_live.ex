@@ -20,7 +20,7 @@ defmodule PhoenixStorybookDemo.PageLive do
       <h2 class="text-xl border-b border-gray-200 pt-10 pb-2 text-slate-700">
         These are application components rendered by the application itself.
       </h2>
-      <section class="row space-y-4">
+      <section class="row space-y-8">
         <.badge text="I'm a badge" color={:primary} />
         <.button label="I'm a button" />
         <.dropdown text="I'm a dropdown" id="dropdown">
@@ -29,13 +29,22 @@ defmodule PhoenixStorybookDemo.PageLive do
           <:entry path="#" text="License" />
         </.dropdown>
         <.live_component module={LiveButton} label="I have state" id="live-button" />
-        <.list :let={entry} entries={~w(apple banana cherry)}>
-          I like {entry}
+        <.list>
+          <:item title="Apples">two</:item>
+          <:item title="Bananas">five</:item>
+          <:item title="Carrots">a lot</:item>
+          <:item title="Potatoes">even more</:item>
         </.list>
-        <.table rows={[
-          %{first_name: "Jean", last_name: "Dupont", city: "Paris"},
-          %{first_name: "Bob", last_name: "Joe", city: "NY"}
-        ]}>
+        <.table
+          id="my-table"
+          rows={[
+            %{id: 1, first_name: "Jean", last_name: "Dupont", city: "Paris"},
+            %{id: 2, first_name: "Bob", last_name: "Joe", city: "NY"}
+          ]}
+        >
+          <:col :let={row} label="ID">
+            {row.id}
+          </:col>
           <:col :let={row} label="First Name">
             {row.first_name}
           </:col>
