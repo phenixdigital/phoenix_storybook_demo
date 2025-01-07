@@ -39,9 +39,7 @@ defmodule PhoenixStorybookDemo.Components.Badge do
   defp render(assigns) do
     ~H"""
     <span style={@inline_style} {@heex_class} theme={@theme} {@rest}>
-      <%= if @icon do %>
-        <i {@heex_icon_class}></i>
-      <% end %>
+      <i :if={@icon} {@heex_icon_class}></i>
       {if assigns[:inner_block], do: render_slot(@inner_block), else: @text}
     </span>
     """

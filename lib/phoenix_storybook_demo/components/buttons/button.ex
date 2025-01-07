@@ -6,7 +6,7 @@ defmodule PhoenixStorybookDemo.Components.Button do
   attr :theme, :atom, default: :not_set
 
   @doc """
-  A simple button. When clicked, triggers a `boom` event.
+  A simple button.
   """
   def button(assigns) do
     ~H"""
