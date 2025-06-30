@@ -15,6 +15,14 @@ defmodule PhoenixStorybookDemo.Components.Badge do
 
   @doc """
   Just a badge component, with colors.
+
+  Here's some example CSS:
+
+  ```css
+  .component {
+    color: pink;
+  }
+  ```
   """
   def badge(assigns) do
     assigns

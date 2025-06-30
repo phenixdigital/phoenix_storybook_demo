@@ -3,7 +3,7 @@ defmodule Storybook do
     otp_app: :phoenix_storybook_demo,
     title: "Phoenix Storybook",
     content_path: Path.expand("../storybook/", __DIR__),
-    css_path: "/assets/app.css",
+    css_path: "/assets/demo.css",
     js_path: "/assets/components.js",
     sandbox_class: "storybook-demo-sandbox",
     themes: [

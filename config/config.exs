@@ -21,12 +21,11 @@ config :esbuild,
   ]
 
 config :tailwind,
-  version: "3.4.13",
+  version: "4.1.11",
   default: [
     args: ~w(
-      --config=tailwind.config.js
-      --input=css/app.css
-      --output=../priv/static/assets/app.css
+      --input=css/demo.css
+      --output=../priv/static/assets/demo.css
     ),
     cd: Path.expand("../assets", __DIR__)
   ]

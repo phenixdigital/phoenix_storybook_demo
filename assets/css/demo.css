@@ -1,0 +1,121 @@
+@import "tailwindcss";
+@plugin "../js/tailwind_heroicons.js";
+@plugin "@tailwindcss/forms";
+
+@source "../../lib/**/*.{ex,heex}";
+@source "../js/**/*.js";
+@source "../../storybook/**/*.exs";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Default Colors */
+  --color-default: var(--color-gray-600);
+  --color-default-txt: var(--color-gray-600);
+  --color-default-txt-secondary: var(--color-gray-500);
+  --color-default-txt-informative: var(--color-gray-400);
+  --color-default-txt-hover: var(--color-indigo-600);
+  --color-default-border: var(--color-gray-200);
+  --color-default-bg: var(--color-gray-50);
+  --color-default-bg-disabled: var(--color-gray-100);
+  --color-default-bg-hover: var(--color-gray-100);
+  --color-default-btn: var(--color-gray-200);
+  --color-default-btn-hover: var(--color-gray-50);
+  --color-default-btn-focus: var(--color-gray-400);
+  --color-default-btn-disabled: var(--color-gray-100);
+
+  /* Primary Colors */
+  --color-primary: var(--color-indigo-600);
+  --color-primary-txt: var(--color-indigo-600);
+  --color-primary-txt-secondary: var(--color-indigo-600);
+  --color-primary-bg: var(--color-indigo-50);
+  --color-primary-bg-hover: var(--color-indigo-100);
+  --color-primary-btn: var(--color-indigo-200);
+  --color-primary-btn-hover: var(--color-indigo-50);
+  --color-primary-btn-focus: var(--color-indigo-400);
+  --color-primary-btn-disabled: var(--color-indigo-100);
+
+  /* Success Colors */
+  --color-success: var(--color-emerald-500);
+  --color-success-txt: var(--color-emerald-500);
+  --color-success-txt-secondary: var(--color-emerald-400);
+  --color-success-bg: var(--color-emerald-50);
+  --color-success-bg-hover: var(--color-emerald-100);
+  --color-success-btn: var(--color-emerald-500);
+  --color-success-btn-hover: var(--color-emerald-600);
+  --color-success-btn-focus: var(--color-emerald-500);
+  --color-success-btn-disabled: var(--color-emerald-300);
+
+  /* Info Colors */
+  --color-info: var(--color-blue-500);
+  --color-info-txt: var(--color-blue-500);
+  --color-info-txt-secondary: var(--color-blue-400);
+  --color-info-bg: var(--color-blue-50);
+  --color-info-bg-hover: var(--color-blue-100);
+  --color-info-btn: var(--color-blue-500);
+  --color-info-btn-hover: var(--color-blue-600);
+  --color-info-btn-focus: var(--color-blue-500);
+  --color-info-btn-disabled: var(--color-blue-300);
+
+  /* Warning Colors */
+  --color-warning: var(--color-amber-500);
+  --color-warning-txt: var(--color-amber-600);
+  --color-warning-txt-secondary: var(--color-amber-500);
+  --color-warning-bg: var(--color-amber-50);
+  --color-warning-bg-hover: var(--color-amber-100);
+  --color-warning-btn: var(--color-amber-500);
+  --color-warning-btn-hover: var(--color-amber-600);
+  --color-warning-btn-focus: var(--color-amber-500);
+  --color-warning-btn-disabled: var(--color-amber-300);
+
+  /* Danger Colors */
+  --color-danger: var(--color-red-500);
+  --color-danger-txt: var(--color-red-500);
+  --color-danger-txt-secondary: var(--color-red-300);
+  --color-danger-border: var(--color-red-400);
+  --color-danger-bg: var(--color-red-50);
+  --color-danger-bg-hover: var(--color-red-100);
+  --color-danger-btn: var(--color-red-500);
+  --color-danger-btn-hover: var(--color-red-600);
+  --color-danger-btn-focus: var(--color-red-500);
+  --color-danger-btn-disabled: var(--color-red-300);
+}
+
+.storybook-demo-sandbox {
+   * {
+    font-family: system-ui;
+  }
+  
+  i.fa {
+    font-family: "Font Awesome 6 Pro";
+  }
+
+  h1 {
+    @apply text-2xl font-bold text-slate-700 mt-2 mb-6;
+  }
+  h2 {
+    @apply text-xl font-bold text-slate-500 mt-2 mb-4;
+  }
+  h3 {
+    @apply text-lg font-bold text-slate-500 my-2;
+  }
+  h4 {
+    @apply text-base font-bold text-slate-500 my-2;
+  }
+  h5 {
+    @apply text-base font-medium text-slate-500 my-2;
+  }
+  .btn {
+    @apply inline-flex items-center rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
+  }
+
+  .form-input-error {
+    @apply border-danger-border focus:border-danger-border focus-within:border-danger-border text-danger-txt placeholder-danger-txt-secondary focus:outline-none focus:ring-danger-btn-focus focus-within:ring-danger-btn-focus;
+  }
+
+  .form-input,
+  .phx-no-feedback.form-input-error,
+  .phx-no-feedback .form-input-error {
+    @apply border-default-border focus:border-default-border focus-within:border-default-border text-default-txt placeholder-default-txt-informative focus:ring-primary-btn-focus focus-within:ring-primary-btn-focus;
+  }
+}

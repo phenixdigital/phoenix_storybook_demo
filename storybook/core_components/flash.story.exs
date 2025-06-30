@@ -23,7 +23,7 @@ defmodule Storybook.Components.CoreComponents.Flash do
         description: "Info message",
         attributes: %{
           kind: :info,
-          hidden: true,
+          mount_hidden: true,
           title: "Did you know?"
         },
         slots: ["Flash message"]
@@ -33,7 +33,7 @@ defmodule Storybook.Components.CoreComponents.Flash do
         description: "Error message",
         attributes: %{
           kind: :error,
-          hidden: true,
+          mount_hidden: true,
           title: "Oops!"
         },
         slots: ["Sorry, it just crashed"]

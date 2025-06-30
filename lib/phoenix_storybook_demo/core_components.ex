@@ -28,6 +28,7 @@ defmodule PhoenixStorybookDemo.CoreComponents do
   """
   attr :id, :string, doc: "the optional id of flash container"
   attr :flash, :map, default: %{}, doc: "the map of flash messages to display"
+  attr :mount_hidden, :boolean, default: false
   attr :title, :string, default: nil
   attr :kind, :atom, values: [:info, :error], doc: "used for styling and flash lookup"
   attr :rest, :global, doc: "the arbitrary HTML attributes to add to the flash container"
@@ -44,9 +45,10 @@ defmodule PhoenixStorybookDemo.CoreComponents do
       phx-click={JS.push("lv:clear-flash", value: %{key: @kind}) |> hide("##{@id}")}
       role="alert"
       class={[
-        "fixed top-2 right-2 mr-2 w-80 sm:w-96 z-50 rounded-lg p-3 ring-1",
-        @kind == :info && "bg-emerald-50 text-emerald-800 ring-emerald-500 fill-cyan-900",
-        @kind == :error && "bg-rose-50 text-rose-900 shadow-md ring-rose-500 fill-rose-900"
+        assigns[:mount_hidden] && "hidden",
+        "fixed top-2 right-2 mr-2 w-80 sm:w-96 z-50 rounded-lg p-3 ring-1 border",
+        @kind == :info && "bg-emerald-50 text-emerald-800 border-emerald-500 fill-cyan-900",
+        @kind == :error && "bg-rose-50 text-rose-900 shadow-md border-rose-500 fill-rose-900"
       ]}
       {@rest}
     >
@@ -525,7 +527,7 @@ defmodule PhoenixStorybookDemo.CoreComponents do
   width, height, and background color classes.
 
   Icons are extracted from the `deps/heroicons` directory and bundled within
-  your compiled app.css by the plugin in your `assets/tailwind.config.js`.
+  your compiled demo.css by the plugin in your `assets/tailwind.config.js`.
 
   ## Examples
 
