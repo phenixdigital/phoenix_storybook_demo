@@ -82,10 +82,10 @@
 }
 
 .storybook-demo-sandbox {
-   * {
+  * {
     font-family: system-ui;
   }
-  
+
   i.fa {
     font-family: "Font Awesome 6 Pro";
   }
