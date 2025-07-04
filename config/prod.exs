@@ -12,7 +12,7 @@ import Config
 config :phoenix_storybook_demo, PhoenixStorybookDemo.Endpoint,
   cache_static_manifest: "priv/static/cache_manifest.json"
 
-config :phoenix_storybook, :gzip_assets, false
+config :phoenix_storybook, :gzip_assets, true
 config :phoenix_storybook, :fingerprint_assets, true
 
 # Do not print debug messages in production
