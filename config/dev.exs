@@ -54,9 +54,9 @@ config :phoenix_storybook_demo, PhoenixStorybookDemo.Endpoint,
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/phoenix_storybook/(live|views|components)/.*(ex)$",
-      ~r"storybook/.*(exs)$",
-      ~r"../../priv/phoenix_storybook.*"
+      ~r"lib/phoenix_storybook_demo/.*(ex)$",
+      ~r"storybook/.*$",
+      ~r"../../priv/phoenix_storybook_demo.*"
     ]
   ]
 

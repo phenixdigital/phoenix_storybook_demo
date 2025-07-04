@@ -4,7 +4,7 @@
 
 @source "../../lib/**/*.{ex,heex}";
 @source "../js/**/*.js";
-@source "../../storybook/**/*.exs";
+@source "../../storybook/**/*";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -81,41 +81,43 @@
   --color-danger-btn-disabled: var(--color-red-300);
 }
 
-.storybook-demo-sandbox {
-  * {
-    font-family: system-ui;
-  }
+@layer theme {
+  .storybook-demo-sandbox {
+    * {
+      font-family: system-ui;
+    }
 
-  i.fa {
-    font-family: "Font Awesome 6 Pro";
-  }
+    i.fa {
+      font-family: "Font Awesome 6 Pro";
+    }
 
-  h1 {
-    @apply text-2xl font-bold text-slate-700 mt-2 mb-6;
-  }
-  h2 {
-    @apply text-xl font-bold text-slate-500 mt-2 mb-4;
-  }
-  h3 {
-    @apply text-lg font-bold text-slate-500 my-2;
-  }
-  h4 {
-    @apply text-base font-bold text-slate-500 my-2;
-  }
-  h5 {
-    @apply text-base font-medium text-slate-500 my-2;
-  }
-  .btn {
-    @apply inline-flex items-center rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
-  }
+    h1 {
+      @apply text-2xl font-bold text-slate-700 mt-2 mb-6;
+    }
+    h2 {
+      @apply text-xl font-bold text-slate-500 mt-2 mb-4;
+    }
+    h3 {
+      @apply text-lg font-bold text-slate-500 my-2;
+    }
+    h4 {
+      @apply text-base font-bold text-slate-500 my-2;
+    }
+    h5 {
+      @apply text-base font-medium text-slate-500 my-2;
+    }
+    .btn {
+      @apply inline-flex items-center rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
+    }
 
-  .form-input-error {
-    @apply border-danger-border focus:border-danger-border focus-within:border-danger-border text-danger-txt placeholder-danger-txt-secondary focus:outline-none focus:ring-danger-btn-focus focus-within:ring-danger-btn-focus;
-  }
+    .form-input-error {
+      @apply border-danger-border focus:border-danger-border focus-within:border-danger-border text-danger-txt placeholder-danger-txt-secondary focus:outline-none focus:ring-danger-btn-focus focus-within:ring-danger-btn-focus;
+    }
 
-  .form-input,
-  .phx-no-feedback.form-input-error,
-  .phx-no-feedback .form-input-error {
-    @apply border-default-border focus:border-default-border focus-within:border-default-border text-default-txt placeholder-default-txt-informative focus:ring-primary-btn-focus focus-within:ring-primary-btn-focus;
+    .form-input,
+    .phx-no-feedback.form-input-error,
+    .phx-no-feedback .form-input-error {
+      @apply border-default-border focus:border-default-border focus-within:border-default-border text-default-txt placeholder-default-txt-informative focus:ring-primary-btn-focus focus-within:ring-primary-btn-focus;
+    }
   }
 }
