@@ -3,6 +3,7 @@ defmodule Storybook.CoreComponents do
 
   def folder_open?, do: true
   def folder_icon, do: {:fa, "box-open", :thin}
+  def folder_index, do: 1
 
   def entry("back"), do: [icon: {:fa, "circle-left", :thin}]
   def entry("button"), do: [icon: {:fa, "rectangle-ad", :thin}]
