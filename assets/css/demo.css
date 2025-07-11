@@ -81,7 +81,7 @@
   --color-danger-btn-disabled: var(--color-red-300);
 }
 
-@layer theme {
+@layer base {
   .storybook-demo-sandbox {
     * {
       font-family: system-ui;
