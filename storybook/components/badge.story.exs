@@ -7,6 +7,11 @@ defmodule Storybook.Components.Badge do
     [
       %Variation{
         id: :default_badge,
+        note: """
+          Your variations can be accompanied with an optional __note__.
+
+          You can use `markdown` syntax in your *text*.
+          """,
         attributes: %{
           text: "Default badge",
           rest: %{"data-foo" => "bar", "qix" => 42}
@@ -15,6 +20,9 @@ defmodule Storybook.Components.Badge do
       %VariationGroup{
         id: :predefined_colors,
         description: "With predefined colors",
+        note: """
+          Notes also work with `VariationGroup`.
+          """,
         variations:
           for color <- ~w(info primary success warning danger)a do
             %Variation{
