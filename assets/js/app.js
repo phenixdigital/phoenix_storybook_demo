@@ -1,7 +1,16 @@
 import "phoenix_html";
+import { LiveSocket, ViewHook } from "phoenix_live_view";
 import { Socket } from "phoenix";
-import { LiveSocket } from "phoenix_live_view";
+import * as Hooks from "./hooks";
 import "./components";
+
+(function () {
+  window.storybook = {
+    Hooks,
+    LiveView: { LiveSocket, ViewHook },
+    Phoenix: { Socket },
+  };
+})();
 
 let csrfToken = document
   .querySelector("meta[name='csrf-token']")
@@ -14,6 +23,19 @@ let liveSocket = new LiveSocket("/live", Socket, {
 });
 
 liveSocket.connect();
+
+const hookDefinitions = liveSocket.hooks || {};
+const hookProtoMatches = Object.fromEntries(
+  Object.entries(hookDefinitions).map(([name, hook]) => [
+    name,
+    Boolean(hook && hook.prototype instanceof ViewHook),
+  ]),
+);
+
+console.warn("[storybook] hook ViewHook matches", {
+  anyClassExtendsViewHook: Object.values(hookProtoMatches).some(Boolean),
+  hookProtoMatches,
+});
 
 // expose liveSocket on window for web console debug logs and latency simulation:
 // >> liveSocket.enableDebug()

@@ -1,4 +1,6 @@
-export const DropdownHook = {
+import { ViewHook } from "phoenix_live_view";
+
+export class DropdownHook extends ViewHook {
   mounted() {
     const toggleButton = this.el.querySelector(".toggle-button");
     const dropdownContent = this.el.querySelector(".dropdown-content");
@@ -11,15 +13,18 @@ export const DropdownHook = {
       event.stopPropagation();
     });
 
-    document.addEventListener("click", this.onDocumentClick.bind(this));
-  },
+    this.boundDocumentClick = this.onDocumentClick.bind(this);
+    document.addEventListener("click", this.boundDocumentClick);
+  }
+
   destroyed() {
-    document.removeEventListener("click", this.onDocumentClick);
-  },
+    document.removeEventListener("click", this.boundDocumentClick);
+  }
+
   onDocumentClick() {
     const dropdownContent = this.el.querySelector(".dropdown-content");
     if (!dropdownContent.classList.contains("hidden")) {
       dropdownContent.classList = "dropdown-content hidden";
     }
-  },
-};
+  }
+}
