@@ -19,7 +19,9 @@ defmodule PhoenixStorybookDemo do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: PhoenixStorybookDemo
+      use Phoenix.Controller, formats: [html: "View"]
+
+      plug :put_layout, html: {PhoenixStorybookDemo.LayoutView, :app}
 
       import Plug.Conn
       alias PhoenixStorybookDemo.Router.Helpers, as: Routes

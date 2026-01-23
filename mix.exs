@@ -20,7 +20,8 @@ defmodule PhoenixStorybookDemo.MixProject do
             keep: ["Docs"]
           ]
         ]
-      ]
+      ],
+      listeners: [Phoenix.CodeReloader]
     ]
   end
 
@@ -43,10 +44,10 @@ defmodule PhoenixStorybookDemo.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps(env) do
     [
-      {:phoenix, "~> 1.7.0"},
+      {:phoenix, "~> 1.8.0"},
       {:phoenix_html, "~> 4.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_view, "~> 1.0.0"},
+      {:phoenix_live_view, "~> 1.1.0"},
       {:phoenix_view, "~> 2.0", override: true},
       {:floki, ">= 0.30.0", only: :test},
       {:esbuild, "~> 0.7", runtime: env == :dev},
@@ -62,8 +63,8 @@ defmodule PhoenixStorybookDemo.MixProject do
        app: false,
        compile: false,
        depth: 1},
-      {:phoenix_storybook, "~> 0.9.0"}
-      # {:phoenix_storybook, path: "../phoenix_storybook"}
+      # {:phoenix_storybook, "~> 0.9.0"}
+      {:phoenix_storybook, path: "../phoenix_storybook"}
     ]
   end
 
