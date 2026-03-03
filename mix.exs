@@ -52,7 +52,7 @@ defmodule PhoenixStorybookDemo.MixProject do
       {:floki, ">= 0.30.0", only: :test},
       {:esbuild, "~> 0.7", runtime: env == :dev},
       {:tailwind, "~> 0.2", runtime: env == :dev},
-      {:gettext, "~> 0.18"},
+      {:gettext, "~> 1.0"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:phx_component_helpers, "~> 1.4.0"},
@@ -63,8 +63,8 @@ defmodule PhoenixStorybookDemo.MixProject do
        app: false,
        compile: false,
        depth: 1},
-      # {:phoenix_storybook, "~> 0.9.0"}
-      {:phoenix_storybook, path: "../phoenix_storybook"}
+      {:phoenix_storybook, "~> 1.0.0"}
+      # {:phoenix_storybook, path: "../phoenix_storybook"}
     ]
   end
 

@@ -16,18 +16,10 @@ defmodule Storybook.Components.Live.SendUpdateCounter do
     [
       %Variation{
         id: :default,
-        description: "Clicking does not change the count because the story has no handle_info/2.",
+        description: "click event is received by the story and propagated with send_update/2",
         attributes: %{
           label: "Request increment",
           count: 0
-        }
-      },
-      %Variation{
-        id: :with_initial_count,
-        description: "Shows a starting value that only changes via send_update/2.",
-        attributes: %{
-          label: "Request increment",
-          count: 3
         }
       }
     ]
