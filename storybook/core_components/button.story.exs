@@ -4,6 +4,13 @@ defmodule Storybook.Components.CoreComponents.Button do
   def function, do: &PhoenixStorybookDemo.CoreComponents.button/1
   def render_source, do: :function
 
+  def extra_sources do
+    [
+      "./router.ex",
+      "./endpoint.ex"
+    ]
+  end
+
   def variations do
     [
       %Variation{

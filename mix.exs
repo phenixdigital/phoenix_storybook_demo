@@ -55,6 +55,7 @@ defmodule PhoenixStorybookDemo.MixProject do
       {:gettext, "~> 1.0"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
+      {:phoenix_html_helpers, "~> 1.0"},
       {:phx_component_helpers, "~> 1.4.0"},
       {:heroicons,
        github: "tailwindlabs/heroicons",
@@ -63,8 +64,8 @@ defmodule PhoenixStorybookDemo.MixProject do
        app: false,
        compile: false,
        depth: 1},
-      {:phoenix_storybook, "~> 1.0.0"}
-      # {:phoenix_storybook, path: "../phoenix_storybook"}
+      # {:phoenix_storybook, "~> 1.0.0"}
+      {:phoenix_storybook, path: "../phoenix_storybook"}
     ]
   end
 
