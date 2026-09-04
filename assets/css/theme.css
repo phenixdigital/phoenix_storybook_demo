@@ -1,0 +1,7 @@
+:root {
+  --psb-color-primary: var(--color-teal-500);
+}
+
+:root.theme-colorful {
+  --psb-color-primary: var(--color-pink-600);
+}

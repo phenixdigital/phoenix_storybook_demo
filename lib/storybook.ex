@@ -3,15 +3,18 @@ defmodule Storybook do
     otp_app: :phoenix_storybook_demo,
     title: "Phoenix Storybook",
     content_path: Path.expand("../storybook/", __DIR__),
-    css_path: "/assets/demo.css",
+    css_path: "/assets/app.css",
+    theme_path: "/assets/theme.css",
     js_path: "/assets/components.js",
     sandbox_class: "storybook-demo-sandbox",
     themes: [
       default: [name: "Default"],
-      colorful: [name: "Colorful", dropdown_class: "psb-text-pink-600"]
+      colorful: [name: "Colorful", dropdown_class: "text-pink-600"]
     ],
     themes_strategies: [
-      body_class: "theme"
+      body_class: "theme",
+      root_class: "theme",
+      assign: :theme
     ],
     color_mode: true,
     font_awesome_plan: :pro,

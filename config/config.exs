@@ -22,10 +22,17 @@ config :esbuild,
 
 config :tailwind,
   version: "4.1.11",
-  default: [
+  app: [
     args: ~w(
-      --input=css/demo.css
-      --output=../priv/static/assets/demo.css
+      --input=css/app.css
+      --output=../priv/static/assets/app.css
+    ),
+    cd: Path.expand("../assets", __DIR__)
+  ],
+  theme: [
+    args: ~w(
+      --input=css/theme.css
+      --output=../priv/static/assets/theme.css
     ),
     cd: Path.expand("../assets", __DIR__)
   ]

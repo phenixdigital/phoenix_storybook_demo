@@ -64,8 +64,8 @@ defmodule PhoenixStorybookDemo.MixProject do
        app: false,
        compile: false,
        depth: 1},
-      # {:phoenix_storybook, "~> 1.0.0"}
-      {:phoenix_storybook, path: "../phoenix_storybook"}
+      {:phoenix_storybook, "~> 1.4.0"}
+      # {:phoenix_storybook, path: "../phoenix_storybook"}
     ]
   end
 
@@ -80,7 +80,8 @@ defmodule PhoenixStorybookDemo.MixProject do
       setup: ["deps.get"],
       test: ["test"],
       "assets.deploy": [
-        "tailwind default --minify",
+        "tailwind app --minify",
+        "tailwind theme --minify",
         "esbuild default --minify",
         "phx.digest"
       ]

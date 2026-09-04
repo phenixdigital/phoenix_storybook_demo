@@ -25,6 +25,8 @@ defmodule PhoenixStorybookDemo.Components.Badge do
   ```
   """
   def badge(assigns) do
+    dbg(assigns)
+
     assigns
     |> assign_new(:theme, fn -> :not_set end)
     |> set_attributes(
